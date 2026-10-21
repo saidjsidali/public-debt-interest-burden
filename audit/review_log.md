@@ -63,5 +63,5 @@ a reader or break reproduction; **Low** is presentation.
 |---|---|
 | `python run.py` from the committed snapshot | Completes in about 25 seconds on Windows 10, Python 3.14 |
 | `pytest` | 20 tests pass |
-| Fresh clone, new virtual environment from `requirements.txt` | See below |
-| GitHub Actions on Ubuntu (clean machine) | See the badge on the README |
+| Fresh clone into a new folder, new virtual environment built only from `requirements.txt`, then `python run.py` and `pytest` (Windows, 21 October 2026) | 20 tests pass. README, report, `key_numbers.json` and all 19 result tables are byte-identical to the committed versions after line-ending normalisation; only the PDF's embedded metadata differs |
+| GitHub Actions on Ubuntu (clean machine): run, test, and fail if the README or report differ from the committed ones | See the badge on the README |
