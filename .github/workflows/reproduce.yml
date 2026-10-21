@@ -8,7 +8,7 @@ on:
 
 jobs:
   reproduce:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pinned so the reproduction check runs on a fixed image
     steps:
       - uses: actions/checkout@v5
 
