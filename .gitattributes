@@ -3,3 +3,7 @@
 *.pdf binary
 *.ttf binary
 *.sqlite binary
+
+# Count the SQL in GitHub's language statistics; the report stylesheet is not code.
+*.sql linguist-detectable=true
+templates/report.css linguist-detectable=false
