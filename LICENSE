@@ -22,5 +22,5 @@ SOFTWARE.
 
 This licence covers the code in this repository. Data in data/raw/ remain
 subject to the terms of the IMF and the World Bank (see data/README.md). The
-Fira Sans fonts in assets/fonts/ are under the SIL Open Font License
-(assets/fonts/OFL.txt).
+Fira Sans and PT Serif fonts in assets/fonts/ are under the SIL Open Font License
+(assets/fonts/OFL-FiraSans.txt and assets/fonts/OFL-PTSerif.txt).

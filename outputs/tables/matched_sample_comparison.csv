@@ -1,0 +1,7 @@
+comparison,step,measure,sample,countries_level,median_burden_end,share_above_threshold,spearman_debt_burden,countries_change,median_change_since_start
+fpp,1,Net (Fiscal Monitor),All sample countries,181,5.828114468199261,11.049723756906078,0.5332786918422276,181,0.9347618722462085
+fpp,2,Net (Fiscal Monitor),"Countries covered by Gross interest, IMF FPP",149,6.957372695478401,10.738255033557047,0.47823689461273355,149,1.0252797481400853
+fpp,3,"Gross interest, IMF FPP",Same countries,149,7.358588155090675,11.409395973154362,0.4966080174133866,149,1.154445041478085
+wb,1,Net (Fiscal Monitor),All sample countries,181,5.828114468199261,11.049723756906078,0.5332786918422276,181,0.9347618722462085
+wb,2,Net (Fiscal Monitor),"Countries covered by Gross interest, central government, World Bank",88,5.423638799628122,9.090909090909092,0.45362967137473154,83,0.6680731137831923
+wb,3,"Gross interest, central government, World Bank",Same countries,88,6.22972946633588,10.227272727272728,0.5231939699200452,83,0.7084711211139396

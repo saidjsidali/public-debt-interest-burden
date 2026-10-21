@@ -1,0 +1,39 @@
+{
+  "retrieved_utc": "2026-10-21T16:07:27Z",
+  "note": "CSV files are tidy extracts of the IMF DataMapper and World Bank API responses (series_code, iso3, year, value). The original JSON responses were not kept for this snapshot.",
+  "files": {
+    "imf_datamapper.csv": {
+      "sha256": "5e259c14a3779836d2466fbb1a3d0ba170d7cb051f7582714bc694f1206a172d",
+      "bytes": 1049149
+    },
+    "wb_wdi.csv": {
+      "sha256": "a6527e5cfc49e51d8482b4c151a50c17ae11a6f09f84d1d99c8f5b06001d747c",
+      "bytes": 503248
+    },
+    "wb_countries.csv": {
+      "sha256": "9346c4b825759da5d3cbca20dbf97a230b9176343585d860d3ab6815d19da4bc",
+      "bytes": 12311
+    },
+    "retrieval_log.json": {
+      "sha256": "177091a7fee58b7d3a6a27331f168ccd6df210e7ce0c140a7e2a9de6c6ff7bb2",
+      "bytes": 1122
+    }
+  },
+  "sources": {
+    "imf_vintage_by_series": {
+      "GGR_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "G_XWDG_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "GGXONLB_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "GGXCNL_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "NGDPD": "World Economic Outlook (October 2026)",
+      "ie": "Public Finances in Modern History Database (Dec 2025)",
+      "rev": "Public Finances in Modern History Database (Dec 2025)"
+    },
+    "world_bank_last_updated": {
+      "GC.XPN.INTP.RV.ZS": "2026-10-08",
+      "SH.XPD.GHED.GD.ZS": "2026-10-08",
+      "SE.XPD.TOTL.GD.ZS": "2026-10-08",
+      "SP.POP.TOTL": "2026-10-08"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+review_status,iso3,year,finding,evidence
+checked against data,ADVEC,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,AFQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,AIA,,"Anguilla: not on the World Bank country list, so it has no income group.",Not in data/raw/wb_countries.csv.
+checked against data,APQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,AS5,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,AZQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,CAQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,CBQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,CMQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,DA,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,EAQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,EDE,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,EEQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,EU,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,EUQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,EURO,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_AdvG20,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_EMEAsia,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_EMEEU,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_EMEG20,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_EMELA,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_EMEME,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_EMG,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_LICAsia,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_LICLA,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_LICO,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_LICOP,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_LICSSA,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,FM_LIDC,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,MAE,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,MECA,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,MEQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,MSR,,"Montserrat: not on the World Bank country list, so it has no income group.",Not in data/raw/wb_countries.csv.
+checked against data,NAQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,NMQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,OAE,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,OEMDC,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,PIQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,SAQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,SEQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,SMQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,SSA,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,SSQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,TWN,,"Taiwan Province of China: not on the World Bank country list, so it is outside the sample. This is a coverage limitation.",Not in data/raw/wb_countries.csv.
+checked against data,WE,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,WEOWORLD,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,WEQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.
+checked against data,WHQ,,"IMF regional or analytical group, not an economy.",Code appears in IMF DataMapper group lists.

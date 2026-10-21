@@ -4,15 +4,21 @@ Templates in templates/ contain placeholders such as
 {{median_burden/All countries/2024:.1f}}: a path into
 outputs/key_numbers.json followed by an optional Python format spec. A
 missing path is an error, so the text cannot quote a number the analysis did
-not produce. The PDF is printed from HTML by a local Chrome or Edge in
-headless mode; if neither is installed the Markdown report is still written.
+not produce.
+
+The PDF is printed from HTML by a local Chrome or Edge in headless mode; if
+neither is installed the Markdown report is still written. In the HTML used
+for the PDF, links to other files in the repository are rewritten to public
+GitHub URLs, so the PDF never points to a folder on the computer that built
+it. Images and fonts are still loaded from the local files.
 """
 
+import json
 import os
+import posixpath
 import re
 import shutil
 import subprocess
-import json
 
 import markdown
 
@@ -20,6 +26,7 @@ import config
 
 TEMPLATES = config.ROOT / "templates"
 PLACEHOLDER = re.compile(r"\{\{\s*([^}:]+?)\s*(?::([^}]+))?\}\}")
+HREF = re.compile(r'href="([^"]+)"')
 
 BROWSERS = [
     os.environ.get("CHROME_PATH", ""),
@@ -51,6 +58,19 @@ def render(text, data):
             raise ValueError(f"Template value is empty: {m.group(1)}")
         return format(value, spec) if spec else str(value)
     return PLACEHOLDER.sub(sub, text)
+
+
+def public_links(html, base="report"):
+    """Rewrite relative links (not images) to the public repository on GitHub."""
+    def sub(m):
+        target = m.group(1)
+        if target.startswith("#") or re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target):
+            return m.group(0)
+        path, _, anchor = target.partition("#")
+        path = posixpath.normpath(posixpath.join(base, path))
+        url = f"{config.REPO_URL}/blob/{config.REPO_LINK_REF}/{path}"
+        return f'href="{url}{"#" + anchor if anchor else ""}"'
+    return HREF.sub(sub, html)
 
 
 def find_browser():
@@ -89,8 +109,8 @@ def run(pdf=True):
     body = markdown.markdown(report_md, extensions=["tables", "attr_list", "md_in_html", "toc"])
     css = (TEMPLATES / "report.css").read_text(encoding="utf-8")
     html = ("<!doctype html><html lang='en'><head><meta charset='utf-8'>"
-            "<title>The Cost of Public Debt</title>"
-            f"<style>{css}</style></head><body>{body}</body></html>")
+            "<title>Public debt and interest burdens, 2015-2024</title>"
+            f"<style>{css}</style></head><body>{public_links(body)}</body></html>")
     html_path = config.REPORT / "economic_analysis.html"
     html_path.write_text(html, encoding="utf-8")
     if pdf:

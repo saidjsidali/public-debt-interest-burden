@@ -1,6 +1,59 @@
 -- Analytical queries. Each named block is exported by src/database.py to
--- outputs/tables/<name>.csv; the Python analysis and the figures read those
--- files, so every number in the report can be traced to one query here.
+-- outputs/tables/<name>.csv. The Python analysis and the figures read those
+-- files, so each number in the report can be traced to a query here or to a
+-- function in src/analyze.py.
+
+-- name: sample_funnel
+-- description: How the 217 economies on the World Bank list become the analysis sample, step by step.
+WITH per_country AS (
+    SELECT
+        c.iso3,
+        c.income_group,
+        SUM(p.revenue_gdp IS NOT NULL)                   AS revenue_years,
+        SUM(p.debt_gdp IS NOT NULL)                      AS debt_years,
+        SUM(p.net_interest_gdp IS NOT NULL)              AS net_interest_years,
+        COALESCE(SUM(ABS(p.net_interest_gdp) < 1e-9), 0) AS zero_years
+    FROM country AS c
+    LEFT JOIN panel AS p
+           ON p.iso3 = c.iso3 AND p.year BETWEEN {{START_YEAR}} AND {{END_YEAR}}
+    GROUP BY c.iso3, c.income_group
+),
+steps AS (
+    SELECT
+        iso3,
+        1                                                         AS s1,
+        revenue_years > 0                                         AS s2,
+        revenue_years = {{END_YEAR}} - {{START_YEAR}} + 1
+            AND debt_years = {{END_YEAR}} - {{START_YEAR}} + 1
+            AND net_interest_years = {{END_YEAR}} - {{START_YEAR}} + 1 AS s3,
+        zero_years <= {{MAX_ZERO_INTEREST_YEARS}}                 AS zero_ok,
+        income_group <> 'Not classified'                          AS income_ok
+    FROM per_country
+)
+SELECT 1 AS step, 'Economies on the World Bank country list' AS stage,
+       SUM(s1) AS countries, 0 AS dropped, '' AS dropped_economies
+FROM steps
+UNION ALL
+SELECT 2, 'With at least one year of Fiscal Monitor revenue data, 2015-2024',
+       SUM(s2), SUM(s1) - SUM(s2),
+       GROUP_CONCAT(CASE WHEN NOT s2 THEN iso3 END, ' ')
+FROM steps
+UNION ALL
+SELECT 3, 'With revenue, gross debt and both balances in all ten years',
+       SUM(s2 AND s3), SUM(s2) - SUM(s2 AND s3),
+       GROUP_CONCAT(CASE WHEN s2 AND NOT s3 THEN iso3 END, ' ')
+FROM steps
+UNION ALL
+SELECT 4, 'Net interest not exactly zero in five or more years',
+       SUM(s3 AND zero_ok), SUM(s3) - SUM(s3 AND zero_ok),
+       GROUP_CONCAT(CASE WHEN s3 AND NOT zero_ok THEN iso3 END, ' ')
+FROM steps
+UNION ALL
+SELECT 5, 'With a World Bank income group (final sample)',
+       SUM(s3 AND zero_ok AND income_ok), SUM(s3 AND zero_ok) - SUM(s3 AND zero_ok AND income_ok),
+       GROUP_CONCAT(CASE WHEN s3 AND zero_ok AND NOT income_ok THEN iso3 END, ' ')
+FROM steps
+ORDER BY step;
 
 -- name: sample_composition
 -- description: Countries in the analysis sample by income group and region.
@@ -10,19 +63,19 @@ GROUP BY income_group, region
 ORDER BY income_group, region;
 
 -- name: burden_ranking
--- description: Interest burden in the end year for every sample country, with its components.
+-- description: Net interest burden in the end year for every sample country, with its components.
 SELECT
     RANK() OVER (ORDER BY p.interest_burden DESC) AS rank,
     p.iso3, p.name, p.income_group, p.region,
     p.interest_burden, p.interest_burden_gross, p.interest_burden_wb,
-    p.net_interest_gdp, p.debt_gdp, p.revenue_gdp, p.implicit_rate
+    p.net_interest_gdp, p.debt_gdp, p.revenue_gdp, p.net_interest_to_debt
 FROM panel AS p
 JOIN sample AS s USING (iso3)
 WHERE p.year = {{END_YEAR}}
 ORDER BY rank;
 
 -- name: group_medians
--- description: Median burden, debt, revenue and implicit rate by income group and year (unweighted: the typical country).
+-- description: Median net burden, gross burden, debt, revenue and net-interest-to-debt factor by income group and year. Unweighted: the typical country.
 WITH long AS (
     SELECT p.income_group AS grp, p.year, 'interest_burden' AS variable, p.interest_burden AS value
     FROM panel AS p JOIN sample AS s USING (iso3)
@@ -31,8 +84,9 @@ WITH long AS (
     UNION ALL
     SELECT p.income_group, p.year, 'revenue_gdp', p.revenue_gdp FROM panel AS p JOIN sample AS s USING (iso3)
     UNION ALL
-    -- an implicit rate has no meaning for net creditors, whose net interest is negative
-    SELECT p.income_group, p.year, 'implicit_rate', CASE WHEN p.net_interest_gdp > 0 THEN p.implicit_rate END
+    -- only defined where net interest is positive
+    SELECT p.income_group, p.year, 'net_interest_to_debt',
+           CASE WHEN p.net_interest_gdp > 0 THEN p.net_interest_to_debt END
     FROM panel AS p JOIN sample AS s USING (iso3)
     UNION ALL
     SELECT p.income_group, p.year, 'net_interest_gdp', p.net_interest_gdp FROM panel AS p JOIN sample AS s USING (iso3)
@@ -58,11 +112,11 @@ WHERE rn IN ((n + 1) / 2, (n + 2) / 2)
 GROUP BY grp, year, variable
 ORDER BY variable, income_group, year;
 
--- name: aggregate_burden
--- description: GDP-weighted aggregate burden, i.e. total net interest over total revenue in US dollars.
+-- name: pooled_burden
+-- description: Total net interest as a share of total revenue across the sample, after converting both to US dollars. This equals a revenue-weighted average of country burdens (not a GDP-weighted average).
 WITH base AS (
     SELECT p.income_group, p.year,
-           p.net_interest_gdp * p.gdp_usd_bn / 100 AS interest_usd_bn,
+           p.net_interest_gdp * p.gdp_usd_bn / 100 AS net_interest_usd_bn,
            p.revenue_gdp      * p.gdp_usd_bn / 100 AS revenue_usd_bn,
            p.debt_gdp         * p.gdp_usd_bn / 100 AS debt_usd_bn,
            p.gdp_usd_bn
@@ -71,21 +125,21 @@ WITH base AS (
       AND p.gdp_usd_bn IS NOT NULL
 ),
 grouped AS (
-    SELECT income_group AS grp, year, interest_usd_bn, revenue_usd_bn, debt_usd_bn, gdp_usd_bn FROM base
+    SELECT income_group AS grp, year, net_interest_usd_bn, revenue_usd_bn, debt_usd_bn, gdp_usd_bn FROM base
     UNION ALL
-    SELECT 'All countries', year, interest_usd_bn, revenue_usd_bn, debt_usd_bn, gdp_usd_bn FROM base
+    SELECT 'All countries', year, net_interest_usd_bn, revenue_usd_bn, debt_usd_bn, gdp_usd_bn FROM base
 )
 SELECT grp AS income_group, year,
-       100.0 * SUM(interest_usd_bn) / SUM(revenue_usd_bn) AS interest_burden,
-       100.0 * SUM(debt_usd_bn)     / SUM(gdp_usd_bn)     AS debt_gdp,
-       SUM(interest_usd_bn)                                AS net_interest_usd_bn,
-       COUNT(*)                                            AS countries
+       100.0 * SUM(net_interest_usd_bn) / SUM(revenue_usd_bn) AS pooled_burden,
+       100.0 * SUM(debt_usd_bn)         / SUM(gdp_usd_bn)     AS pooled_debt_gdp,
+       SUM(net_interest_usd_bn)                                AS net_interest_usd_bn,
+       COUNT(*)                                                AS countries
 FROM grouped
 GROUP BY grp, year
 ORDER BY income_group, year;
 
 -- name: burden_change
--- description: Each country's burden at the start, the break year, the end year and the latest estimate.
+-- description: Each country's net burden at the start, the break year, the end year and the latest estimate.
 SELECT
     s.iso3, s.name, s.income_group, s.region,
     MAX(CASE WHEN p.year = {{START_YEAR}}    THEN p.interest_burden END) AS burden_start,
@@ -104,7 +158,7 @@ GROUP BY s.iso3, s.name, s.income_group, s.region
 ORDER BY change_start_end DESC;
 
 -- name: high_burden_counts
--- description: Countries spending more than the descriptive threshold share of revenue on interest, by year.
+-- description: Countries whose net burden is above the descriptive threshold, by year. Population uses each year's value, or the end-year value for later years.
 WITH latest_pop AS (
     SELECT iso3, population FROM panel WHERE year = {{END_YEAR}}
 )
@@ -125,7 +179,7 @@ GROUP BY p.year
 ORDER BY p.year;
 
 -- name: debt_burden_quadrants
--- description: End-year debt and burden for each country, classified against the sample medians of both.
+-- description: End-year debt and net burden for each country, classified against the sample medians of both. A descriptive grouping only.
 WITH end_year AS (
     SELECT p.* FROM panel AS p JOIN sample AS s USING (iso3) WHERE p.year = {{END_YEAR}}
 ),
@@ -142,19 +196,19 @@ med AS (
 )
 SELECT
     e.iso3, e.name, e.income_group, e.region,
-    e.debt_gdp, e.revenue_gdp, e.implicit_rate, e.interest_burden, e.gdp_usd_bn, e.population,
+    e.debt_gdp, e.revenue_gdp, e.net_interest_to_debt, e.interest_burden, e.gdp_usd_bn, e.population,
     m.median_debt, m.median_burden,
     CASE
-        WHEN e.debt_gdp >= m.median_debt AND e.interest_burden >= m.median_burden THEN 'High debt, high burden'
-        WHEN e.debt_gdp >= m.median_debt AND e.interest_burden <  m.median_burden THEN 'High debt, low burden'
-        WHEN e.debt_gdp <  m.median_debt AND e.interest_burden >= m.median_burden THEN 'Low debt, high burden'
-        ELSE 'Low debt, low burden'
-    END AS quadrant
+        WHEN e.debt_gdp >= m.median_debt AND e.interest_burden >= m.median_burden THEN 'Above-median debt, above-median burden'
+        WHEN e.debt_gdp >= m.median_debt AND e.interest_burden <  m.median_burden THEN 'Above-median debt, below-median burden'
+        WHEN e.debt_gdp <  m.median_debt AND e.interest_burden >= m.median_burden THEN 'Below-median debt, above-median burden'
+        ELSE 'Below-median debt, below-median burden'
+    END AS group_label
 FROM end_year AS e CROSS JOIN med AS m
-ORDER BY quadrant, e.interest_burden DESC;
+ORDER BY group_label, e.interest_burden DESC;
 
 -- name: interest_vs_social_spending
--- description: Net interest against government health and education spending, each in the latest year (from 2019) where both are reported.
+-- description: Net interest against government health and education spending, both in the same year: the latest year from 2019 where both values exist. Health and education can use different years. Population is the end-year value.
 WITH health AS (
     SELECT p.iso3, p.year, p.net_interest_gdp, p.health_gdp,
            ROW_NUMBER() OVER (PARTITION BY p.iso3 ORDER BY p.year DESC) AS rn
@@ -187,11 +241,11 @@ LEFT JOIN panel     AS pop ON pop.iso3 = s.iso3 AND pop.year = {{END_YEAR}}
 ORDER BY s.iso3;
 
 -- name: measure_comparison
--- description: Net (Fiscal Monitor), gross (FPP) and central-government (World Bank) burdens side by side.
+-- description: Net burden (Fiscal Monitor), gross burden (IMF FPP) and central-government gross burden (World Bank) side by side.
 SELECT p.iso3, p.name, p.income_group, p.year,
-       p.interest_burden       AS net_general_government,
-       p.interest_burden_gross AS gross_general_government,
-       p.interest_burden_wb    AS gross_central_government
+       p.interest_burden       AS net_fiscal_monitor,
+       p.interest_burden_gross AS gross_fpp,
+       p.interest_burden_wb    AS gross_central_wb
 FROM panel AS p JOIN sample AS s USING (iso3)
 WHERE p.year BETWEEN {{START_YEAR}} AND {{END_YEAR}}
 ORDER BY p.iso3, p.year;

@@ -1,0 +1,2 @@
+review_status,iso3,year,name,net_burden,gross_burden_fpp,finding,evidence
+checked against data,CAN,2024,Canada,0.0139,8.3,Net burden 0.014% of revenue against a gross FPP burden of 8.3%. Kept in the baseline log regressions; it has the second-largest Cook's distance in the debt-only model and is reported in the influence check.,outputs/tables/regression_influence.csv

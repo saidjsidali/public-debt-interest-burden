@@ -1,0 +1,3 @@
+review_status,iso3,year,name,years,max_revenue_gdp,finding,evidence
+"plausible, not verified",KIR,,Kiribati,6,133.5,"Pacific micro-state. Fishing-licence fees, grants and trust-fund income can be large compared with GDP. Kept in the sample; removed in the small-states sensitivity check.",Maximum revenue 133.5% of GDP in the flag table. No IMF country document was checked.
+"plausible, not verified",TUV,,Tuvalu,8,153.8,"Pacific micro-state. Fishing-licence fees, grants and trust-fund income can be large compared with GDP. Kept in the sample; removed in the small-states sensitivity check.",Maximum revenue 153.8% of GDP in the flag table. No IMF country document was checked.

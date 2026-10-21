@@ -1,0 +1,6 @@
+step,stage,countries,dropped,dropped_economies
+1,Economies on the World Bank country list,217,0,
+2,"With at least one year of Fiscal Monitor revenue data, 2015-2024",193,24,ASM BMU CHI CUB CUW CYM FRO GIB GRL GUM IMN LIE MAF MCO MNP NCL PRK PSE PYF SXM SYR TCA VGB VIR
+3,"With revenue, gross debt and both balances in all ten years",182,11,ERI LBY MAC NRU PLW SGP SOM TKM VEN WSM YEM
+4,Net interest not exactly zero in five or more years,181,1,BRN
+5,With a World Bank income group (final sample),181,0,

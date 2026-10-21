@@ -1,4 +1,4 @@
-iso3,name,income_group,year,net_general_government,gross_general_government,gross_central_government
+iso3,name,income_group,year,net_fiscal_monitor,gross_fpp,gross_central_wb
 ABW,Aruba,High income,2015,15.80241369736501,15.802413697365282,
 ABW,Aruba,High income,2016,17.242479762168074,17.242479762168635,
 ABW,Aruba,High income,2017,18.321101336683903,18.32110133668397,

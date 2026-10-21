@@ -1,11 +1,11 @@
-iso3,name,region,income_group,gdp_usd_bn,interest_burden,reason
-CHN,China,East Asia & Pacific,Upper middle income,18928.994,3.711715264970488,Largest economy in region
-DEU,Germany,Europe & Central Asia,High income,4746.909,1.7309957328592254,Largest economy in region
-BRA,Brazil,Latin America & Caribbean,Upper middle income,2185.822,15.1457619984834,Largest economy in region
-SAU,Saudi Arabia,"Middle East, North Africa, Afghanistan & Pakistan",High income,1254.141,0.3325576038698063,Largest economy in region
-USA,United States,North America,High income,29381.025,10.692019964368583,Largest economy in region
-IND,India,South Asia,Lower middle income,3759.774,22.867078824076643,Largest economy in region
-ZAF,South Africa,Sub-Saharan Africa,Upper middle income,401.076,18.928836605652155,Largest economy in region
-PAK,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,371.929,61.25670839780127,Highest burden in end year
-EGY,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,383.105,55.78025859992326,Highest burden in end year
-LKA,Sri Lanka,South Asia,Upper middle income,99.617,55.55100263637913,Highest burden in end year
+plot_order,group,iso3,name,region,income_group,gdp_usd_bn,interest_burden,reason
+1,Large economies,USA,United States,North America,High income,29381.025,10.692019964368583,Largest economy in its region
+2,Large economies,CHN,China,East Asia & Pacific,Upper middle income,18928.994,3.711715264970488,Largest economy in its region
+3,Large economies,DEU,Germany,Europe & Central Asia,High income,4746.909,1.7309957328592254,Largest economy in its region
+4,Large economies,IND,India,South Asia,Lower middle income,3759.774,22.867078824076643,Largest economy in its region
+5,Large economies,BRA,Brazil,Latin America & Caribbean,Upper middle income,2185.822,15.1457619984834,Largest economy in its region
+6,Large economies,SAU,Saudi Arabia,"Middle East, North Africa, Afghanistan & Pakistan",High income,1254.141,0.3325576038698063,Largest economy in its region
+7,Large economies,ZAF,South Africa,Sub-Saharan Africa,Upper middle income,401.076,18.928836605652155,Largest economy in its region
+8,Highest burdens,PAK,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,371.929,61.25670839780127,One of the three highest burdens in 2024
+9,Highest burdens,EGY,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan",Lower middle income,383.105,55.78025859992326,One of the three highest burdens in 2024
+10,Highest burdens,LKA,Sri Lanka,South Asia,Upper middle income,99.617,55.55100263637913,One of the three highest burdens in 2024

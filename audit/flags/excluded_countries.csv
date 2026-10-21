@@ -1,0 +1,13 @@
+review_status,iso3,year,name,income_group,years_with_revenue,years_with_debt,years_with_net_interest,zero_net_interest_years,finding,evidence
+unresolved,BRN,,Brunei Darussalam,High income,10,10,10,10.0,"Complete data, but net interest is exactly zero in all 10 years. Not confirmed whether interest is not recorded separately or is truly zero. Removed by the repeated-zero rule; the sensitivity check 'Adding Brunei' shows the effect of keeping it.",Flag table: 10 zero years. IMF country documentation could not be accessed (IMF website returned Access Denied).
+checked against data,ERI,,Eritrea,Low income,5,5,5,0.0,Fiscal data for only 5 of 10 years.,Flag table: 5 years with revenue.
+checked against data,LBY,,Libya,Upper middle income,10,0,10,10.0,No gross debt data; net interest is also exactly zero in all 10 years. Fails the complete-data rule first.,"Flag table: 0 years with debt, 10 zero years."
+checked against data,MAC,,"Macao SAR, China",High income,10,0,8,8.0,No gross debt data; net interest zero in 8 years. Fails the complete-data rule first.,"Flag table: 0 years with debt, 8 zero years."
+checked against data,NRU,,Naoero,High income,10,10,0,,No net interest series (a balance series is missing).,Flag table: 0 years with net interest.
+checked against data,PLW,,Palau,High income,10,0,0,,No gross debt and no net interest series.,Flag table.
+checked against data,SGP,,Singapore,High income,10,10,0,,No net interest series (a balance series is missing).,Flag table: 0 years with net interest.
+checked against data,SOM,,"Somalia, Fed. Rep.",Low income,10,0,0,,No gross debt and no net interest series.,Flag table.
+checked against data,TKM,,Turkmenistan,Upper middle income,10,10,0,,No net interest series (a balance series is missing).,Flag table.
+checked against data,VEN,,"Venezuela, RB",Lower middle income,10,0,10,0.0,No gross debt data.,Flag table: 0 years with debt.
+checked against data,WSM,,Samoa,Upper middle income,10,10,0,,No net interest series (a balance series is missing).,Flag table.
+checked against data,YEM,,"Yemen, Rep.",Low income,7,0,7,0.0,No gross debt data and only 7 years of other data.,Flag table.

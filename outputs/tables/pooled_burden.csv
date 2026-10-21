@@ -1,4 +1,4 @@
-income_group,year,interest_burden,debt_gdp,net_interest_usd_bn,countries
+income_group,year,pooled_burden,pooled_debt_gdp,net_interest_usd_bn,countries
 All countries,2015,4.887867227033232,78.03151663682345,1191.26926083552,181
 All countries,2016,4.901299229039486,81.7032169154266,1207.648922577169,181
 All countries,2017,4.973524940286263,80.7023797190078,1299.9090505976478,181
