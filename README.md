@@ -1,57 +1,32 @@
 <!-- Generated from templates/README.md by src/build_report.py: edit the template, not this file. -->
 
-# The cost of public debt
+# Public debt and interest burdens, 2015–2024
 
-**How much government revenue goes to interest, and is debt-to-GDP a reliable guide to who is under pressure?**
-A reproducible cross-country analysis of 181 economies, 2015–2024, using SQL and Python.
+**How much government revenue goes to net interest, and what does the debt-to-GDP ratio not show?**
+A reproducible analysis of 181 economies with SQL (SQLite) and Python, using IMF and World Bank data.
 
 [![Reproduce analysis](https://github.com/saidjsidali/public-debt-interest-burden/actions/workflows/reproduce.yml/badge.svg)](https://github.com/saidjsidali/public-debt-interest-burden/actions/workflows/reproduce.yml)
-&nbsp;**[Read the report (PDF)](report/economic_analysis.pdf)** · [Report on GitHub](report/economic_analysis.md) · [Methodology](research/methodology.md) · [Data sources](data/README.md) · [Validation](audit/validation_report.md) · [Reproduce](#reproduce-the-analysis)
+&nbsp;**[Report (PDF)](report/economic_analysis.pdf)** · [Report (Markdown)](report/economic_analysis.md) · [Methodology](research/methodology.md) · [Data](data/README.md) · [Validation](audit/validation_report.md) · [Changes in this revision](audit/repair_register.md)
 
-## Why it matters
+## The measure
 
-Interest is the one budget item a government cannot cut without a default or a renegotiation. The share of revenue it absorbs shows how much of a government's income is committed before any other spending decision. That share was pushed up after 2021 by pandemic-era debt and the fastest rise in interest rates in decades. Rating agencies use the ratio to judge debt affordability. Finance ministries, debt managers and international lenders need to know where the pressure is, and whether the usual yardstick, debt-to-GDP, finds it.
+The **net interest burden** is net interest paid by the government (interest paid minus interest received) divided by government revenue. It shows how much of the government's income goes to interest. Debt-to-GDP shows the size of the debt, not its yearly cost.
 
-## Key findings
+## Three findings
 
-- **Interest takes a growing share of revenue.** The median government spent **5.8%** of revenue on net interest in 2024, against 4.5% in 2015. Across all 181 economies, net interest rose from 4.9% of total revenue in 2021 to 6.4% in 2024, about **$2.2trn**.
-- **The load has shifted to poorer countries.** The median burden rose from 3.6% to **8.4%** in low-income economies, while in high-income ones it fell from 4.0% to 2.3% (roughly flat on a gross-interest basis). In 2024, 20 governments ruling 2.7bn people spent more than a fifth of revenue on interest; Pakistan, Egypt and Sri Lanka spent more than half.
-- **Debt-to-GDP is only a partial guide.** It explains about a quarter of cross-country differences in burdens (R² 0.25). Adding revenue raises this to 0.48. Japan (214% debt, 0.3% net burden) and Nigeria (39% debt, 23% burden) sit at opposite corners.
-- **Since 2021, higher interest rates did the damage.** For the average country the burden rose 1.0 points between 2021 and 2024: higher implicit rates added 2.0, while falling debt ratios and rising revenue offset about half of that. Before 2021, debt accumulation was the driver.
-- **Interest competes with health.** In 45 countries, home to 3.7bn people, governments pay more in net interest than they spend on health.
+1. **Burdens rose in most countries, most of all in poorer ones.** The median net burden was 4.5% of revenue in 2015 and 5.8% in 2024. In low-income countries it rose from 3.6% to 8.4%. In high-income countries it fell on the net measure but was almost unchanged on a gross measure.
+2. **Debt-to-GDP and interest-to-revenue often rank countries differently.** In all, 52 of 181 countries are above the median on one measure and below it on the other. Japan: debt 214% of GDP, net burden 0.3%. Nigeria: debt 39% of GDP, burden 23%, because revenue is only 11% of GDP.
+3. **Definitions and coverage change the numbers.** The 2024 median on the IMF gross measure is 1.5 points higher than the net median, but about 74% of that gap comes from the smaller set of countries the gross series covers, not from the measure.
 
-![Debt versus interest burden, 2024](outputs/figures/fig4_debt_vs_burden.png)
+![Debt versus net burden, 2024](outputs/figures/fig4_debt_vs_burden.png)
 
-![Median burden by income group](outputs/figures/fig2_median_burden_by_income.png)
+![Median net burden by income group](outputs/figures/fig1_income_group_trend.png)
 
-## What this means
+**Limits.** The results are descriptive and use one data vintage (IMF, October 2026). They do not show causes, and the burden is not a measure of default risk. Government coverage and accounting differ between countries; see [Appendix C of the report](report/economic_analysis.md#appendix-c-coverage-notes-for-highlighted-countries).
 
-- Watch **affordability (interest/revenue), not just the debt stock**. A rule based only on debt-to-GDP flags Japan and misses Nigeria and Bangladesh.
-- For the most burdened economies, **revenue is the strongest lever**: the burden is inversely proportional to the revenue ratio, so raising revenue from 12% to 15% of GDP cuts it by a fifth at unchanged debt.
-- **Debt structure decides how fast rate shocks arrive.** Longer maturities and less short-term and foreign-currency debt slow the pass-through.
-- **A falling burden is not always good news.** Lebanon's dropped from 47% to 4% because it defaulted.
+## Reproduce the results
 
-These follow from the accounting identity and the cross-country patterns; they are not estimated policy effects. See the [limitations](report/economic_analysis.md#7-limitations).
-
-## Data and method
-
-| | |
-|---|---|
-| **Measure** | Net interest (primary balance minus overall balance) as % of general-government revenue |
-| **Main source** | IMF Fiscal Monitor, October 2026 (revenue, gross debt, primary and overall balance) |
-| **Cross-checks** | Gross interest from the IMF Public Finances in Modern History database; World Bank `GC.XPN.INTP.RV.ZS` (central government) |
-| **Context** | World Bank income groups, regions, population, health and education spending; IMF WEO GDP in US dollars |
-| **Sample** | 181 economies with complete data for 2015–2024 (balanced panel); 2025 estimates and 2026–27 IMF forecasts shown as context |
-| **Methods** | Medians and GDP-weighted aggregates; Spearman correlation with bootstrap interval; log-log OLS with HC3 errors; exact log-mean Divisia decomposition of burden = implicit rate × debt ÷ revenue |
-| **Tools** | SQLite (data integration, validation, aggregation, window-function medians) and Python (pandas, statsmodels, matplotlib) |
-
-The burden identity, the hypotheses and the case-study selection rule were written down before the main results were computed ([methodology](research/methodology.md)); later changes are logged in [research decisions](research/research_decisions.md).
-
-**Limitations.** These are cross-country associations, not causal effects. Net interest understates the cash cost for governments with large financial assets, which is why gross measures are reported alongside. The ratio ignores maturity, currency and principal repayments, so it is not a measure of default risk.
-
-## Reproduce the analysis
-
-Requires Python 3.11+ (tested with 3.14). Every table, figure and number in the report is regenerated from the data snapshot in `data/raw/`.
+Requires Python 3.11+ (tested with 3.14). The published results use the data snapshot in `data/raw/` (downloaded on 21 October 2026).
 
 ```bash
 git clone https://github.com/saidjsidali/public-debt-interest-burden.git
@@ -59,45 +34,36 @@ cd public-debt-interest-burden
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-python run.py                    # ~1 minute; add --no-pdf if Chrome/Edge is not installed
-pytest                           # data-quality and consistency tests
+python run.py                    # about 30 seconds; add --no-pdf if Chrome or Edge is not installed
+pytest
 ```
 
-`python run.py --refresh` downloads the latest IMF and World Bank data instead of using the snapshot. Expect the numbers to change when the IMF publishes a new vintage (April and October).
+`run.py` first checks the input files against `data/snapshot_manifest.json`, then builds the SQLite database, runs the data checks, the SQL queries and the statistics, draws the charts and writes this README and the report. After a run, `data/processed/fiscal.sqlite` contains the tables (`panel` has one row per country and year).
 
-To query the data yourself, open `data/processed/fiscal.sqlite` after a run: the `panel` table has one row per country and year.
+`python run.py --refresh` only downloads a **new** snapshot into `data/snapshots/<date>/`. It does not change the published results: a new IMF vintage needs a new review of the numbers, the flagged cases and the text. To look at a new snapshot, run `SNAPSHOT_DIR=data/snapshots/<date> python run.py` (PowerShell: `$env:SNAPSHOT_DIR="data/snapshots/<date>"; python run.py`). This is **draft mode**: it checks the new files against their own manifest and writes everything to separate files (`outputs_draft/`, `audit/draft/`, `README_draft.md`, `report/economic_analysis_draft.*`), each marked as an unreviewed draft. The published files are not changed.
+
+**What CI checks.** On every push, GitHub Actions installs the pinned packages on Ubuntu 24.04, runs `python run.py --no-pdf` and `pytest`, compares the key numbers with the committed ones (with a small numeric tolerance) and checks that the README and Markdown report are unchanged. It does not rebuild or check the PDF; the PDF is built locally with Chrome or Edge and its links are checked by a test.
 
 ## Repository structure
 
 ```
-├── run.py                     single entry point: data → SQL → checks → statistics → figures → report
-├── sql/
-│   ├── 01_schema.sql          tables and keys for the raw observations
-│   ├── 02_build_panel.sql     pivot to a country-year panel, derive indicators, define the sample
-│   ├── 03_validation.sql      data-quality checks (blocking and review)
-│   └── 04_analysis.sql        rankings, medians, aggregates, quadrants, social-spending comparison
-├── src/                       Python: acquire, database, validate, analyze, figures, style, build_report
-├── data/
-│   ├── raw/                   frozen API snapshot (October 2026) and retrieval log
-│   ├── data_dictionary.csv    every variable, unit and source
-│   └── README.md              sources, licences, definitions
-├── research/                  problem statement, literature review, methodology, decisions, reasoning journal
-├── outputs/
-│   ├── figures/               eight charts
-│   ├── tables/                every result table (CSV)
-│   └── key_numbers.json       every number quoted in the report and this README
-├── report/                    economic_analysis.pdf and .md
-├── templates/                 sources for this README and the report
-├── audit/                     generated validation report and review log
-└── tests/                     pytest checks on data integrity and internal consistency
+run.py                  entry point: input check -> SQL -> checks -> statistics -> charts -> README/report
+sql/                    schema, country-year panel and sample, data checks, analytical queries
+src/                    Python modules (database, validate, analyze, figures, build_report, acquire, snapshot)
+data/raw/               published data snapshot (tidy CSV extracts of the API responses)
+data/                   README (sources, definitions, licences), data dictionary, snapshot manifest
+research/               methodology, research decisions, literature notes, learning note
+outputs/                tables (CSV), figures (PNG) and key_numbers.json (every number used in the text)
+report/                 economic_analysis.pdf and .md
+templates/              sources of this README and of the report
+audit/                  validation report, reviewed cases, flagged rows, repair register
+tests/                  checks on data, calculations, links and generated text
 ```
 
-## Sources and citation
+## Contributions
 
-IMF Fiscal Monitor and World Economic Outlook (October 2026); IMF Public Finances in Modern History (December 2025); World Bank World Development Indicators (October 2026). Full references and licences are in [data/README.md](data/README.md). To cite this work, use the "Cite this repository" button (from [CITATION.cff](CITATION.cff)).
+Sidali Saidj chose the research question, set the project requirements and asked for a revision after an external audit. Claude, an AI assistant made by Anthropic, did most of the data collection, SQL and Python code, charts and writing, in the first version and in this revision. The repository does not record which results the author has checked personally.
 
-Code is released under the [MIT licence](LICENSE). Data remain subject to the IMF's and the World Bank's terms of use. Charts use Fira Sans (SIL Open Font Licence) and follow The Economist's published chart conventions; they are not affiliated with The Economist.
+## Sources and licence
 
-## About
-
-Analysis, code and report by Sidali Saidj, October 2026. Every number and chart is generated by the scripts in this repository from the official sources listed, and can be checked by running `python run.py`.
+IMF Fiscal Monitor and World Economic Outlook (October 2026); IMF Public Finances in Modern History (December 2025); World Bank World Development Indicators. Details in [data/README.md](data/README.md). Code: [MIT licence](LICENSE). Data remain under the IMF's and the World Bank's terms. Fonts: Fira Sans and PT Serif (SIL Open Font License). The chart style follows common newspaper-graphics conventions; the project is not connected to any newspaper.

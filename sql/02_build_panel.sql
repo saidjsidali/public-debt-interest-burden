@@ -39,8 +39,10 @@ SELECT
     c.region,
     c.income_group,
     d.year,
+    -- A uniform label by year. 'past' years may still contain IMF staff
+    -- estimates for some countries: the API does not say which.
     CASE
-        WHEN d.year <= {{END_YEAR}}      THEN 'historical'
+        WHEN d.year <= {{END_YEAR}}      THEN 'past'
         WHEN d.year =  {{ESTIMATE_YEAR}} THEN 'estimate'
         ELSE 'projection'
     END                                                          AS period_type,
@@ -50,8 +52,12 @@ SELECT
     d.overall_balance_gdp,
     d.net_interest_gdp,
     100.0 * d.net_interest_gdp / NULLIF(d.revenue_gdp, 0)        AS interest_burden,
-    100.0 * d.net_interest_gdp / NULLIF(d.debt_gdp, 0)           AS implicit_rate,
+    -- Net interest divided by end-year GROSS debt: an accounting factor, not a
+    -- borrowing rate. It also moves with interest income on assets, debt timing
+    -- and valuation changes.
+    100.0 * d.net_interest_gdp / NULLIF(d.debt_gdp, 0)           AS net_interest_to_debt,
     d.gross_interest_gdp_fpp,
+    d.revenue_gdp_fpp,
     100.0 * d.gross_interest_gdp_fpp / NULLIF(d.revenue_gdp_fpp, 0) AS interest_burden_gross,
     d.interest_burden_wb,
     d.gdp_usd_bn,
@@ -64,8 +70,9 @@ JOIN country AS c USING (iso3);
 CREATE UNIQUE INDEX idx_panel_country_year ON panel (iso3, year);
 
 -- 2. Analysis sample: complete fiscal data for every year of the study
---    window, and net interest that is actually reported (not a placeholder
---    zero in most years). Small states are flagged for a robustness check.
+--    window, and net interest that is not exactly zero in half or more of the
+--    years (repeated zeros are a review flag; see audit/reviewed_cases.csv).
+--    Small states are flagged for a robustness check.
 CREATE TABLE sample AS
 SELECT
     p.iso3,

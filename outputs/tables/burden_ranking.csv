@@ -1,4 +1,4 @@
-rank,iso3,name,income_group,region,interest_burden,interest_burden_gross,interest_burden_wb,net_interest_gdp,debt_gdp,revenue_gdp,implicit_rate
+rank,iso3,name,income_group,region,interest_burden,interest_burden_gross,interest_burden_wb,net_interest_gdp,debt_gdp,revenue_gdp,net_interest_to_debt
 1,PAK,Pakistan,Lower middle income,"Middle East, North Africa, Afghanistan & Pakistan",61.25670839780127,61.256708397798164,,7.75000629925448,70.279770742758,12.651685834841,11.027364229205432
 2,EGY,"Egypt, Arab Rep.",Lower middle income,"Middle East, North Africa, Afghanistan & Pakistan",55.78025859992326,,,8.8224634006518,90.925932701282,15.816461992279,9.702912181980192
 3,LKA,Sri Lanka,Upper middle income,South Asia,55.55100263637913,57.1027758573919,,7.5508234189455,100.17908692991,13.592596101948,7.537325054907329

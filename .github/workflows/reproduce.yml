@@ -1,5 +1,11 @@
 name: Reproduce analysis
 
+# What this checks: the pinned packages install on a clean Ubuntu runner, the
+# pipeline runs from the committed data snapshot (without the PDF), the tests
+# pass, the key numbers match the committed ones within a small tolerance, and
+# the README and Markdown report are unchanged. It does not rebuild or inspect
+# the PDF, which is printed locally with Chrome or Edge.
+
 on:
   push:
     branches: [main]
@@ -8,7 +14,7 @@ on:
 
 jobs:
   reproduce:
-    runs-on: ubuntu-24.04  # pinned so the reproduction check runs on a fixed image
+    runs-on: ubuntu-24.04  # runner family pinned; GitHub still updates the image itself
     steps:
       - uses: actions/checkout@v5
 
@@ -20,11 +26,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run the full pipeline from the committed data snapshot
+      - name: Keep the committed key numbers for comparison
+        run: cp outputs/key_numbers.json "$RUNNER_TEMP/committed_key_numbers.json"
+
+      - name: Run the pipeline from the committed data snapshot
         run: python run.py --no-pdf
 
       - name: Run tests
         run: pytest
+
+      - name: Compare key numbers with the committed ones (numeric tolerance)
+        run: python src/compare_numbers.py "$RUNNER_TEMP/committed_key_numbers.json" outputs/key_numbers.json
 
       - name: Check that the committed README and report match a fresh run
         run: git diff --exit-code -- README.md report/economic_analysis.md

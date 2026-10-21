@@ -1,106 +1,28 @@
-# Literature review
+# Literature notes
 
-A focused review of the work this project builds on: what each study asks, how, and what it
-means for the design here. All references were checked to exist before being cited.
+Short notes on the sources used in the report: what each one says and which claim in the
+report it supports. Full references are at the end of the
+[report](../report/economic_analysis.md#references).
 
-## 1. Stocks versus flows: how should public debt be judged?
+| Source | What it says | Used for |
+|---|---|---|
+| Blanchard (2019), *American Economic Review* 109(4) — [doi:10.1257/aer.109.4.1197](https://doi.org/10.1257/aer.109.4.1197) | When the safe interest rate is below the growth rate, debt can be rolled over at a low fiscal cost. | Background: the cost of debt can differ from its size. |
+| Furman and Summers (2020), Brookings/PIIE discussion draft — [PDF](https://www.brookings.edu/wp-content/uploads/2020/11/furman-summers-fiscal-reconsideration-discussion-draft.pdf) | Real interest payments relative to GDP are a better guide to fiscal space than the debt stock, in a period of low rates. | Background: looking at the yearly cost of debt. This project uses revenue instead of GDP. |
+| Escolano (2010), IMF Technical Notes and Manuals 10/02 — [PDF](https://www.imf.org/external/pubs/ft/tnm/2010/tnm1002.pdf) | Standard formulas for public debt dynamics and effective interest rates. | Background for the accounting identity. Note: the project's net-interest-to-debt factor is a simpler ratio than an effective interest rate. |
+| Reinhart, Rogoff and Savastano (2003), *Brookings Papers on Economic Activity* — [link](https://www.brookings.edu/articles/debt-intolerance/) | Countries with a history of default and high inflation face debt stress at lower debt levels ("debt intolerance"). | A possible reason why middle-income countries have a higher net-interest-to-debt factor. Not tested here. |
+| Eichengreen and Hausmann (1999), NBER Working Paper 7418 — [link](https://www.nber.org/papers/w7418) | Many countries cannot borrow abroad in their own currency ("original sin"), which creates exchange-rate risk. | The statement that foreign-currency debt can raise interest costs when the exchange rate falls. Not tested here. |
+| Kose, Nagle, Ohnsorge and Sugawara (2021), World Bank — [link](http://hdl.handle.net/10986/32809) | Describes four waves of debt in developing economies; the wave since 2010 is the largest and fastest. | Background on debt growth before 2021. |
+| Mauro, Romeu, Binder and Zaman (2015), *Journal of Monetary Economics* 76 — [IMF working-paper version](https://www.imf.org/en/publications/wp/issues/2016/12/31/a-modern-history-of-fiscal-prudence-and-profligacy-40222) | The paper behind the IMF Public Finances in Modern History database. | Source of the gross-interest check. |
+| Ang (2004), *Energy Policy* 32(9) — [doi:10.1016/S0301-4215(03)00076-4](https://doi.org/10.1016/S0301-4215(03)00076-4) | Compares decomposition methods and recommends the log-mean Divisia index, which has no unexplained residual. | The decomposition method. |
+| IMF (2024), *Fiscal Monitor, October 2024* — [link](https://www.imf.org/en/Publications/FM/Issues/2024/10/23/fiscal-monitor-october-2024) | Global public debt is high and risks to the outlook are tilted upwards. | Policy context. |
+| IMF Fiscal Monitor, Methodological and Statistical Appendix — [October 2024](https://www.imf.org/-/media/files/publications/fiscal-monitor/2024/october/english/msa.pdf) | Fiscal data for advanced economies mostly cover general government; for many developing economies only central government. Country notes (e.g. fiscal years for Pakistan and Egypt). | Coverage statements in the report and Appendix C. The full country table could not be accessed for this revision. |
+| UNCTAD (2024), news release for *A World of Debt 2024* — [link](https://unctad.org/news/global-public-debt-hits-record-97-trillion-2023-un-urges-action) | 3.3 billion people live in countries that spend more on interest than on education or health care. | Comparison with the health-spending result. Years and definitions differ. |
+| Moody's (2019), *Sovereign Ratings Methodology* (replaced in 2022 by a version with the same factors) — [link](https://ratings.moodys.com/api/rmc-documents/63168) | Debt affordability is measured with interest payments relative to revenue and to GDP. | The statement that rating agencies use interest-to-revenue. |
 
-**Blanchard (2019), "Public Debt and Low Interest Rates", *American Economic Review* 109(4).**
-Blanchard's presidential address showed that for long stretches of US history the safe interest
-rate has been below the growth rate (r < g). When that holds, debt can be rolled over without
-later tax increases, and the fiscal cost of debt is lower than its size suggests. *Relevance:*
-it motivates looking at the cost of debt rather than only its size. It also implies the answer
-depends on rates, which rose sharply after 2021, inside our sample period.
+## How this project relates to the sources
 
-**Furman and Summers (2020), "A Reconsideration of Fiscal Policy in the Era of Low Interest
-Rates", Brookings/PIIE discussion draft.** They argue that the debt-to-GDP ratio is a poor guide
-to fiscal space when rates are low, and propose real interest payments as a share of GDP
-instead. *Relevance:* this project follows the same flow-based logic but scales interest by
-**revenue**, the resource that actually pays it, and covers 181 economies rather than the US.
-Their argument assumed persistently low rates. The 2021–24 decomposition here tests what
-happened when that assumption failed.
-
-**Escolano (2010), *A Practical Guide to Public Debt Dynamics, Fiscal Sustainability, and
-Cyclical Adjustment of Budgetary Aggregates*, IMF Technical Notes and Manuals 10/02.** The
-standard reference for the debt-dynamics equation and the implicit (effective) interest rate
-on public debt. *Relevance:* the accounting identity used in the decomposition
-(burden = implicit rate × debt ÷ revenue) and the definition of the implicit rate follow this
-framework.
-
-## 2. Why emerging and developing economies pay more
-
-**Reinhart, Rogoff and Savastano (2003), "Debt Intolerance", *Brookings Papers on Economic
-Activity* 2003(1).** Using credit histories since the 1820s, they show that countries with
-records of default and high inflation run into debt distress at debt ratios that advanced
-economies carry easily. *Relevance:* this predicts higher risk premia and therefore higher
-implicit rates for lower-income economies at the same debt ratio (hypothesis H3). The finding
-here is mixed: middle-income economies do pay about twice the high-income rate at a given debt
-ratio, but low-income economies' rates are not clearly higher, which points to concessional
-lending as an offsetting force.
-
-**Eichengreen and Hausmann (1999), "Exchange Rates and Financial Fragility", NBER Working Paper
-7418.** They introduced "original sin": the inability of many countries to borrow abroad in
-their own currency. Foreign-currency debt makes interest costs rise in local-currency terms
-when the exchange rate falls. *Relevance:* it is a plausible mechanism behind jumps such as
-Egypt's in 2024 and Pakistan's in 2023, both after large depreciations. Annual data on interest
-as a share of revenue cannot isolate it, which is listed as a limitation.
-
-**Kose, Nagle, Ohnsorge and Sugawara (2021), *Global Waves of Debt: Causes and Consequences*,
-World Bank.** They document four waves of debt accumulation in emerging and developing
-economies since 1970. The latest, starting in 2010, is the largest, fastest and most broad-based,
-and was followed by the pandemic. *Relevance:* it frames the 2015–2021 rise in debt ratios that
-the decomposition identifies as the main driver of burdens before 2021.
-
-## 3. Measurement and data
-
-**Mauro, Romeu, Binder and Zaman (2015), "A Modern History of Fiscal Prudence and Profligacy",
-*Journal of Monetary Economics* 76.** The paper behind the IMF's Public Finances in Modern
-History database, which assembles long series on revenue, spending, interest and debt for a
-large panel of countries. *Relevance:* it supplies the gross-interest cross-check. Gross and net
-measures agree closely for most economies (rank correlation 0.96), which supports using the
-broader-coverage net measure.
-
-**Ang (2004), "Decomposition Analysis for Policymaking in Energy: Which Is the Preferred
-Method?", *Energy Policy* 32(9).** Recommends the log-mean Divisia index (LMDI) because it
-decomposes changes in a product of factors exactly, with no unexplained residual. *Relevance:*
-the method is borrowed from energy economics and applied to the burden identity, so the rate,
-debt and revenue effects add up exactly to each country's observed change.
-
-## 4. Policy context
-
-**IMF (2024), *Fiscal Monitor, October 2024: Putting a Lid on Public Debt*.** Projects global
-public debt above US$100trn and argues that risks to debt are tilted upwards and that
-adjustment beyond current plans is needed. *Relevance:* the policy backdrop; this project
-complements it with a country-level view of what debt costs.
-
-**UNCTAD (2024), *A World of Debt 2024: A Growing Burden to Global Prosperity*.** Reports that
-3.3bn people live in countries that spend more on interest than on health or education.
-*Relevance:* section 5.7 of the report makes a comparable calculation with different data and
-definitions (net interest, latest year mostly 2023). It finds 3.7bn people in countries where
-interest exceeds health spending, the same order of magnitude.
-
-**Moody's Investors Service (2019), *Sovereign Ratings Methodology*** (superseded in 2022 by a
-version with the same factors). Moody's fiscal-strength assessment combines the debt burden
-(debt/GDP) with debt affordability, measured by interest payments relative to revenue and to
-GDP. *Relevance:* it confirms that interest-to-revenue is
-used by practitioners, not just researchers.
-
-## Where the literature disagrees, and the gap this project fills
-
-The low-rate literature (Blanchard; Furman and Summers) treated high debt as less costly than
-it looked; the debt-intolerance literature warns that for many countries even moderate debt is
-dangerous. Both are partly right, for different countries, and the cross-country evidence here
-shows how. High-income economies with deep markets carry high debt at low burdens; lower-income
-economies with narrow revenue bases face high burdens at moderate debt.
-
-Existing reports (IMF, UNCTAD) present the rising cost of debt mainly through aggregates. This
-project contributes:
-
-1. a transparent, reproducible country-level measure from a single consistent source;
-2. a direct test of how much debt-to-GDP explains about interest burdens; and
-3. an exact decomposition of changes in burdens into rate, debt and revenue effects before and
-   after the 2022 tightening.
-
-## References
-
-Full citations are listed at the end of the [report](../report/economic_analysis.md#references).
+The sources above discuss the cost of debt, mostly with aggregates or for advanced economies.
+This project is a small, reproducible descriptive study: it calculates the net interest
+burden for 181 economies from one source, shows how it differs from debt-to-GDP, and shows
+how much the definition of interest and the choice of countries change the results. It does
+not test the mechanisms described in the sources.

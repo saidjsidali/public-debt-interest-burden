@@ -2,260 +2,282 @@
 
 <div class="masthead" markdown="1">
 
-# The cost of public debt
+# Public debt and interest burdens, 2015–2024
 
-<p class="standfirst">How much government revenue goes to interest, why it differs so much between countries, and what changed after 2021. A cross-country analysis of {{sample/countries}} economies, 2015–2024</p>
+<p class="standfirst">How much government revenue goes to net interest in {{sample/countries}} economies, and what the debt-to-GDP ratio does not show</p>
 
-<p class="byline">Sidali Saidj · October 2026 · Data: IMF Fiscal Monitor (October 2026), World Bank</p>
+<p class="byline">Sidali Saidj · Revised October 2026 · Data: IMF Fiscal Monitor (October 2026), IMF Public Finances in Modern History (December 2025), World Bank · Prepared with substantial help from Claude, an AI assistant (see Contributions)</p>
 
 </div>
 
-## Executive summary
+## Summary
 
-**Question.** How much government revenue is absorbed by interest payments, how has that share changed between 2015 and 2024, and is the debt-to-GDP ratio a reliable guide to which economies bear the heaviest burden?
+**Questions.** (1) How did net interest burdens change between 2015 and 2024? (2) How do the debt-to-GDP ratio and the interest-to-revenue ratio describe countries differently? (3) How do the definition of interest and the choice of countries change the picture?
 
-**Approach.** Net interest as a share of general-government revenue, built from the IMF's October 2026 Fiscal Monitor for a balanced panel of {{sample/countries}} economies. The burden is split into three parts (the implicit interest rate, the debt ratio and the revenue ratio) to see which one drove each change. Two gross-interest series from the IMF and the World Bank serve as cross-checks.
+**Measure.** The *net interest burden* is net interest paid by the government divided by government revenue, in percent. Net interest is interest paid minus interest received. Data come from the IMF Fiscal Monitor for {{sample/countries}} economies with complete data for 2015–2024. Two gross-interest series are used as checks.
 
 **Main findings**
 
-1. **Interest takes a growing share of revenue, but not everywhere.** The median government spent {{median_burden/All countries/2024:.1f}}% of its revenue on net interest in 2024, against {{median_burden/All countries/2015:.1f}}% in 2015; {{change/countries_up_start_end}} of {{sample/countries}} economies saw a rise. For all {{sample/countries}} combined, net interest went from {{aggregate_burden/All countries/2021:.1f}}% of total revenue in 2021 to {{aggregate_burden/All countries/2024:.1f}}% in 2024, about ${{net_interest_usd_trn/2024:.1f}}trn.
-2. **Poorer countries carry the heavier and faster-growing load.** The median burden rose from {{median_burden/Low income/2015:.1f}}% to {{median_burden/Low income/2024:.1f}}% in low-income economies and from {{median_burden/Lower middle income/2015:.1f}}% to {{median_burden/Lower middle income/2024:.1f}}% in lower-middle-income ones, while in the typical high-income economy it fell from {{median_burden/High income/2015:.1f}}% to {{median_burden/High income/2024:.1f}}% (on a gross basis it was roughly flat, at {{median_burden_gross/High income/2015:.1f}}% and {{median_burden_gross/High income/2024:.1f}}%). The number of governments spending more than a fifth of their revenue on interest rose from {{high_burden/countries/2015}} in 2015 to {{high_burden/countries/2024}} in 2024; they govern {{high_burden/population_bn/2024:.1f}}bn people.
-3. **Debt-to-GDP is only a partial guide.** Debt and burden are clearly related (rank correlation {{correlation/All countries/spearman:.2f}}), but debt alone accounts for about a quarter of the cross-country variation in burdens. Adding revenue nearly doubles the explained share. In all, {{derived/off_diagonal_countries}} economies sit in the "wrong" quadrant: above-median debt with a below-median burden (mostly rich countries), or the reverse (mostly poorer ones).
-4. **Thin revenue is the main reason poor countries' burdens are high.** Low-income governments collect {{median_revenue/Low income/2024:.1f}}% of GDP in revenue, against {{median_revenue/High income/2024:.1f}}% in high-income ones. Middle-income governments also pay roughly twice the implicit interest rate of high-income ones at the same debt ratio.
-5. **Since 2021, higher interest rates did the damage.** For the average country the burden rose by {{decomposition/All countries/2021-2024/mean_change:.1f}} points between 2021 and 2024. Higher implicit rates added {{decomposition/All countries/2021-2024/mean_rate_effect:.1f}} points; falling debt ratios and rising revenue took off {{derived/offset_2021_2024:.1f}}. Between 2015 and 2021 the driver was debt accumulation, while falling rates held the burden down.
-6. **Interest now competes with health spending.** In {{social_spending/countries_interest_gt_health}} countries, home to {{social_spending/population_interest_gt_health_bn:.1f}}bn people, governments pay more in net interest than they spend on health.
+1. **Burdens rose in most countries, and most in poorer ones.** The median net burden was {{median_burden/All countries/2015:.1f}}% of revenue in 2015 and {{median_burden/All countries/2024:.1f}}% in 2024; it rose in {{change/countries_up_start_end}} of {{sample/countries}} countries. In low-income countries the median rose from {{median_burden/Low income/2015:.1f}}% to {{median_burden/Low income/2024:.1f}}%. In high-income countries it fell from {{median_burden/High income/2015:.1f}}% to {{median_burden/High income/2024:.1f}}% on the net measure, but it was almost unchanged on a gross measure ({{median_burden_gross/High income/2015:.1f}}% and {{median_burden_gross/High income/2024:.1f}}%). For all countries together, total net interest was {{pooled_burden/All countries/2021:.1f}}% of total revenue in 2021 and {{pooled_burden/All countries/2024:.1f}}% in 2024.
+2. **Debt-to-GDP and interest-to-revenue often rank countries differently.** The two measures are clearly related (Spearman rank correlation {{correlation/All countries/spearman:.2f}}), but {{quadrants/different_classification}} of {{sample/countries}} countries ({{quadrants/different_classification_share:.0%}}) are above the median on one measure and below it on the other. Japan has very high debt and a very low net burden; Nigeria has moderate debt and a high burden because its revenue is low.
+3. **Definitions and coverage matter.** Net and gross burdens are close for most countries, but not for governments with large interest income, such as Canada. When the net and gross medians are compared, most of the difference for the IMF gross series comes from the smaller set of countries it covers ({{derived/fpp_gap_sample:+.1f}} points), not from the measure itself ({{derived/fpp_gap_measure:+.1f}} points).
 
-**Implications.** Judging fiscal risk by debt-to-GDP alone misses where the pressure is: a government with modest debt but a narrow tax base can be more constrained than one with twice the debt. For the most burdened economies, raising revenue does more for affordability than any feasible cut in the debt ratio. Debt-management choices that lengthen maturities and reduce exposure to foreign-currency and short-term borrowing also slow how fast rate shocks feed into budgets. These are implications of the accounting and the cross-country patterns, not tested policy effects.
+**Limits.** These are descriptive results for one data vintage. They do not show causes, and the burden is not a measure of default risk. Fiscal coverage and accounting rules differ between countries.
 
-## 1. The problem
+## 1. The question and the measure
 
-Interest is the one item in a budget that cannot be cut without a political or legal event. A finance ministry can trim wages, delay investment or reform transfers, but coupons are owed. The share of revenue that goes to interest therefore measures how much of a government's income is spoken for before it decides anything else. Rating agencies use it in exactly this way: Moody's, for example, scores "debt affordability" by interest payments relative to revenue alongside the debt-to-GDP ratio (Moody's, 2019).
+### 1.1 Why compare interest with revenue?
 
-The ratio had good reason to rise after 2021. Debt stocks jumped during the pandemic, and from 2022 central banks raised policy rates at the fastest pace in four decades. Because governments refinance gradually, higher market rates reach the interest bill with a lag. The IMF has warned that global public debt is set to keep rising and that risks are tilted towards worse outcomes (IMF, 2024). UNCTAD (2024) estimated that 3.3bn people live in countries that spend more on interest than on health or education.
+Debt-to-GDP measures the *stock* of debt. It does not show what the debt costs each year or how easily the government can pay that cost. Interest compared with revenue does this: it shows how much of the government's income goes to interest. Interest payments are contractual obligations, so they can limit the room for other spending. They are not completely fixed, however: the interest bill changes when debt is repaid or refinanced, when floating rates change and, for the net measure, when interest income changes. Credit-rating agencies use the interest-to-revenue ratio; for example, Moody's 2019 sovereign methodology uses it as a measure of "debt affordability" (Moody's, 2019).
 
-This report asks three things: how large the burden is, how and why it changed between 2015 and 2024, and whether the familiar debt-to-GDP ratio identifies the governments under most pressure.
+### 1.2 Net and gross interest
 
-## 2. Economic framework
+<p class="equation">net interest burden (%) = 100 × (primary balance − overall balance) ÷ revenue</p>
 
-### 2.1 An identity with three moving parts
+The primary balance is the budget balance before net interest, so the difference between the two balances is net interest. All three series come from the same Fiscal Monitor vintage.
 
-The burden can be written exactly as the product of three ratios (Escolano, 2010, sets out the related debt-dynamics algebra):
+*Gross* interest is the interest the government pays before interest income is subtracted. The two measures can be very different for governments with large financial assets. In 2024, Canada's net burden was {{country/CAN/burden_end:.2f}}% of revenue but its gross burden (IMF Public Finances in Modern History, "FPP") was {{country/CAN/gross_end:.1f}}%. For Japan the figures were {{country/JPN/burden_end:.1f}}% and {{country/JPN/gross_end:.1f}}%. A low net burden therefore does not mean a low gross interest bill. In {{regression/countries_excluded_nonpositive}} sample countries net interest was negative in 2024: they received more interest than they paid. This flow alone does not show that their governments hold more assets than debts, so the report does not call them "net creditors".
 
-<p class="equation">interest / revenue = (interest / debt) × (debt / GDP) ÷ (revenue / GDP)</p>
+The report uses the net measure as its main measure because it covers more countries and comes from the same source as the debt and revenue data. Gross results are shown where they change the interpretation.
 
-The first term is the *implicit interest rate*: the average rate paid on the whole stock of debt. It moves more slowly than market yields because only maturing and new debt is repriced. The second is the debt ratio. The third is the government's capacity to raise revenue. The identity explains why the debt ratio alone can mislead: two countries with the same debt can face very different burdens if one borrows at 2% and collects 40% of GDP in revenue while the other borrows at 8% and collects 12%.
+## 2. Data and sample
 
-### 2.2 Mechanisms and competing explanations
+**Sources.** Revenue, gross debt and the two budget balances come from the IMF Fiscal Monitor (October 2026); GDP in US dollars from the World Economic Outlook (October 2026). Gross interest and FPP revenue come from the IMF Public Finances in Modern History database (December 2025). The World Bank provides central-government interest payments (`GC.XPN.INTP.RV.ZS`), health and education spending, population, regions and income groups. All data were downloaded on 21 October 2026 and are kept in the repository; a checksum file confirms that they have not changed.
 
-Each term has its own economics:
+**Sample.** A country is included if it has all four fiscal series in every year from 2015 to 2024. A balanced panel keeps the same countries in every year, but it may leave out countries with weaker statistics.
 
-- **Borrowing costs.** Rates depend on the global rate cycle, on country risk premia and on the structure of debt. Economies with a history of default or high inflation face higher premia and become stressed at lower debt levels ("debt intolerance"; Reinhart, Rogoff and Savastano, 2003). Governments that cannot borrow abroad in their own currency pay for exchange-rate risk ("original sin"; Eichengreen and Hausmann, 1999). Concessional loans from development lenders push the other way for the poorest countries.
-- **Debt.** Deficits add to the stock. Inflation and growth reduce the *ratio* by raising nominal GDP, which is why high inflation in 2022–23 lowered many debt ratios even as rates rose.
-- **Revenue.** A narrow tax base, a large informal sector or dependence on commodity revenue means a given interest bill absorbs a larger share of income.
+<p class="table-label">Table 1. From the World Bank country list to the analysis sample</p>
 
-A rise in the burden can also have a misleading counterpart: a fall. A government that defaults stops paying interest, so its burden drops without any improvement in its finances. Lebanon, Ghana and Sri Lanka all show this pattern in the data.
+| Step | Countries | Removed | Removed economies |
+|---|---|---|---|
+| {{sample/funnel/0/stage}} | {{sample/funnel/0/countries}} | | |
+| {{sample/funnel/1/stage}} | {{sample/funnel/1/countries}} | {{sample/funnel/1/dropped}} | Mostly territories and small economies without IMF fiscal data (full list in `outputs/tables/sample_funnel.csv`) |
+| {{sample/funnel/2/stage}} | {{sample/funnel/2/countries}} | {{sample/funnel/2/dropped}} | {{sample/funnel/2/dropped_economies}} |
+| {{sample/funnel/3/stage}} | {{sample/funnel/3/countries}} | {{sample/funnel/3/dropped}} | {{sample/funnel/3/dropped_economies}} |
+| {{sample/funnel/4/stage}} | {{sample/funnel/4/countries}} | {{sample/funnel/4/dropped}} | |
 
-### 2.3 Hypotheses
+<p class="table-note">Brunei has complete data but net interest of exactly zero in every year. It is unclear whether interest is not recorded separately or is really zero, so this case is unresolved; adding it back gives a 2024 median of {{sensitivity/Adding Brunei (repeated-zero case)/median_burden_end:.2f}}% instead of {{matched/0/median_burden_end:.2f}}% (Appendix A). Libya and Macao also show repeated zeros, but they already fail the complete-data step.</p>
 
-| | Hypothesis, stated before the main analysis |
-|---|---|
-| H1 | The typical country's burden was higher in 2024 than in 2015, with most of the increase after 2021. |
-| H2 | Debt-to-GDP is positively but only weakly associated with the burden across countries. |
-| H3 | At comparable debt ratios, lower-income economies carry heavier burdens because they pay higher rates and collect less revenue. |
-| H4 | Between 2021 and 2024 the rise came mainly from higher implicit rates, partly offset by falling debt ratios. |
+**Coverage.** The IMF notes that fiscal data for most advanced economies cover general government, while data for many emerging and developing economies cover only central or budgetary central government (IMF Fiscal Monitor methodological appendix). Some countries report on fiscal years: for example Pakistan and Egypt. India's data cover central and state governments. Appendix C lists what could be documented for the countries named in this report.
 
-## 3. Related research
+**Other choices.** Income groups are the World Bank's current classification, used for all years: the results describe the past experience of countries grouped by their current status. Years up to 2024 are treated as past data, but the IMF may still use staff estimates for some of them; 2025 values are mostly estimates and 2026–27 are IMF projections, shown only as context.
 
-The debate about how to judge public debt has shifted from stocks towards flows. Blanchard (2019) showed that when the interest rate is below the growth rate, debt can be rolled over at low fiscal cost, so high debt ratios need not imply high burdens. Furman and Summers (2020) argued that real interest payments relative to GDP are a better guide to fiscal space than the debt stock. This report applies the same logic to revenue rather than GDP, because revenue is what pays the bill. Their argument assumed persistently low rates; the period studied here includes the end of that era.
-
-A second strand explains why emerging and developing economies face stress at lower debt levels: debt intolerance linked to default and inflation histories (Reinhart, Rogoff and Savastano, 2003) and currency mismatches (Eichengreen and Hausmann, 1999). Kose et al. (2021) document how the post-2010 wave of debt in developing economies differed from earlier ones in its speed and breadth. On the measurement side, the IMF's Public Finances in Modern History database (Mauro et al., 2015) provides long series of gross interest, used here as a cross-check.
-
-UNCTAD (2024) and the IMF (2024) have documented the rising cost of debt with aggregate statistics. This report adds three things: a transparent, reproducible cross-country measure built from one consistent source; a formal test of how much the debt ratio explains; and an exact decomposition of changes in the burden into rate, debt and revenue effects before and after the 2022 tightening. The full review is in [research/literature_review.md](../research/literature_review.md).
-
-## 4. Data and method
-
-**Sources.** General-government revenue, gross debt, primary balance and overall balance come from the IMF Fiscal Monitor (October 2026), via the IMF DataMapper API. GDP in US dollars is from the October 2026 World Economic Outlook. Gross interest is from the IMF Public Finances in Modern History database (December 2025). The World Bank supplies the central-government interest series (`GC.XPN.INTP.RV.ZS`), health and education spending, population, regions and income groups. All data were retrieved on 21 October 2026 and are stored in the repository as a frozen snapshot.
-
-**Measure.** Net interest equals the primary balance minus the overall balance; the burden is net interest divided by revenue. Net interest is lower than gross interest when governments earn interest on financial assets. The two agree closely for most economies (rank correlation {{measure_agreement/gross_general_government/spearman:.2f}} across {{measure_agreement/gross_general_government/countries}} countries; {{measure_agreement/gross_general_government/within_2_points:.0%}} within two points) but diverge for a few asset-rich governments, such as Canada (net {{country/CAN/burden_end:.1f}}%, gross {{country/CAN/gross_end:.1f}}%) and Japan (net {{country/JPN/burden_end:.1f}}%, gross {{country/JPN/gross_end:.1f}}%). The net measure is used because it covers far more countries and comes from the same vintage as the debt and revenue data.
-
-**Sample.** Every economy with all four fiscal series in each year from 2015 to 2024: {{sample/countries}} economies ({{sample/by_income/High income}} high-income, {{sample/by_income/Upper middle income}} upper-middle, {{sample/by_income/Lower middle income}} lower-middle and {{sample/by_income/Low income}} low-income). Of the economies with some fiscal data, {{sample/excluded_with_some_data}} fail this rule, mostly because debt is not reported (for example Venezuela) or interest is not separately identified (Brunei, Libya, Macao). The full list and other data checks are in [audit/validation_report.md](../audit/validation_report.md). Values for 2025 are partly estimates and 2026–27 are IMF forecasts; they are shown as context only.
-
-**Methods.** The typical country is described by medians, because burdens are strongly skewed. The total for all countries is a GDP-weighted aggregate (total net interest over total revenue, in US dollars). The relationship between debt and burden is measured by a Spearman rank correlation with a bootstrap confidence interval, and by log-log regressions with heteroskedasticity-robust (HC3) standard errors. Changes in the burden are split exactly into rate, debt and revenue effects with a log-mean Divisia index (Ang, 2004). Case studies were chosen by a rule fixed in advance: the largest economy in each World Bank region plus the three highest burdens in 2024. Details are in [research/methodology.md](../research/methodology.md).
-
-## 5. Results
-
-### 5.1 How much revenue goes to interest?
-
-In 2024 the median government spent {{median_burden/All countries/2024:.1f}}% of its revenue on net interest. The distribution has a long right tail: {{high_burden/countries/2024}} economies spent more than 20%, and three spent more than half: Pakistan ({{country/PAK/burden_end:.1f}}%), Egypt ({{country/EGY/burden_end:.1f}}%) and Sri Lanka ({{country/LKA/burden_end:.1f}}%) (Figure 1). Of the top 20, {{top20_low_and_lower_middle}} are low- or lower-middle-income economies. Two high-income exceptions are instructive. Bahrain is a high-income economy whose debt has risen to {{country/BHR/debt_end:.0f}}% of GDP while its revenue, mostly from oil, is only {{country/BHR/revenue_end:.0f}}% of GDP. Costa Rica combines moderate debt with an implicit rate of {{country/CRI/implicit_rate_end:.1f}}% and revenue of {{country/CRI/revenue_end:.0f}}% of GDP.
+## 3. How did net interest burdens change?
 
 <p class="fig-label">Figure 1</p>
 
-![Highest interest burdens in 2024](../outputs/figures/fig1_highest_burdens.png)
+![Median net burden by income group](../outputs/figures/fig1_income_group_trend.png)
 
-The burden differs systematically by income. In 2024 the median low-income government spent {{median_burden/Low income/2024:.1f}}% of revenue on interest, {{derived/burden_multiple_low_vs_high:.1f}} times the {{median_burden/High income/2024:.1f}}% of the median high-income government, although their median debt ratios were similar ({{median_debt/Low income/2024:.0f}}% and {{median_debt/High income/2024:.0f}}% of GDP).
+The median net burden of all countries rose from {{median_burden/All countries/2015:.1f}}% of revenue in 2015 to {{median_burden/All countries/2021:.1f}}% in 2021 and {{median_burden/All countries/2024:.1f}}% in 2024. The rise was spread over the whole period, not only after 2021. It was largest in low-income countries ({{median_burden/Low income/2015:.1f}}% to {{median_burden/Low income/2024:.1f}}%) and lower-middle-income countries ({{median_burden/Lower middle income/2015:.1f}}% to {{median_burden/Lower middle income/2024:.1f}}%) (Figure 1).
 
-### 5.2 How has the burden changed?
-
-For the typical country the burden rose steadily, from {{median_burden/All countries/2015:.1f}}% in 2015 to {{median_burden/All countries/2021:.1f}}% in 2021 and {{median_burden/All countries/2024:.1f}}% in 2024. Behind that median, income groups diverged (Figure 2). The median low-income burden more than doubled, from {{median_burden/Low income/2015:.1f}}% to {{median_burden/Low income/2024:.1f}}%, and rose in almost every year. The lower-middle-income median went from {{median_burden/Lower middle income/2015:.1f}}% to {{median_burden/Lower middle income/2024:.1f}}%. The high-income median fell, from {{median_burden/High income/2015:.1f}}% to {{median_burden/High income/2024:.1f}}%. Its median implicit rate barely moved after 2021 ({{median_implicit_rate/High income/2021:.1f}}% in 2021, {{median_implicit_rate/High income/2024:.1f}}% in 2024), which is consistent with long-dated debt locked in at low rates before 2022. Part of the fall is also a feature of the net measure: as rates rose, governments with financial assets earned more interest. On a gross basis the high-income median was roughly flat ({{median_burden_gross/High income/2015:.1f}}% in 2015, {{median_burden_gross/High income/2021:.1f}}% in 2021, {{median_burden_gross/High income/2024:.1f}}% in 2024), while the low-income one rose from {{median_burden_gross/Low income/2015:.1f}}% to {{median_burden_gross/Low income/2024:.1f}}%: the gap widened on either measure. IMF forecasts show the low-income median rising further, to {{median_burden/Low income/2027:.1f}}% by 2027.
+The high-income median fell on the net measure, from {{median_burden/High income/2015:.1f}}% to {{median_burden/High income/2024:.1f}}%. On the gross measure it was almost unchanged ({{median_burden_gross/High income/2015:.1f}}%, {{median_burden_gross/High income/2021:.1f}}% and {{median_burden_gross/High income/2024:.1f}}% in 2015, 2021 and 2024). So part of the fall reflects more interest income, not a lower interest bill. The gross series covers fewer countries ({{matched/2/countries_level}} of {{sample/countries}}), so this comparison is indicative.
 
 <p class="fig-label">Figure 2</p>
 
-![Median burden by income group](../outputs/figures/fig2_median_burden_by_income.png)
+![Total net interest and number of high-burden countries](../outputs/figures/fig2_pooled_and_count.png)
 
-Weighting by GDP tells a different story about timing (Figure 3). Total net interest across the {{sample/countries}} economies was {{aggregate_burden/All countries/2015:.1f}}% of total revenue in 2015 and still {{aggregate_burden/All countries/2021:.1f}}% in 2021, then rose to {{aggregate_burden/All countries/2024:.1f}}% by 2024. That aggregate is dominated by large economies whose interest bills responded quickly to higher rates: the United States' burden went from {{country/USA/burden_break:.1f}}% in 2021 to {{country/USA/burden_end:.1f}}% in 2024. In dollars, net interest rose from ${{net_interest_usd_trn/2021:.2f}}trn in 2021 to ${{net_interest_usd_trn/2024:.2f}}trn in 2024 (nominal, at market exchange rates). The number of governments spending more than a fifth of revenue on interest rose from {{high_burden/countries/2015}} in 2015 to {{high_burden/countries/2024}} in 2024, and an estimated {{high_burden/countries/2025}} in 2025.
+Total net interest as a share of total revenue across all countries was stable at {{pooled_burden/All countries/2015:.1f}}% in 2015 and {{pooled_burden/All countries/2021:.1f}}% in 2021, then rose to {{pooled_burden/All countries/2024:.1f}}% in 2024 (Figure 2). This total is calculated after converting both values to US dollars. It equals an average of country burdens weighted by revenue, so large economies such as the United States dominate it. It is not a GDP-weighted average of country burdens, which would be {{gdp_weighted_average_burden_end:.1f}}% in 2024. In dollars, total net interest was about ${{net_interest_usd_trn/2024:.2f}}trn in 2024, against ${{net_interest_usd_trn/2021:.2f}}trn in 2021 (nominal, at market exchange rates). The number of countries with a net burden above 20% of revenue rose from {{high_burden/countries/2015}} in 2015 to {{high_burden/countries/2024}} in 2024. The 20% line is a simple descriptive threshold, not a risk limit.
+
+**What changed: net interest or revenue?** The burden equals net interest/GDP divided by revenue/GDP, so a change in the burden can be split exactly into these two parts (log-mean Divisia method; Appendix A). The split uses countries with positive net interest at the start and end of each period.
+
+<p class="table-label">Table 2. Contributions to the change in the net burden, percentage points, average country</p>
+
+| Period | Countries | Change in burden | From net interest/GDP | From revenue/GDP |
+|---|---|---|---|---|
+| 2015–2021 | {{decomposition_two/All countries/2015-2021/countries:.0f}} | {{decomposition_two/All countries/2015-2021/mean_change:+.2f}} | {{decomposition_two/All countries/2015-2021/mean_net_interest_gdp_effect:+.2f}} | {{decomposition_two/All countries/2015-2021/mean_revenue_effect:+.2f}} |
+| 2021–2024 | {{decomposition_two/All countries/2021-2024/countries:.0f}} | {{decomposition_two/All countries/2021-2024/mean_change:+.2f}} | {{decomposition_two/All countries/2021-2024/mean_net_interest_gdp_effect:+.2f}} | {{decomposition_two/All countries/2021-2024/mean_revenue_effect:+.2f}} |
+
+<p class="table-note">A negative revenue contribution means that revenue rose as a share of GDP. On the {{decomposition_common/two_factor/0/countries}} countries present in both periods the pattern is the same (Appendix A). Medians are smaller than means: see <code>outputs/tables/decomposition_two_factor_by_group.csv</code>.</p>
+
+In both periods the average burden rose because net interest grew faster than GDP. After 2021, higher revenue offset part of this ({{decomposition_two/All countries/2021-2024/mean_revenue_effect:+.1f}} points). Appendix A splits net interest/GDP further into a *net-interest-to-debt factor* (net interest divided by gross debt) and the debt ratio. Between 2021 and 2024 this factor made the largest positive contribution on average ({{decomposition_three/All countries/2021-2024/mean_nid_effect:+.1f}} points), while falling debt ratios reduced the burden ({{decomposition_three/All countries/2021-2024/mean_debt_effect:+.1f}} points). The factor was the largest positive contribution in {{dominance/2021-2024/largest_positive}} of {{dominance/2021-2024/countries}} countries. This pattern is consistent with the rise in interest rates after 2021. However, the factor is not a borrowing rate: it also changes with interest income on assets, the timing of debt flows and valuation changes. The split is accounting, so it cannot measure how much higher policy rates caused.
+
+## 4. How do debt-to-GDP and interest-to-revenue describe countries differently?
 
 <p class="fig-label">Figure 3</p>
 
-![Aggregate burden and count of high-burden countries](../outputs/figures/fig3_global_burden_and_count.png)
+![Highest net burdens in 2024 with debt ratios](../outputs/figures/fig3_highest_burdens.png)
 
-**Verdict on H1: partly supported.** The burden of the typical country was higher in 2024 than in 2015. But for the median country the rise was spread across the whole period, driven by poorer economies, rather than concentrated after 2021. The concentration after 2021 holds for the GDP-weighted total. The median high-income burden fell on the net measure and was roughly flat on the gross one.
-
-### 5.3 Is debt-to-GDP a reliable guide?
-
-Countries with more debt do tend to spend more of their revenue on interest. The Spearman rank correlation in 2024 is {{correlation/All countries/spearman:.2f}} (95% bootstrap interval {{correlation/All countries/ci_low:.2f}} to {{correlation/All countries/ci_high:.2f}}), and it is positive within each income group, though imprecisely estimated for the {{sample/by_income/Low income}} low-income economies. But the scatter is wide (Figure 4). Japan has the highest debt ratio among large economies ({{country/JPN/debt_end:.0f}}% of GDP) and a net burden of {{country/JPN/burden_end:.1f}}% ({{country/JPN/gross_end:.1f}}% gross). Nigeria's debt is {{country/NGA/debt_end:.0f}}% of GDP, yet interest absorbs {{country/NGA/burden_end:.0f}}% of revenue, because revenue is only {{country/NGA/revenue_end:.0f}}% of GDP. Bangladesh is similar (debt {{country/BGD/debt_end:.0f}}%, revenue {{country/BGD/revenue_end:.1f}}%, burden {{country/BGD/burden_end:.0f}}%).
+In 2024, {{high_burden/countries/2024}} countries had a net burden above 20% of revenue (Figure 3). Pakistan ({{country/PAK/burden_end:.1f}}%), Egypt ({{country/EGY/burden_end:.1f}}%) and Sri Lanka ({{country/LKA/burden_end:.1f}}%) were above 50%. Of the top 20, {{top20_low_and_lower_middle}} are low- or lower-middle-income countries. Their debt ratios vary a lot: from {{top20_debt/min:.0f}}% of GDP ({{top20_debt/min_country}}) to {{top20_debt/max:.0f}}% ({{top20_debt/max_country}}).
 
 <p class="fig-label">Figure 4</p>
 
-![Debt versus interest burden, 2024](../outputs/figures/fig4_debt_vs_burden.png)
+![Debt versus net burden](../outputs/figures/fig4_debt_vs_burden.png)
 
-Of the {{sample/countries}} economies, {{quadrants/counts/High debt, low burden}} have above-median debt but below-median burdens, and {{quadrants/counts/Low debt, high burden}} the reverse. Of the first group, {{quadrants/high_debt_low_burden_hic_share:.0%}} are high-income economies; of the second, {{quadrants/low_debt_high_burden_lic_lmic_share:.0%}} are low- or lower-middle-income.
+Countries with more debt tend to have higher burdens: the Spearman rank correlation is {{correlation/All countries/spearman:.2f}} (95% bootstrap interval {{correlation/All countries/ci_low:.2f}} to {{correlation/All countries/ci_high:.2f}}). The relationship is far from exact (Figure 4). Of the {{sample/countries}} countries, {{quadrants/counts/Above-median debt, below-median burden}} have above-median debt but a below-median burden; {{quadrants/debt_high_burden_low_hic_share:.0%}} of them are high-income. Another {{quadrants/counts/Below-median debt, above-median burden}} have below-median debt but an above-median burden; {{quadrants/debt_low_burden_high_lic_lmic_share:.0%}} of them are low- or lower-middle-income. Japan's debt is {{country/JPN/debt_end:.0f}}% of GDP and its net burden {{country/JPN/burden_end:.1f}}% (gross {{country/JPN/gross_end:.1f}}%). Nigeria's debt is {{country/NGA/debt_end:.0f}}% of GDP, but its burden is {{country/NGA/burden_end:.0f}}% because revenue is only {{country/NGA/revenue_end:.0f}}% of GDP. Bangladesh is similar (debt {{country/BGD/debt_end:.0f}}%, revenue {{country/BGD/revenue_end:.1f}}%, burden {{country/BGD/burden_end:.0f}}%).
 
-Table 1 makes the point formally. In logs, debt alone explains {{regression/debt_only/r_squared:.0%}} of the cross-country variation in burdens (model 1). Adding the revenue ratio raises this to {{regression/debt_with_revenue/r_squared:.0%}} (model 2). The coefficients sit close to what the identity implies: a 1% higher debt ratio goes with a burden about {{regression/debt_with_revenue/coef:.1f}}% higher, and a 1% higher revenue ratio with a burden about {{derived/revenue_elasticity_abs:.1f}}% lower. Neither differs significantly from one in magnitude. Model 4 confirms the implication: across countries, implicit rates are unrelated to the debt ratio (coefficient {{regression/rate_on_debt/coef:.2f}}, interval {{regression/rate_on_debt/ci_low:.2f}} to {{regression/rate_on_debt/ci_high:.2f}}), so more indebted governments do not systematically borrow more cheaply or more expensively.
+**Regressions.** Table 3 describes the 2024 cross-section with ordinary least squares on logarithms. Logarithms need positive values, so the models use the {{regression/countries_positive}} countries with positive net interest; {{regression/countries_excluded_nonpositive}} countries are left out.
 
-<p class="table-label">Table 1. What explains cross-country differences in interest burdens, 2024</p>
+<p class="table-label">Table 3. Cross-country regressions, 2024 (95% confidence intervals in brackets)</p>
 
-| | (1) Debt only | (2) Debt and revenue | (3) Adding income group | (4) Implicit rate |
-|---|---|---|---|---|
-| Dependent variable | log burden | log burden | log burden | log implicit rate |
-| log debt/GDP | {{regression/debt_only/coef:.2f}} [{{regression/debt_only/ci_low:.2f}}, {{regression/debt_only/ci_high:.2f}}] | {{regression/debt_with_revenue/coef:.2f}} [{{regression/debt_with_revenue/ci_low:.2f}}, {{regression/debt_with_revenue/ci_high:.2f}}] | {{regression/debt_full/coef:.2f}} [{{regression/debt_full/ci_low:.2f}}, {{regression/debt_full/ci_high:.2f}}] | {{regression/rate_on_debt/coef:.2f}} [{{regression/rate_on_debt/ci_low:.2f}}, {{regression/rate_on_debt/ci_high:.2f}}] |
-| log revenue/GDP | | {{regression/revenue/coef:.2f}} [{{regression/revenue/ci_low:.2f}}, {{regression/revenue/ci_high:.2f}}] | {{regression/revenue_full/coef:.2f}} [{{regression/revenue_full/ci_low:.2f}}, {{regression/revenue_full/ci_high:.2f}}] | |
-| Income-group dummies | No | No | Yes | Yes |
-| R² | {{regression/debt_only/r_squared:.2f}} | {{regression/debt_with_revenue/r_squared:.2f}} | {{regression/debt_full/r_squared:.2f}} | {{regression/rate_on_debt/r_squared:.2f}} |
-| Countries | {{regression/debt_only/countries}} | {{regression/debt_with_revenue/countries}} | {{regression/debt_full/countries}} | {{regression/rate_on_debt/countries}} |
+| | (1) Debt only | (2) Debt and revenue | (3) Adding income group |
+|---|---|---|---|
+| Dependent variable | log net burden | log net burden | log net burden |
+| log debt/GDP | {{regression/debt_only/coef:.2f}} [{{regression/debt_only/ci_low:.2f}}, {{regression/debt_only/ci_high:.2f}}] | {{regression/debt_with_revenue/coef:.2f}} [{{regression/debt_with_revenue/ci_low:.2f}}, {{regression/debt_with_revenue/ci_high:.2f}}] | {{regression/debt_full/coef:.2f}} [{{regression/debt_full/ci_low:.2f}}, {{regression/debt_full/ci_high:.2f}}] |
+| log revenue/GDP | | {{regression/revenue/coef:.2f}} [{{regression/revenue/ci_low:.2f}}, {{regression/revenue/ci_high:.2f}}] | {{regression/revenue_full/coef:.2f}} [{{regression/revenue_full/ci_low:.2f}}, {{regression/revenue_full/ci_high:.2f}}] |
+| R² | {{regression/debt_only/r_squared:.2f}} | {{regression/debt_with_revenue/r_squared:.2f}} | {{regression/debt_full/r_squared:.2f}} |
+| R² range when one country is left out | {{influence/debt_only_r2_without_min:.2f}}–{{influence/debt_only_r2_without_max:.2f}} | {{influence/with_revenue_r2_without_min:.2f}}–{{influence/with_revenue_r2_without_max:.2f}} | |
+| Countries | {{regression/debt_only/countries}} | {{regression/debt_with_revenue/countries}} | {{regression/debt_full/countries}} |
 
-<p class="table-note">OLS on 2024 cross-section; 95% confidence intervals from HC3 robust standard errors in brackets. Countries with positive net interest only. Full output, including income-group coefficients: <a href="../outputs/tables/regressions.csv">outputs/tables/regressions.csv</a>.</p>
+<p class="table-note">Heteroskedasticity-robust (HC3) standard errors. R² is the in-sample fit for log burdens among countries with positive net interest in 2024. It is not the share of variation in burdens explained for all {{sample/countries}} countries, and it is not a forecast accuracy. Full results: <a href="../outputs/tables/regressions.csv">regressions.csv</a>, <a href="../outputs/tables/regression_influence.csv">regression_influence.csv</a>.</p>
 
-**Verdict on H2: partly supported.** The association is positive and moderate rather than weak. But debt alone leaves three-quarters of the variation unexplained, and {{derived/off_diagonal_share:.0%}} of countries fall on the "wrong" side of the median on one measure or the other.
+In model 1, debt explains {{regression/debt_only/r_squared:.0%}} of the variation in log burdens. This number depends on a few countries. {{influence/debt_only_top/0/name}} and {{influence/debt_only_top/1/name}} have the largest influence (Cook's distance {{influence/debt_only_top/0/cooks_distance:.2f}} and {{influence/debt_only_top/1/cooks_distance:.2f}}). Canada's net burden is close to zero ({{country/CAN/burden_end:.3f}}% of revenue), so its logarithm is extreme. Without Canada, R² is {{influence/debt_only_r2_without_canada:.2f}}; leaving out any single country gives values between {{influence/debt_only_r2_without_min:.2f}} and {{influence/debt_only_r2_without_max:.2f}}. Canada stays in the main results: it is a valid observation, and removing it only to improve the fit would not be justified. A model in levels that keeps all {{levels_model/countries}} countries, including those with negative net interest, gives R² = {{levels_model/r_squared:.2f}}, a debt coefficient of {{levels_model/debt_coef:.3f}} ({{levels_model/debt_ci_low:.3f}} to {{levels_model/debt_ci_high:.3f}}) and a revenue coefficient of {{levels_model/revenue_coef:.2f}} ({{levels_model/revenue_ci_low:.2f}} to {{levels_model/revenue_ci_high:.2f}}).
 
-### 5.4 Why are poorer countries' burdens higher?
+Adding revenue raises R² to {{regression/debt_with_revenue/r_squared:.2f}}. This is partly built into the measure: revenue is the denominator of the burden, so a negative coefficient on revenue is expected by construction. The result shows that low revenue and high burdens go together at similar debt levels. It does not show which policy would lower burdens most.
 
-The identity points to two channels, and the data show both. Revenue is the larger one. The median low-income government raises {{median_revenue/Low income/2024:.1f}}% of GDP and the lower-middle-income one {{median_revenue/Lower middle income/2024:.1f}}%, against {{median_revenue/High income/2024:.1f}}% in high-income economies. With similar debt ratios, that gap alone roughly doubles the burden.
+A fourth model (Appendix A) relates the net-interest-to-debt factor to debt and income group. Its debt coefficient is {{regression/nid_on_debt/coef:.2f}} (95% interval {{regression/nid_on_debt/ci_low:.2f}} to {{regression/nid_on_debt/ci_high:.2f}}): the model cannot estimate this relationship precisely. At similar debt, the factor is about {{derived/nid_multiple_upper_middle:.1f}} times higher in upper-middle-income countries and {{derived/nid_multiple_lower_middle:.1f}} times higher in lower-middle-income countries than in high-income countries. For low-income countries the estimate ({{derived/nid_multiple_low_income:.1f}} times) is imprecise.
 
-Rates are the second channel. Holding the debt ratio constant (Table 1, model 4), upper-middle-income governments pay implicit rates about {{derived/rate_multiple_upper_middle:.1f}} times, and lower-middle-income ones about {{derived/rate_multiple_lower_middle:.1f}} times, those of high-income governments. Both differences are statistically clear. For low-income economies the estimate is {{derived/rate_multiple_low_income:.1f}} times but imprecise (the interval includes no difference), probably because much of their debt is concessional. Their implicit rates are rising fastest: the median went from {{median_implicit_rate/Low income/2015:.1f}}% in 2015 to {{median_implicit_rate/Low income/2024:.1f}}% in 2024, overtaking the high-income median of {{median_implicit_rate/High income/2024:.1f}}%. The data cannot say whether this reflects more borrowing on commercial terms, more expensive domestic debt or higher rates on new loans.
-
-**Verdict on H3: supported, with a qualification.** Lower-income economies carry much heavier burdens at similar debt levels. Weak revenue explains most of the gap; higher rates matter clearly for middle-income economies and, less certainly, for low-income ones.
-
-### 5.5 What drove the change?
-
-Figure 5 splits each country's change in burden into its three components, averaged by income group. The two periods look very different.
+## 5. How do definitions and coverage change the picture?
 
 <p class="fig-label">Figure 5</p>
 
-![Decomposition of the change in burden](../outputs/figures/fig5_decomposition.png)
+![Sample and measure effects on the median](../outputs/figures/fig5_sample_vs_measure.png)
 
-Between 2015 and 2021 the burden of the average country rose by {{decomposition/All countries/2015-2021/mean_change:.1f}} points. Debt accumulation, much of it during the pandemic, contributed {{decomposition/All countries/2015-2021/mean_debt_effect:+.1f}} points; falling implicit rates contributed {{decomposition/All countries/2015-2021/mean_rate_effect:+.1f}}. Between 2021 and 2024 the roles reversed. Higher implicit rates contributed {{decomposition/All countries/2021-2024/mean_rate_effect:+.1f}} points and were the largest of the three contributions in {{decomposition/All countries/2021-2024/share_rate_largest_up:.0%}} of countries. Falling debt ratios contributed {{decomposition/All countries/2021-2024/mean_debt_effect:+.1f}} points, consistent with inflation raising nominal GDP faster than debt, and rising revenue {{decomposition/All countries/2021-2024/mean_revenue_effect:+.1f}}. The rate effect was largest for low-income economies ({{decomposition/Low income/2021-2024/mean_rate_effect:.1f}} points), whose revenue ratios also slipped. Upper-middle-income economies offset most of their rate shock with higher revenue and lower debt ratios.
+The gross FPP median in 2024 ({{matched/2/median_burden_end:.1f}}%) is {{derived/fpp_gap_total:.1f}} points higher than the net median for all countries ({{matched/0/median_burden_end:.1f}}%). Figure 5 changes one thing at a time. First, the net median on the same {{matched/1/countries_level}} countries that FPP covers is {{matched/1/median_burden_end:.1f}}% ({{derived/fpp_gap_sample:+.1f}} points). Second, the gross measure on those countries is {{matched/2/median_burden_end:.1f}}% ({{derived/fpp_gap_measure:+.1f}} points). So about {{derived/fpp_gap_sample_share:.0%}} of the difference comes from country coverage. The World Bank central-government series shows a different pattern: its {{matched/4/countries_level}} countries have a *lower* net median ({{matched/4/median_burden_end:.1f}}%, {{derived/wb_gap_sample:+.1f}} points), and its measure is higher ({{matched/5/median_burden_end:.1f}}%, {{derived/wb_gap_measure:+.1f}} points); central-government coverage is one possible reason. These are descriptive comparisons of medians, not a causal split.
 
-Medians tell the same story with smaller magnitudes (2021–24 median rate effect {{decomposition/All countries/2021-2024/median_rate_effect:.1f}} points against a median change of {{decomposition/All countries/2021-2024/median_change:.1f}}; see `outputs/tables/decomposition_by_group.csv`).
-
-**Verdict on H4: supported.** The rise after 2021 came from higher rates, with falling debt ratios and rising revenue offsetting about half of it.
-
-### 5.6 Country cases
-
-The ten case studies (Figure 6) show how the same shocks played out differently. In the **United States** the burden almost doubled, from {{country/USA/burden_start:.1f}}% to {{country/USA/burden_end:.1f}}%, as a high and rising debt ratio ({{country/USA/debt_end:.0f}}% of GDP) met higher rates; the IMF expects {{country/USA/burden_forecast_end:.1f}}% by 2027. **China**'s burden doubled from a low base ({{country/CHN/burden_start:.1f}}% to {{country/CHN/burden_end:.1f}}%) as general-government debt more than doubled, to {{country/CHN/debt_end:.0f}}% of GDP, at an implicit rate of only {{country/CHN/implicit_rate_end:.1f}}%. **Germany**'s fell, from {{country/DEU/burden_start:.1f}}% to {{country/DEU/burden_end:.1f}}%. **India**'s stayed high and roughly flat at about {{country/IND/burden_end:.0f}}%, reflecting an implicit rate of {{country/IND/implicit_rate_end:.1f}}% on debt of {{country/IND/debt_end:.0f}}% of GDP. **Brazil**'s fell from {{country/BRA/burden_start:.0f}}% to {{country/BRA/burden_end:.0f}}% on the net measure, though its gross burden was {{country/BRA/gross_end:.0f}}% in 2024. **South Africa**'s rose from {{country/ZAF/burden_start:.0f}}% to {{country/ZAF/burden_end:.0f}}% as debt climbed from {{country/ZAF/debt_start:.0f}}% to {{country/ZAF/debt_end:.0f}}% of GDP. **Saudi Arabia** moved from being a net earner of interest to a small net payer as it borrowed.
+Across the {{measure_agreement/gross_fpp/countries}} countries with both values, the net and gross burdens have a rank correlation of {{measure_agreement/gross_fpp/spearman:.2f}}, and {{measure_agreement/gross_fpp/within_2_points:.0%}} differ by 2 points or less (Appendix B, Figure A3). Larger differences can come from interest income, but also from different revenue figures, coverage, accounting and data vintages in the two IMF databases, so they are not a direct measure of interest income.
 
 <p class="fig-label">Figure 6</p>
 
-![Case studies](../outputs/figures/fig6_case_studies.png)
+![Country cases](../outputs/figures/fig6_country_cases.png)
 
-The three most burdened economies show crisis dynamics. **Pakistan**'s burden reached {{country/PAK/burden_end:.0f}}% in 2024, with an implicit rate of {{country/PAK/implicit_rate_end:.0f}}% and revenue of {{country/PAK/revenue_end:.0f}}% of GDP. **Egypt**'s reached {{country/EGY/burden_end:.0f}}%, and the IMF projects a peak of {{country/EGY/burden_max_forecast:.0f}}% in {{country/EGY/burden_max_forecast_year}}. **Sri Lanka**'s peaked at {{country/LKA/burden_peak:.0f}}% in {{country/LKA/burden_peak_year}} and fell to {{country/LKA/burden_end:.0f}}% in 2024 as it restructured its debt. Lebanon is the warning against reading a falling burden as good news: its burden dropped from {{country/LBN/burden_start:.0f}}% in 2015 to {{country/LBN/burden_end:.0f}}% in 2024 because it defaulted in 2020 and stopped servicing much of its debt.
+Among the largest economies (Figure 6), the net burden rose in the United States ({{country/USA/burden_start:.1f}}% to {{country/USA/burden_end:.1f}}%), China ({{country/CHN/burden_start:.1f}}% to {{country/CHN/burden_end:.1f}}%) and South Africa ({{country/ZAF/burden_start:.1f}}% to {{country/ZAF/burden_end:.1f}}%). It fell in Germany ({{country/DEU/burden_start:.1f}}% to {{country/DEU/burden_end:.1f}}%) and Brazil ({{country/BRA/burden_start:.1f}}% to {{country/BRA/burden_end:.1f}}%; Brazil's gross FPP burden was {{country/BRA/gross_end:.1f}}% in 2024). India's stayed close to {{country/IND/burden_end:.0f}}%. Saudi Arabia moved from negative net interest to a small positive burden. Among the three highest burdens, Egypt's is projected by the IMF to reach {{country/EGY/burden_max_forecast:.0f}}% in {{country/EGY/burden_max_forecast_year}}. Sri Lanka's peaked at {{country/LKA/burden_peak:.0f}}% in {{country/LKA/burden_peak_year}} and was {{country/LKA/burden_end:.0f}}% in 2024.
 
-### 5.7 Interest and social spending
+**Falling burdens after a default.** Measured burdens fell sharply in Lebanon (2020), Ghana (2023) and Sri Lanka (2024), around default or debt restructuring. The data alone do not show whether this reflects interest that was not paid, the accounting treatment of the restructured debt or other changes; this was not checked in country documents. A lower measured burden does not by itself mean that debt became sustainable.
 
-Comparing net interest with government health spending, both as shares of GDP in the latest year with data (2023 for most), {{social_spending/countries_interest_gt_health}} of {{social_spending/countries_health}} countries spend more on interest (Figure 7). They are home to {{social_spending/population_interest_gt_health_bn:.1f}}bn people; the most populous are India (interest {{country/IND/interest_gdp_end:.1f}}% of GDP in 2024; health {{country/IND/health_gdp:.1f}}% in 2023), Indonesia, Pakistan, Nigeria and Brazil. For education the count is {{social_spending/countries_interest_gt_education}} countries, with {{social_spending/population_interest_gt_education_bn:.1f}}bn people. These figures are of the same order as UNCTAD's (2024) estimate of 3.3bn people, which used different years and definitions.
+## 6. Interest and health spending
 
-<p class="fig-label">Figure 7</p>
+Net interest was larger than government health spending in {{social_spending/countries_interest_gt_health}} of the {{social_spending/countries_health}} countries with data (Appendix B, Figure A2). Each comparison uses the same year for both values: {{social_spending/health_years/2023}} countries use 2023, {{social_spending/health_years/2024}} use 2024 and {{social_spending/health_years/2021}} uses 2021. These countries had {{social_spending/population_interest_gt_health_bn:.1f}}bn people in {{social_spending/population_year}}. For example, in {{country/IND/health_year}} India's net interest was {{country/IND/interest_gdp_health_year:.2f}}% of GDP and its government health spending {{country/IND/health_gdp:.2f}}%. For education, net interest was larger in {{social_spending/countries_interest_gt_education}} of {{social_spending/countries_education}} countries ({{social_spending/population_interest_gt_education_bn:.1f}}bn people); education data are older for many countries (2019–2024). UNCTAD (2024) reported a similar order of magnitude with different data: 3.3 billion people in countries that spend more on interest than on education or health care.
 
-![Interest versus health spending](../outputs/figures/fig7_interest_vs_health.png)
-
-The comparison is descriptive. It does not show that interest payments crowded out health spending; health budgets in these countries were low before interest costs rose.
-
-## 6. Robustness
-
-The main results hold under the alternatives set out in advance (Table 2). On the gross measure the median burden is higher, as expected, but the change since 2015, the share of high-burden countries and the debt–burden correlation are similar. Results also hold without net-creditor governments, without small states and with 2025 estimates as the end year. Dropping the top and bottom 5% of burdens leaves the rank correlation at {{spearman_trimmed:.2f}}. Figure 8 shows the agreement between net and gross measures country by country.
-
-<p class="table-label">Table 2. Robustness of headline statistics</p>
-
-| Specification | Countries | Median burden, % | Median change since 2015, points | Share above 20%, % | Debt–burden rank correlation |
-|---|---|---|---|---|---|
-| Baseline (net, general government) | {{robustness/Baseline (net interest, general government)/countries}} | {{robustness/Baseline (net interest, general government)/median_burden_end:.1f}} | {{robustness/Baseline (net interest, general government)/median_change_since_start:.1f}} | {{robustness/Baseline (net interest, general government)/share_above_threshold:.0f}} | {{robustness/Baseline (net interest, general government)/spearman_debt_burden:.2f}} |
-| Gross interest, general government (IMF FPP) | {{robustness/Gross interest, general government (FPP)/countries}} | {{robustness/Gross interest, general government (FPP)/median_burden_end:.1f}} | {{robustness/Gross interest, general government (FPP)/median_change_since_start:.1f}} | {{robustness/Gross interest, general government (FPP)/share_above_threshold:.0f}} | {{robustness/Gross interest, general government (FPP)/spearman_debt_burden:.2f}} |
-| Gross interest, central government (World Bank) | {{robustness/Gross interest, central government (World Bank)/countries}} | {{robustness/Gross interest, central government (World Bank)/median_burden_end:.1f}} | {{robustness/Gross interest, central government (World Bank)/median_change_since_start:.1f}} | {{robustness/Gross interest, central government (World Bank)/share_above_threshold:.0f}} | {{robustness/Gross interest, central government (World Bank)/spearman_debt_burden:.2f}} |
-| Excluding net-creditor governments | {{robustness/Excluding net-creditor governments/countries}} | {{robustness/Excluding net-creditor governments/median_burden_end:.1f}} | {{robustness/Excluding net-creditor governments/median_change_since_start:.1f}} | {{robustness/Excluding net-creditor governments/share_above_threshold:.0f}} | {{robustness/Excluding net-creditor governments/spearman_debt_burden:.2f}} |
-| Excluding small states | {{robustness/Excluding small states/countries}} | {{robustness/Excluding small states/median_burden_end:.1f}} | {{robustness/Excluding small states/median_change_since_start:.1f}} | {{robustness/Excluding small states/share_above_threshold:.0f}} | {{robustness/Excluding small states/spearman_debt_burden:.2f}} |
-| End year 2025 (estimates) | {{robustness/End year 2025 (estimate)/countries}} | {{robustness/End year 2025 (estimate)/median_burden_end:.1f}} | {{robustness/End year 2025 (estimate)/median_change_since_start:.1f}} | {{robustness/End year 2025 (estimate)/share_above_threshold:.0f}} | {{robustness/End year 2025 (estimate)/spearman_debt_burden:.2f}} |
-
-<p class="table-note">Gross-interest rows cover fewer countries. On exactly the same countries, the baseline median is {{robustness/Gross interest, general government (FPP)/baseline_median_same_countries:.1f}}% (FPP sample) and {{robustness/Gross interest, central government (World Bank)/baseline_median_same_countries:.1f}}% (World Bank sample), so most of the gap in levels is the net-versus-gross concept, not sample composition.</p>
-
-<p class="fig-label">Figure 8</p>
-
-![Net versus gross measure](../outputs/figures/fig8_net_vs_gross.png)
+This comparison is descriptive. It does not show that interest payments caused lower health spending. Low revenue could explain both a high interest burden and low health spending; this was not tested.
 
 ## 7. Limitations
 
-- **Association, not causation.** The regressions describe cross-country patterns in one year. Debt, revenue and borrowing costs are shaped jointly by institutions, history and shocks the data do not measure.
-- **Net versus gross.** Net interest understates the cash cost for governments with large financial assets; gross results are reported alongside.
-- **Implicit rate.** Dividing interest by end-year debt gives an average rate that mixes old and new borrowing and is affected by exchange-rate movements on foreign-currency debt. It is not a market yield.
-- **Coverage and comparability.** General-government coverage differs across countries (some report only the central or budgetary government), and data for 2025 are partly estimates. A different IMF vintage will revise the numbers.
-- **What the ratio leaves out.** Interest-to-revenue says nothing about maturity, currency composition, who holds the debt or whether the government can roll it over, all of which matter for default risk. Principal repayments, often the binding constraint in a liquidity crisis, are excluded.
+- **Descriptive, not causal.** The results describe patterns. They do not identify the effect of debt, revenue or interest rates.
+- **One data vintage.** IMF data are revised twice a year. The results apply to the October 2026 Fiscal Monitor.
+- **Net interest.** The net measure is lower than the gross interest bill when governments earn interest. Gross data cover fewer countries and come from a different database.
+- **Coverage and accounting.** Government coverage, fiscal years and accounting rules differ by country, and some values are IMF estimates.
+- **Not a default-risk measure.** The ratio says nothing about debt maturity, currency, creditors or principal repayments.
+- **Small groups.** Only {{sample/by_income/Low income}} low-income countries are in the sample, so their estimates are less precise.
 
-## 8. Policy implications
+## 8. What the results suggest
 
-The evidence supports four practical conclusions. They follow from the identity and the patterns above; none is a tested estimate of a policy's effect.
+These points follow from the measures and patterns above. None is an estimated effect of a policy.
 
-1. **Monitor affordability, not just the debt stock.** A debt ceiling or anchor expressed only as a share of GDP would have flagged Japan and missed Nigeria and Bangladesh. Adding interest-to-revenue to fiscal rules and surveillance would point at where pressure is building.
-2. **For the most burdened, revenue is the main lever.** Because the burden is inversely proportional to the revenue ratio, raising revenue from 12% to 15% of GDP cuts the burden by a fifth at unchanged debt. Debt reduction on that scale would take years of primary surpluses.
-3. **Debt structure determines how fast rate shocks arrive.** Longer maturities and less reliance on short-term and foreign-currency debt slow the pass-through of rate rises. The rise in low-income economies' implicit rates is a reason for lenders and borrowers to watch borrowing terms, not only volumes.
-4. **Read falling burdens with care.** A drop after default or restructuring (Lebanon, Ghana, Sri Lanka) reflects unpaid interest, not restored sustainability.
+1. **Look at both indicators.** Debt-to-GDP and interest-to-revenue answer different questions. Using only debt-to-GDP would flag Japan and miss Nigeria and Bangladesh.
+2. **Low revenue goes with high burdens.** At similar debt levels, countries with low revenue tend to have higher burdens. As an illustration, if the interest bill stays the same, raising revenue from 12% to 15% of GDP lowers the burden by 20%; a 20% lower interest bill would have the same effect. The study does not compare how feasible or costly these options are. The right response depends on each country's tax capacity, spending needs, growth and borrowing terms.
+3. **Debt composition matters.** Debt in foreign currency can make interest costs rise when the exchange rate falls (Eichengreen and Hausmann, 1999). This study does not measure debt composition or maturity.
+4. **Read falling burdens with care.** A fall after a default or restructuring is not, by itself, evidence of sustainable debt.
 
 ## 9. Conclusion
 
-Interest took a larger share of government revenue in 2024 than in 2015 for most of the {{sample/countries}} economies studied. The typical burden rose from {{median_burden/All countries/2015:.1f}}% to {{median_burden/All countries/2024:.1f}}%, and the aggregate jumped after 2021. The increase was concentrated in poorer economies, while the typical rich economy's burden fell on a net basis and held steady on a gross one. The debt-to-GDP ratio is a useful but incomplete guide: it explains about a quarter of the cross-country differences, and weak revenue explains much of the rest. Since 2021, higher interest rates have been the main force pushing burdens up. With IMF forecasts showing the low-income median still rising, these pressures look set to continue.
+Net interest took a larger share of revenue in 2024 than in 2015 in most of the {{sample/countries}} countries studied. The median rose from {{median_burden/All countries/2015:.1f}}% to {{median_burden/All countries/2024:.1f}}%, with the largest increases in poorer countries. Debt-to-GDP and interest-to-revenue are related, but they often rank countries differently, mainly because revenue and the net-interest-to-debt factor differ widely between countries. How interest is defined and which countries are covered change the size of the results, so both should be stated with every headline number.
 
-Next steps that the data would support: extend the analysis to debt service including principal, separate domestic and external debt, and test whether high burdens precede cuts in public investment using a panel design with an identification strategy.
+The first version of this project stated four hypotheses. They were written by Claude after the data coverage and the 2024 ranking had been checked, but before the correlations, regressions and decomposition were run. The Git history does not record this order, so a reader cannot verify it.
 
-| | Verdict |
+| Hypothesis | Verdict in this revision |
 |---|---|
-| H1: burden higher in 2024 than 2015, mostly after 2021 | Partly supported: higher, but for the median country the rise was spread over the decade |
-| H2: debt weakly associated with burden | Partly supported: moderately associated, yet a poor guide on its own |
-| H3: lower-income economies carry heavier burdens at similar debt | Supported: mainly through weaker revenue, also higher rates for middle-income economies |
-| H4: rates drove the rise after 2021 | Supported |
+| H1: the typical burden was higher in 2024 than in 2015, with most of the rise after 2021 | Partly supported: higher, but the median rose over the whole period |
+| H2: debt-to-GDP is positively but weakly related to the burden | Partly supported: moderately related; debt alone describes the burden incompletely, and the size of R² depends on a few countries |
+| H3: at similar debt, poorer countries have higher burdens because of higher rates and lower revenue | Supported for revenue (partly by construction of the measure); the net-interest-to-debt factor is higher in middle-income countries; the low-income estimate is imprecise |
+| H4: after 2021 the rise came mainly from higher implicit rates | The accounting pattern is consistent with this, but the factor is not a borrowing rate and the effect of interest rates was not estimated |
+
+## Contributions
+
+Sidali Saidj chose the research question, set the project requirements and asked for this revision after an external audit. Claude, an AI assistant made by Anthropic, did most of the data collection, SQL and Python code, charts and writing, in the first version and in this revision. The repository does not record which results the author has checked personally.
+
+<div class="page-break"></div>
+
+## Appendix A. Methods and sensitivity checks
+
+**Three-factor accounting split.** The net burden can also be written as
+
+<p class="equation">burden = (net interest ÷ gross debt) × (debt ÷ GDP) ÷ (revenue ÷ GDP)</p>
+
+The first term, the *net-interest-to-debt factor*, uses net interest and end-year gross debt. It is an accounting ratio, not the interest rate paid on borrowing: it falls when interest income rises, and it is affected by the timing of debt flows and by valuation changes. The log-mean Divisia index (Ang, 2004) splits each country's change into contributions that add up exactly to the change. Countries need positive net interest at both ends of a period. Results by income group are in Figure A1 and in <code>outputs/tables/decomposition_three_factor_by_group.csv</code>.
+
+<p class="table-label">Table A1. Three-factor split, average country, percentage points</p>
+
+| Sample | Period | Countries | Change | Net interest ÷ debt | Debt ratio | Revenue ratio |
+|---|---|---|---|---|---|---|
+| Each period | 2015–2021 | {{decomposition_three/All countries/2015-2021/countries:.0f}} | {{decomposition_three/All countries/2015-2021/mean_change:+.2f}} | {{decomposition_three/All countries/2015-2021/mean_nid_effect:+.2f}} | {{decomposition_three/All countries/2015-2021/mean_debt_effect:+.2f}} | {{decomposition_three/All countries/2015-2021/mean_revenue_effect:+.2f}} |
+| Each period | 2021–2024 | {{decomposition_three/All countries/2021-2024/countries:.0f}} | {{decomposition_three/All countries/2021-2024/mean_change:+.2f}} | {{decomposition_three/All countries/2021-2024/mean_nid_effect:+.2f}} | {{decomposition_three/All countries/2021-2024/mean_debt_effect:+.2f}} | {{decomposition_three/All countries/2021-2024/mean_revenue_effect:+.2f}} |
+| Each period | 2015–2024 | {{decomposition_three/All countries/2015-2024/countries:.0f}} | {{decomposition_three/All countries/2015-2024/mean_change:+.2f}} | {{decomposition_three/All countries/2015-2024/mean_nid_effect:+.2f}} | {{decomposition_three/All countries/2015-2024/mean_debt_effect:+.2f}} | {{decomposition_three/All countries/2015-2024/mean_revenue_effect:+.2f}} |
+| Common countries | 2015–2021 | {{decomposition_common/three_factor/0/countries}} | {{decomposition_common/three_factor/0/mean_change:+.2f}} | {{decomposition_common/three_factor/0/mean_nid_effect:+.2f}} | {{decomposition_common/three_factor/0/mean_debt_effect:+.2f}} | {{decomposition_common/three_factor/0/mean_revenue_effect:+.2f}} |
+| Common countries | 2021–2024 | {{decomposition_common/three_factor/1/countries}} | {{decomposition_common/three_factor/1/mean_change:+.2f}} | {{decomposition_common/three_factor/1/mean_nid_effect:+.2f}} | {{decomposition_common/three_factor/1/mean_debt_effect:+.2f}} | {{decomposition_common/three_factor/1/mean_revenue_effect:+.2f}} |
+
+<p class="table-note">The net-interest-to-debt and debt contributions add up to the net interest/GDP contribution in Table 2. "Largest positive contribution" means that the factor's contribution is above zero and larger than the other two. For 2021–2024 this is true in {{dominance/2021-2024/largest_positive}} of {{dominance/2021-2024/countries}} countries. In {{dominance/2021-2024/largest_signed_but_not_positive}} more, all three contributions are negative and the factor's is the least negative; these are not counted. The factor has the largest contribution in absolute size in {{dominance/2021-2024/largest_absolute}} countries.</p>
+
+**Regressions.** Models 1–3 are in Table 3. Model 4 uses the log of the net-interest-to-debt factor as the dependent variable, with log debt and income-group dummies (high income is the base). All use HC3 standard errors. Influence checks use Cook's distance and leverage from models 1 and 2 without robust errors, and refit each model leaving out one country at a time.
+
+<p class="table-label">Table A2. Sensitivity of headline statistics, 2024</p>
+
+| Specification | Countries | Median burden, % | Median change since 2015, points | Share above 20%, % | Debt–burden rank correlation |
+|---|---|---|---|---|---|
+| Baseline: net burden, all sample countries | {{matched/0/countries_level}} | {{matched/0/median_burden_end:.1f}} | {{matched/0/median_change_since_start:.1f}} | {{matched/0/share_above_threshold:.0f}} | {{matched/0/spearman_debt_burden:.2f}} |
+| Net burden, countries covered by FPP | {{matched/1/countries_level}} | {{matched/1/median_burden_end:.1f}} | {{matched/1/median_change_since_start:.1f}} | {{matched/1/share_above_threshold:.0f}} | {{matched/1/spearman_debt_burden:.2f}} |
+| Gross burden (FPP), same countries | {{matched/2/countries_level}} | {{matched/2/median_burden_end:.1f}} | {{matched/2/median_change_since_start:.1f}} | {{matched/2/share_above_threshold:.0f}} | {{matched/2/spearman_debt_burden:.2f}} |
+| Net burden, countries covered by the World Bank series | {{matched/4/countries_level}} | {{matched/4/median_burden_end:.1f}} | {{matched/4/median_change_since_start:.1f}} | {{matched/4/share_above_threshold:.0f}} | {{matched/4/spearman_debt_burden:.2f}} |
+| Central-government gross burden (World Bank), same countries | {{matched/5/countries_level}} | {{matched/5/median_burden_end:.1f}} | {{matched/5/median_change_since_start:.1f}} | {{matched/5/share_above_threshold:.0f}} | {{matched/5/spearman_debt_burden:.2f}} |
+| Excluding countries with negative net interest | {{sensitivity/Excluding countries with negative net interest/countries_level}} | {{sensitivity/Excluding countries with negative net interest/median_burden_end:.1f}} | {{sensitivity/Excluding countries with negative net interest/median_change_since_start:.1f}} | {{sensitivity/Excluding countries with negative net interest/share_above_threshold:.0f}} | {{sensitivity/Excluding countries with negative net interest/spearman_debt_burden:.2f}} |
+| Excluding small states (population below 1.5 million) | {{sensitivity/Excluding small states/countries_level}} | {{sensitivity/Excluding small states/median_burden_end:.1f}} | {{sensitivity/Excluding small states/median_change_since_start:.1f}} | {{sensitivity/Excluding small states/share_above_threshold:.0f}} | {{sensitivity/Excluding small states/spearman_debt_burden:.2f}} |
+| End year 2025 (mostly estimates) | {{sensitivity/End year 2025 (mostly estimates)/countries_level}} | {{sensitivity/End year 2025 (mostly estimates)/median_burden_end:.1f}} | {{sensitivity/End year 2025 (mostly estimates)/median_change_since_start:.1f}} | {{sensitivity/End year 2025 (mostly estimates)/share_above_threshold:.0f}} | {{sensitivity/End year 2025 (mostly estimates)/spearman_debt_burden:.2f}} |
+| Adding Brunei (repeated-zero case) | {{sensitivity/Adding Brunei (repeated-zero case)/countries_level}} | {{sensitivity/Adding Brunei (repeated-zero case)/median_burden_end:.1f}} | {{sensitivity/Adding Brunei (repeated-zero case)/median_change_since_start:.1f}} | {{sensitivity/Adding Brunei (repeated-zero case)/share_above_threshold:.0f}} | {{sensitivity/Adding Brunei (repeated-zero case)/spearman_debt_burden:.2f}} |
+
+<p class="table-note">Median change: the median of country changes since 2015, not the change in the median; countries with values in both years ({{matched/2/countries_change}} for FPP, {{matched/5/countries_change}} for World Bank). Trimming the top and bottom 5% of 2024 burdens gives a rank correlation of {{spearman_trimmed:.2f}}.</p>
+
+## Appendix B. Additional figures
+
+<p class="fig-label">Figure A1</p>
+
+![Three-factor decomposition](../outputs/figures/figA1_decomposition.png)
+
+<p class="fig-label">Figure A2</p>
+
+![Interest versus health spending](../outputs/figures/figA2_interest_vs_health.png)
+
+<p class="fig-label">Figure A3</p>
+
+![Net versus gross burdens](../outputs/figures/figA3_net_vs_gross.png)
+
+## Appendix C. Coverage notes for highlighted countries
+
+The table lists only what could be documented in this revision. The IMF Fiscal Monitor methodological appendix has a full table by country, but it could not be downloaded for this revision (the IMF website returned "Access Denied"). The other cells are unresolved and should be checked in that appendix before any country comparison is used.
+
+| Country | What is documented | Source |
+|---|---|---|
+| Advanced economies (general) | Fiscal data mostly cover general government | IMF Fiscal Monitor, Methodological and Statistical Appendix |
+| Emerging and developing economies (general) | Data often cover only central or budgetary central government | IMF Fiscal Monitor, Methodological and Statistical Appendix |
+| Pakistan | Data on a fiscal-year basis | IMF Fiscal Monitor, October 2024, appendix notes |
+| Egypt | Data on a fiscal-year basis | IMF Fiscal Monitor, October 2024, appendix notes |
+| India | Data cover central and state governments | IMF Fiscal Monitor, April 2026, appendix notes |
+| United States, China, Germany, Brazil, South Africa, Saudi Arabia, Sri Lanka, Japan, Canada, Nigeria, Bangladesh, Lebanon, Ghana | Not documented in this revision (unresolved) | — |
 
 ## References
 
-Ang, B. W. (2004). Decomposition analysis for policymaking in energy: which is the preferred method? *Energy Policy*, 32(9), 1131–1139.
+Ang, B. W. (2004). Decomposition analysis for policymaking in energy: which is the preferred method? *Energy Policy*, 32(9), 1131–1139. <https://doi.org/10.1016/S0301-4215(03)00076-4>
 
-Blanchard, O. (2019). Public debt and low interest rates. *American Economic Review*, 109(4), 1197–1229.
+Blanchard, O. (2019). Public debt and low interest rates. *American Economic Review*, 109(4), 1197–1229. <https://doi.org/10.1257/aer.109.4.1197>
 
-Eichengreen, B., and Hausmann, R. (1999). Exchange rates and financial fragility. NBER Working Paper 7418.
+Eichengreen, B., and Hausmann, R. (1999). Exchange rates and financial fragility. NBER Working Paper 7418. <https://www.nber.org/papers/w7418>
 
-Escolano, J. (2010). *A Practical Guide to Public Debt Dynamics, Fiscal Sustainability, and Cyclical Adjustment of Budgetary Aggregates*. IMF Technical Notes and Manuals 10/02.
+Escolano, J. (2010). *A Practical Guide to Public Debt Dynamics, Fiscal Sustainability, and Cyclical Adjustment of Budgetary Aggregates*. IMF Technical Notes and Manuals 10/02. <https://www.imf.org/external/pubs/ft/tnm/2010/tnm1002.pdf>
 
-Furman, J., and Summers, L. (2020). A reconsideration of fiscal policy in the era of low interest rates. Discussion draft, Hutchins Center on Fiscal and Monetary Policy and Peterson Institute for International Economics.
+Furman, J., and Summers, L. (2020). A reconsideration of fiscal policy in the era of low interest rates. Discussion draft, Brookings Institution and Peterson Institute for International Economics. <https://www.brookings.edu/wp-content/uploads/2020/11/furman-summers-fiscal-reconsideration-discussion-draft.pdf>
 
-IMF (2024). *Fiscal Monitor, October 2024: Putting a Lid on Public Debt*. Washington, DC: International Monetary Fund.
+IMF (2024). *Fiscal Monitor, October 2024: Putting a Lid on Public Debt*. <https://www.imf.org/en/Publications/FM/Issues/2024/10/23/fiscal-monitor-october-2024>
 
-IMF (2026). *Fiscal Monitor database, October 2026*, and *World Economic Outlook database, October 2026*. Retrieved via the IMF DataMapper API, 21 October 2026.
+IMF (2024, 2026). *Fiscal Monitor, Methodological and Statistical Appendix* (October 2024; April 2026). <https://www.imf.org/-/media/files/publications/fiscal-monitor/2024/october/english/msa.pdf>
 
-IMF (2025). *Public Finances in Modern History database*, December 2025 update. Retrieved via the IMF DataMapper API, 21 October 2026.
+IMF (2025, 2026). *Fiscal Monitor* and *World Economic Outlook* databases (October 2026) and *Public Finances in Modern History* database (December 2025), via the IMF DataMapper API. <https://www.imf.org/external/datamapper/>
 
-Kose, M. A., Nagle, P., Ohnsorge, F., and Sugawara, N. (2021). *Global Waves of Debt: Causes and Consequences*. Washington, DC: World Bank.
+Kose, M. A., Nagle, P., Ohnsorge, F., and Sugawara, N. (2021). *Global Waves of Debt: Causes and Consequences*. World Bank. <http://hdl.handle.net/10986/32809>
 
-Mauro, P., Romeu, R., Binder, A., and Zaman, A. (2015). A modern history of fiscal prudence and profligacy. *Journal of Monetary Economics*, 76, 55–70.
+Mauro, P., Romeu, R., Binder, A., and Zaman, A. (2015). A modern history of fiscal prudence and profligacy. *Journal of Monetary Economics*, 76, 55–70. Working-paper version: IMF WP/13/5. <https://www.imf.org/en/publications/wp/issues/2016/12/31/a-modern-history-of-fiscal-prudence-and-profligacy-40222>
 
-Moody's Investors Service (2019). *Sovereign Ratings Methodology*, November 2019. Superseded in November 2022 by a version that keeps the same factors and sub-factors.
+Moody's Investors Service (2019). *Sovereign Ratings Methodology*, November 2019 (replaced in November 2022 by a version with the same factors). <https://ratings.moodys.com/api/rmc-documents/63168>
 
-Reinhart, C. M., Rogoff, K. S., and Savastano, M. A. (2003). Debt intolerance. *Brookings Papers on Economic Activity*, 2003(1), 1–74.
+Reinhart, C. M., Rogoff, K. S., and Savastano, M. A. (2003). Debt intolerance. *Brookings Papers on Economic Activity*, 2003(1), 1–74. <https://www.brookings.edu/articles/debt-intolerance/>
 
-UNCTAD (2024). *A World of Debt 2024: A Growing Burden to Global Prosperity*. Geneva: United Nations.
+UNCTAD (2024). Global public debt hits record $97 trillion in 2023, UN urges action (news release for *A World of Debt 2024*). <https://unctad.org/news/global-public-debt-hits-record-97-trillion-2023-un-urges-action>
 
-World Bank (2026). *World Development Indicators*. Retrieved via the World Bank API, 21 October 2026.
+World Bank (2026). *World Development Indicators*, via the World Bank API. <https://data.worldbank.org/>

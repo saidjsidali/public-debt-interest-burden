@@ -4,3 +4,11 @@ __pycache__/
 .pytest_cache/
 data/processed/fiscal.sqlite
 report/economic_analysis.html
+
+# New downloads and draft-mode outputs (SNAPSHOT_DIR=... python run.py): never published as they are
+data/snapshots/
+data/processed_draft/
+outputs_draft/
+audit/draft/
+README_draft.md
+report/economic_analysis_draft.*

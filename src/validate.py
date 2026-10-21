@@ -1,9 +1,15 @@
 """Run the SQL data checks and write audit/validation_report.md.
 
-The report is regenerated on every run so it always describes the data the
-results were computed from. Blocking checks stop the pipeline (see
-database.run_validation); review checks list rows that a reader should know
-about, with the explanation recorded in EXPLANATIONS below.
+Two kinds of output are kept apart:
+
+- automatic flags: rows returned by the review queries in sql/03_validation.sql;
+- reviews: entries in audit/reviewed_cases.csv, each tied to a check, a
+  country, a year and the data vintage it was written for.
+
+A flag with no matching review entry is reported as UNREVIEWED. A new data
+vintage therefore starts with every flag unreviewed, and old explanations are
+never applied to new data automatically. Every flagged row is exported in full
+to audit/flags/<check>.csv.
 """
 
 import json
@@ -14,53 +20,104 @@ import pandas as pd
 import config
 import database
 
-EXPLANATIONS = {
-    "unmatched_imf_codes": "IMF regional and analytical aggregates, plus Anguilla, Montserrat and Taiwan Province of China, which are not on the World Bank country list. None is a country that should be in the sample.",
-    "excluded_countries": "Missing gross debt (Libya, Macao, Palau, Somalia, Venezuela, Yemen); no net-interest series because the primary or overall balance is missing (Nauru, Samoa, Singapore, Turkmenistan); incomplete years (Eritrea); or net interest recorded as exactly zero in every year (Brunei; Libya and Macao also fail this rule).",
-    "negative_net_interest": "Governments with large financial assets (sovereign-wealth or pension funds) earn more interest than they pay. Their burden is negative on the net measure, so they are excluded from the implicit-rate statistics and the decomposition, and shown on the gross measure in Figure 8.",
-    "large_net_gross_gaps": "The gap is the interest income on government financial assets. It is largest for Kuwait, Canada (public pension plans), Hong Kong and Norway. Robustness checks repeat the main results on the gross measure.",
-    "large_annual_swings": "Checked against the components. Falls after default or restructuring, where interest paid dropped (Lebanon 2020, Ghana 2023: from 7.4% to 3.1% of GDP; Sri Lanka 2024); a fall in revenue (Sri Lanka 2020); higher interest (Pakistan 2023: from 4.8% to 6.8% of GDP; Egypt 2024: from 6.8% to 8.8%); higher revenue (Nigeria 2024: from 7.3% to 10.8% of GDP; The Gambia 2017). Lao PDR's 2024 jump (interest from 0.8% to 3.7% of GDP) is not explained by the source and is treated as uncertain. A fall after a default means interest went unpaid, not that the debt became more sustainable.",
-    "revenue_above_gdp": "Kiribati and Tuvalu receive fishing-licence fees, grants and trust-fund income that are large relative to GDP. The values are plausible and both are dropped in the small-states robustness check.",
-}
+REGISTER_COLUMNS = ["check", "iso3", "year", "source_vintage", "status", "reviewed_by",
+                    "review_date", "finding", "evidence"]
 
 
-def _md_table(df, max_rows=40):
+def source_vintage():
+    """The Fiscal Monitor vintage of the snapshot, as recorded at download."""
+    log = json.loads((config.DATA_RAW / "retrieval_log.json").read_text(encoding="utf-8"))
+    return log["imf_datamapper"]["vintage_by_series"]["GGR_G01_GDP_PT"]
+
+
+def load_register(path=None):
+    path = path or config.REVIEWED_CASES
+    if not path.exists():
+        return pd.DataFrame(columns=REGISTER_COLUMNS)
+    reg = pd.read_csv(path, dtype=str, keep_default_na=False)
+    return reg[REGISTER_COLUMNS]
+
+
+def _year_key(v):
+    return "" if pd.isna(v) or v == "" else str(int(float(v)))
+
+
+def attach_reviews(check, flags, register, vintage):
+    """Add review status to each flagged row; unmatched rows are UNREVIEWED."""
+    reg = register[(register["check"] == check) & (register["source_vintage"] == vintage)]
+    reg = reg.assign(key=reg["iso3"] + "|" + reg["year"].map(_year_key)).set_index("key")
+    out = flags.copy()
+    keys = out["iso3"].astype(str) + "|" + out["year"].map(_year_key)
+    out.insert(0, "review_status", keys.map(reg["status"]).fillna("UNREVIEWED").values)
+    out["finding"] = keys.map(reg["finding"]).fillna("").values
+    out["evidence"] = keys.map(reg["evidence"]).fillna("").values
+    return out
+
+
+def _md_table(df):
     if df.empty:
         return "_No rows._\n"
-    df = df.head(max_rows).copy()
+    df = df.copy()
     for c in df.select_dtypes("float").columns:
         df[c] = df[c].map(lambda v: "" if pd.isna(v) else f"{v:,.2f}")
+    df = df.fillna("").astype(str).apply(lambda s: s.str.replace("|", "/", regex=False))
     head = "| " + " | ".join(df.columns) + " |"
     rule = "| " + " | ".join("---" for _ in df.columns) + " |"
-    rows = ["| " + " | ".join(str(v) for v in r) + " |" for r in df.astype(str).values]
+    rows = ["| " + " | ".join(r) + " |" for r in df.values]
     return "\n".join([head, rule, *rows]) + "\n"
 
 
 def run():
     results = database.run_validation()
-    log = json.loads((config.DATA_RAW / "retrieval_log.json").read_text(encoding="utf-8"))
-    lines = [
-        "# Data validation report",
-        "",
-        f"Generated by `src/validate.py` on {date.today().isoformat()} from the raw snapshot retrieved "
-        f"{log['retrieved_utc']}. The checks are the named queries in "
-        "[`sql/03_validation.sql`](../sql/03_validation.sql).",
-        "",
-        "| Check | Severity | Rows | Status |",
-        "| --- | --- | --- | --- |",
-    ]
+    vintage = source_vintage()
+    register = load_register()
+    flags_dir = config.AUDIT_OUT / "flags"
+    flags_dir.mkdir(parents=True, exist_ok=True)
+    up = "../.." if config.DRAFT else ".."          # relative links from the report's folder
+    register_link = "../reviewed_cases.csv" if config.DRAFT else "reviewed_cases.csv"
+    for old in flags_dir.glob("*.csv"):
+        old.unlink()
+
+    summary, sections, unreviewed = [], [], 0
     for name, (meta, df) in results.items():
         sev = meta.get("severity", "")
-        status = "Pass" if sev == "error" and df.empty else ("Explained below" if len(df) else "Pass")
-        lines.append(f"| `{name}` | {sev} | {len(df)} | {status} |")
-    lines.append("")
-    for name, (meta, df) in results.items():
-        if meta.get("severity") != "review":
+        if sev != "review":
+            summary.append(f"| `{name}` | blocking | {len(df)} | - | {'Pass' if df.empty else 'FAIL'} |")
             continue
-        lines += [f"## `{name}`", "", meta.get("description", ""), ""]
-        if name in EXPLANATIONS:
-            lines += [f"**Assessment.** {EXPLANATIONS[name]}", ""]
-        lines.append(_md_table(df))
-    config.AUDIT.mkdir(parents=True, exist_ok=True)
-    (config.AUDIT / "validation_report.md").write_text("\n".join(lines), encoding="utf-8")
+        reviewed = attach_reviews(name, df, register, vintage)
+        reviewed.to_csv(flags_dir / f"{name}.csv", index=False, lineterminator="\n")
+        n_unrev = int((reviewed["review_status"] == "UNREVIEWED").sum())
+        unreviewed += n_unrev
+        counts = reviewed["review_status"].value_counts().to_dict()
+        status = ", ".join(f"{v} {k.lower()}" for k, v in sorted(counts.items())) or "no rows"
+        summary.append(f"| `{name}` | review | {len(df)} | {status} | "
+                       f"{'No unreviewed rows' if n_unrev == 0 else f'{n_unrev} UNREVIEWED'} |")
+        sections += [f"## `{name}`", "", meta.get("description", ""), "",
+                     f"Full table: [flags/{name}.csv](flags/{name}.csv)", "", _md_table(reviewed)]
+
+    lines = [
+        "# Data validation report" + (" (DRAFT: unreviewed data snapshot)" if config.DRAFT else ""),
+        "",
+        f"Generated by `src/validate.py` on {date.today().isoformat()} for the data vintage "
+        f"**{vintage}**. The checks are the named queries in "
+        f"[`sql/03_validation.sql`]({up}/sql/03_validation.sql).",
+        "",
+        "Blocking checks stop the pipeline if they fail. Review checks only flag unusual values; "
+        "a flag does not say why a value is unusual. Review notes come from "
+        f"[`reviewed_cases.csv`]({register_link}) and apply only to the vintage they were written "
+        "for. Rows without a note are marked **UNREVIEWED**. All review notes so far were written "
+        "by Claude (an AI assistant); none has been checked by the author yet.",
+        "",
+        "| Check | Type | Rows | Review status | Result |",
+        "| --- | --- | --- | --- | --- |",
+        *summary,
+        "",
+        *sections,
+    ]
+    config.AUDIT_OUT.mkdir(parents=True, exist_ok=True)
+    report = config.AUDIT_OUT / "validation_report.md"
+    report.write_text("\n".join(lines), encoding="utf-8")
+    if unreviewed:
+        print(f"   note: {unreviewed} flagged rows have no review note "
+              f"(see {report.relative_to(config.ROOT).as_posix()})")
     return results
