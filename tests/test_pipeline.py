@@ -7,8 +7,15 @@ that the pipeline is internally consistent; they do not show that the
 economic interpretation is right.
 """
 
+import inspect
 import json
 import math
+import os
+import shutil
+import subprocess
+import sys
+import textwrap
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -45,7 +52,7 @@ def in_sample(panel, sample):
 
 @pytest.fixture(scope="module")
 def key():
-    return json.loads((config.ROOT / "outputs" / "key_numbers.json").read_text(encoding="utf-8"))
+    return json.loads(config.KEY_NUMBERS.read_text(encoding="utf-8"))
 
 
 def table(name):
@@ -55,12 +62,55 @@ def table(name):
 # --- Raw data and panel -------------------------------------------------------
 
 def test_snapshot_matches_manifest():
+    assert not config.DRAFT
     assert snapshot.check_inputs()
 
 
 def test_refresh_never_overwrites_published_snapshot():
     with pytest.raises(ValueError):
-        acquire.main(config.DATA_RAW)
+        acquire.main(config.PUBLISHED_RAW)
+
+
+def test_check_inputs_detects_a_changed_file_or_a_missing_manifest(tmp_path):
+    for name in config.REQUIRED_RAW_FILES:
+        shutil.copy(config.PUBLISHED_RAW / name, tmp_path / name)
+    manifest = tmp_path / "manifest.json"
+    snapshot.write_manifest(tmp_path, manifest)
+    assert snapshot.check_inputs(tmp_path, manifest)
+    with open(tmp_path / "wb_wdi.csv", "a", encoding="utf-8") as f:
+        f.write("SP.POP.TOTL,ZZZ,2024,1\n")
+    with pytest.raises(RuntimeError, match="wb_wdi.csv"):
+        snapshot.check_inputs(tmp_path, manifest)
+    manifest.unlink()
+    with pytest.raises(FileNotFoundError, match="manifest"):
+        snapshot.check_inputs(tmp_path, manifest)
+
+
+def test_draft_mode_writes_every_output_to_separate_paths(tmp_path):
+    """With SNAPSHOT_DIR set, no generated file may share a path with a published one."""
+    def paths(c):
+        return [c.DATA_PROCESSED, c.OUTPUTS, c.AUDIT_OUT / "flags", c.AUDIT_OUT / "validation_report.md",
+                c.SNAPSHOT_MANIFEST]
+
+    code = ("import json, config\n"
+            f"{textwrap.dedent(inspect.getsource(paths))}\n"
+            "print(json.dumps({'draft': config.DRAFT, 'paths': [str(p) for p in paths(config)]}))")
+    env = {**os.environ, "SNAPSHOT_DIR": str(tmp_path), "PYTHONPATH": str(config.ROOT / "src")}
+    out = subprocess.run([sys.executable, "-c", code], env=env, capture_output=True, text=True, check=True)
+    draft = json.loads(out.stdout)
+    assert draft["draft"] is True
+    for d, p in zip(map(Path, draft["paths"]), paths(config)):
+        assert d != p and p not in d.parents and d not in p.parents, (d, p)
+
+
+def test_draft_documents_are_marked_and_point_to_draft_outputs():
+    text = ("![a](../outputs/figures/a.png) `outputs/tables/b.csv` [v](../audit/validation_report.md) "
+            "[f](audit/flags/x.csv) [r](audit/reviewed_cases.csv)")
+    out = build_report.as_draft(text)
+    assert out.startswith("> **DRAFT")
+    assert "../outputs_draft/figures/a.png" in out and "`outputs_draft/tables/b.csv`" in out
+    assert "../audit/draft/validation_report.md" in out and "audit/draft/flags/x.csv" in out
+    assert "(audit/reviewed_cases.csv)" in out  # the register itself is shared
 
 
 @pytest.mark.parametrize("name", ["imf_datamapper.csv", "wb_wdi.csv"])
@@ -115,7 +165,7 @@ def test_no_blocking_validation_failures():
 def test_every_flagged_row_is_exported():
     for name, (meta, df) in database.run_validation().items():
         if meta.get("severity") == "review":
-            exported = pd.read_csv(config.AUDIT / "flags" / f"{name}.csv")
+            exported = pd.read_csv(config.AUDIT_OUT / "flags" / f"{name}.csv")
             assert len(exported) == len(df), name
 
 

@@ -223,7 +223,7 @@ The first term, the *net-interest-to-debt factor*, uses net interest and end-yea
 | End year 2025 (mostly estimates) | {{sensitivity/End year 2025 (mostly estimates)/countries_level}} | {{sensitivity/End year 2025 (mostly estimates)/median_burden_end:.1f}} | {{sensitivity/End year 2025 (mostly estimates)/median_change_since_start:.1f}} | {{sensitivity/End year 2025 (mostly estimates)/share_above_threshold:.0f}} | {{sensitivity/End year 2025 (mostly estimates)/spearman_debt_burden:.2f}} |
 | Adding Brunei (repeated-zero case) | {{sensitivity/Adding Brunei (repeated-zero case)/countries_level}} | {{sensitivity/Adding Brunei (repeated-zero case)/median_burden_end:.1f}} | {{sensitivity/Adding Brunei (repeated-zero case)/median_change_since_start:.1f}} | {{sensitivity/Adding Brunei (repeated-zero case)/share_above_threshold:.0f}} | {{sensitivity/Adding Brunei (repeated-zero case)/spearman_debt_burden:.2f}} |
 
-<p class="table-note">Changes since 2015 use countries with values in both years for that measure ({{matched/2/countries_change}} for FPP, {{matched/5/countries_change}} for the World Bank series). Dropping the top and bottom 5% of 2024 burdens gives a rank correlation of {{spearman_trimmed:.2f}}.</p>
+<p class="table-note">Median change: the median of country changes since 2015, not the change in the median; countries with values in both years ({{matched/2/countries_change}} for FPP, {{matched/5/countries_change}} for World Bank). Trimming the top and bottom 5% of 2024 burdens gives a rank correlation of {{spearman_trimmed:.2f}}.</p>
 
 ## Appendix B. Additional figures
 

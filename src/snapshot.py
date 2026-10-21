@@ -43,15 +43,19 @@ def write_manifest(raw_dir, path, note=NOTE):
 
 
 def check_inputs(raw_dir=None, manifest_path=None):
-    """Stop early if a required input is missing or differs from the manifest."""
+    """Stop early if a required input or the manifest is missing, or if a file differs from the manifest."""
     raw_dir = raw_dir or config.DATA_RAW
     manifest_path = manifest_path or config.SNAPSHOT_MANIFEST
     missing = [n for n in config.REQUIRED_RAW_FILES if not (raw_dir / n).exists()]
     if missing:
         raise FileNotFoundError(f"Missing input files in {raw_dir}: {', '.join(missing)}")
-    if manifest_path.exists():
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        changed = [n for n, meta in manifest["files"].items() if sha256(raw_dir / n) != meta["sha256"]]
-        if changed:
-            raise RuntimeError(f"Input files differ from {manifest_path.name}: {', '.join(changed)}")
+    if not manifest_path.exists():
+        raise FileNotFoundError(f"No checksum manifest at {manifest_path}; a snapshot without one cannot be "
+                                "traced. Download it with `python run.py --refresh`.")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    listed = set(manifest["files"])
+    unlisted = [n for n in config.REQUIRED_RAW_FILES if n not in listed]
+    changed = [n for n, meta in manifest["files"].items() if sha256(raw_dir / n) != meta["sha256"]]
+    if unlisted or changed:
+        raise RuntimeError(f"Input files differ from {manifest_path.name}: {', '.join(unlisted + changed)}")
     return True

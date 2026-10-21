@@ -41,9 +41,13 @@ Endpoints: `https://www.imf.org/external/datamapper/api/v1/<code>` and
 
 The CSV files are tidy extracts made from the API responses. The original JSON responses were
 not kept for this snapshot. New downloads (`python run.py --refresh`) go to
-`data/snapshots/<date>/` and keep the JSON responses, a retrieval log and a manifest. A new
-snapshot is not used by the analysis until `config.DATA_RAW` is changed on purpose, and it
-then needs a new review of the flagged cases (`audit/reviewed_cases.csv`) and of the report text.
+`data/snapshots/<date>/` and keep the JSON responses, a retrieval log and a manifest
+(`data/snapshots/` is not committed). A new snapshot can be analysed in draft mode with
+`SNAPSHOT_DIR=data/snapshots/<date> python run.py`: the files are checked against that
+snapshot's own `manifest.json`, and all outputs go to separate draft files (`data/processed_draft/`,
+`outputs_draft/`, `audit/draft/`, `README_draft.md`, `report/economic_analysis_draft.*`). The
+published results change only if `data/raw/` and `data/snapshot_manifest.json` are replaced on
+purpose, after a new review of the flagged cases (`audit/reviewed_cases.csv`) and of the report text.
 
 ## Definitions that matter
 

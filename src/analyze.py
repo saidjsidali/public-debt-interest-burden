@@ -592,6 +592,5 @@ def run(tables):
     numbers = key_numbers(panel, sample, tables, res)
     numbers["country"] = country_facts(panel, tables["interest_vs_social_spending"],
                                        list(res["cases"]["iso3"]) + NAMED_COUNTRIES)
-    path = config.ROOT / "outputs" / "key_numbers.json"
-    path.write_text(json.dumps(_jsonable(numbers), indent=2), encoding="utf-8")
+    config.KEY_NUMBERS.write_text(json.dumps(_jsonable(numbers), indent=2), encoding="utf-8")
     return numbers

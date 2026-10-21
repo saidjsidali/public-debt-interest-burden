@@ -37,6 +37,7 @@ narrowed or labelled), **unresolved** (needs information that was not available)
 | 17 | No full sample funnel | 217 → 193 → 182 → 181 | `sample_funnel` query and Table 1 | SQL, template | `test_sample_funnel_adds_up` | fixed |
 | 18 | Hard-coded review explanations would certify new data | Text in `validate.py` | `reviewed_cases.csv` keyed by vintage; new flags are UNREVIEWED; full CSV export of flags | `validate.py`, `audit/` | `test_new_flags_are_unreviewed_...`; `test_every_flagged_row_is_exported` | fixed |
 | 19 | `--refresh` overwrote the published snapshot | `acquire.py` wrote to `data/raw` | Refresh writes `data/snapshots/<date>/` with JSON responses and a manifest; startup checksum check | `acquire.py`, `snapshot.py`, `run.py` | `test_snapshot_matches_manifest`; `test_refresh_never_overwrites_...` | fixed |
+| 19a | No safe way to analyse a new snapshot | The first fix told users to change `config.DATA_RAW`; the checksum check would then stop the run, and a run would overwrite the published README, report and outputs | Draft mode: `SNAPSHOT_DIR=<folder> python run.py` checks the snapshot against its own manifest (now required) and writes only to `*_draft` paths, each document with a DRAFT banner; draft paths are git-ignored | `config.py`, `run.py`, `snapshot.py`, `validate.py`, `build_report.py`, README, `data/README.md` | `test_check_inputs_detects_...`; `test_draft_mode_writes_every_output_to_separate_paths`; `test_draft_documents_are_marked_...`; full draft run on a copy of `data/raw` (see Verification) | fixed |
 | 20 | PDF links pointed to a local workspace | 4 annotations | Relative links rewritten to GitHub URLs | `build_report.py` | `test_pdf_has_no_local_paths_or_local_links`; annotation scan (18 links, all public) | fixed |
 | 21 | Case-study order hard-coded | `figures.py` list | Order taken from `case_studies.csv` | `analyze.py`, `figures.py` | Visual check | fixed |
 | 22 | Ten case panels on one −25 to 100 scale | Large economies looked flat | Two groups with labelled scales | `fig6` | Visual check | fixed |
@@ -47,9 +48,12 @@ narrowed or labelled), **unresolved** (needs information that was not available)
 | 27 | Repeated material across documents | Problem statement, reasoning journal, review log | Removed these three; one purpose per document; this register replaces the review log | `research/`, `audit/` | – | fixed |
 | 28 | References without links | – | DOI or institutional links; each source linked to the claim it supports | template, `literature_review.md` | Links checked by web search | fixed |
 | 29 | Coverage of highlighted countries undocumented | IMF appendix returned "Access Denied" | Partial table with sources; rest marked unresolved | template (Appendix C) | – | unresolved |
-| 30 | Chart style | Author's request | Newspaper style (PT Serif headlines, grey grid, left labels); no newspaper names | `style.py`, `figures.py`, CSS | Every chart inspected | fixed |
+| 30 | Chart style | Author's request | Newspaper style (PT Serif headlines, grey grid, left labels); no newspaper names. Final pass: white halo behind point labels, shorter quadrant labels in Figure 4, leader lines for China (Figure 4) and the United States (Figure A3), China labelled inside its bubble (Figure A2) | `style.py`, `figures.py`, CSS | Every chart and PDF page inspected after the last change | fixed |
 | 31 | Gross effective-rate sensitivity | Optional in the audit | Not built: comparable lagged debt and GDP denominators would be needed | – | – | not done |
 | 32 | Historical income-group sensitivity | Optional | Not built | – | – | not done |
+| 33 | Table A2 "median change" could be read as the change in the median | Baseline row shows 0.9; the median itself rose 4.5 → 5.8 (1.3 points) | Note under Table A2 states that it is the median of country changes | template | Visual check of page 11 | fixed |
+| 34 | PDF links to repository files point to `main` | `regression_influence.csv` exists only on this branch | Kept: links are correct once the branch is merged into `main`; until then that link returns "not found" on GitHub | `config.REPO_LINK_REF` | Annotation scan | open until merge |
+| 35 | Report length | The repair brief suggests a main report of about 6–8 pages | Main text is 10 pages (plus 5 pages of appendices and references) because it now includes the sample funnel, the matched comparison and the influence checks; not shortened further | template | Page count | not done |
 
 ## Before and after
 
@@ -73,11 +77,12 @@ narrowed or labelled), **unresolved** (needs information that was not available)
 | Check | Command | Result |
 |---|---|---|
 | Full pipeline with PDF | `python run.py` | Completed |
-| Tests | `pytest` | 37 passed |
+| Tests | `pytest` | 40 passed |
 | Independent recomputation from the raw CSVs | `python audit/independent_check.py` | 17 of 17 headline numbers match |
-| Clean environment | Fresh clone of the branch, new virtual environment from `requirements.txt`, `python run.py --no-pdf`, `pytest` | 37 passed; `compare_numbers.py`: 0 differences; README, report Markdown, tables and validation report unchanged |
-| PDF links and paths | Annotation scan with PyMuPDF and byte search | 18 link annotations (16 distinct), all public URLs; 2 point to files in the repository; no local paths |
-| Visual inspection | All 9 charts and all 15 PDF pages viewed | No clipped text after fixes; one minor label crowding in Figure A2 (Indonesia) |
+| Clean environment (before draft mode) | Fresh clone of the branch, new virtual environment from `requirements.txt`, `python run.py --no-pdf`, `pytest` | 37 passed (all tests at that time); `compare_numbers.py`: 0 differences; README, report Markdown, tables and validation report unchanged |
+| Draft mode | Copy of `data/raw` without a manifest, then with one, run with `SNAPSHOT_DIR` | Without a manifest the run stops; with one it completes. SHA-256 of all 100 published files identical before and after; draft key numbers 0 differences from the published ones; draft README, report and validation report carry the DRAFT banner; draft files removed afterwards |
+| PDF links and paths | Annotation scan with pypdf and byte search | 18 link annotations (16 distinct), all public URLs; 2 point to files in the repository (see row 34); no local paths |
+| Visual inspection | All 9 charts and all 15 PDF pages viewed after the last change | No clipped or overlapping text; every table note is on the same page as its table |
 | Stale-claim search | Text search for old terms in tracked files | Remaining matches are intentional (explaining what is not claimed, or quoting the original H4) |
 | GitHub Actions | – | Not run: nothing was pushed |
 
@@ -90,3 +95,4 @@ narrowed or labelled), **unresolved** (needs information that was not available)
 5. Original JSON responses of the published snapshot (not kept in 2026-10-21 download).
 6. Review notes in `audit/reviewed_cases.csv` were written by Claude; none has been checked by the author.
 7. The author's own verification and ownership steps (see `research/learning_note.md`, section 7).
+8. GitHub Actions has not run on this branch, and the PDF link to `regression_influence.csv` works only after the branch is merged into `main` (row 34).

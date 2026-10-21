@@ -95,15 +95,41 @@ def to_pdf(html_path, pdf_path):
     return pdf_path
 
 
+DRAFT_BANNER = (
+    "> **DRAFT built from an unreviewed data snapshot** (`{snapshot}`). The numbers come from that "
+    "snapshot, but the text, the reviewed cases and the conclusions were written for the October 2026 "
+    "IMF data and have not been checked again. Do not publish this file as it is.\n\n"
+)
+
+
+DRAFT_PATHS = [  # published path -> draft path, for links, images and file names in the text
+    (re.compile(r"(?<![\w-])outputs/"), "outputs_draft/"),
+    (re.compile(r"(?<![\w-])audit/validation_report\.md"), "audit/draft/validation_report.md"),
+    (re.compile(r"(?<![\w-])audit/flags/"), "audit/draft/flags/"),
+]
+
+
+def as_draft(text):
+    """Mark a rendered document as a draft and point it to the draft figures, tables and checks."""
+    snapshot = config.DATA_RAW.relative_to(config.ROOT).as_posix() if config.DATA_RAW.is_relative_to(config.ROOT) \
+        else config.DATA_RAW.as_posix()
+    for pattern, draft_path in DRAFT_PATHS:
+        text = pattern.sub(draft_path, text)
+    return DRAFT_BANNER.format(snapshot=snapshot) + text
+
+
 def run(pdf=True):
-    data = json.loads((config.ROOT / "outputs" / "key_numbers.json").read_text(encoding="utf-8"))
+    """Write README.md and the report; in draft mode write *_draft files and leave the published ones alone."""
+    data = json.loads(config.KEY_NUMBERS.read_text(encoding="utf-8"))
+    suffix = "_draft" if config.DRAFT else ""
 
     readme = render((TEMPLATES / "README.md").read_text(encoding="utf-8"), data)
-    (config.ROOT / "README.md").write_text(readme, encoding="utf-8")
-
     report_md = render((TEMPLATES / "economic_analysis.md").read_text(encoding="utf-8"), data)
+    if config.DRAFT:
+        readme, report_md = as_draft(readme), as_draft(report_md)
+    (config.ROOT / f"README{suffix}.md").write_text(readme, encoding="utf-8")
     config.REPORT.mkdir(parents=True, exist_ok=True)
-    md_path = config.REPORT / "economic_analysis.md"
+    md_path = config.REPORT / f"economic_analysis{suffix}.md"
     md_path.write_text(report_md, encoding="utf-8")
 
     body = markdown.markdown(report_md, extensions=["tables", "attr_list", "md_in_html", "toc"])
@@ -111,8 +137,8 @@ def run(pdf=True):
     html = ("<!doctype html><html lang='en'><head><meta charset='utf-8'>"
             "<title>Public debt and interest burdens, 2015-2024</title>"
             f"<style>{css}</style></head><body>{public_links(body)}</body></html>")
-    html_path = config.REPORT / "economic_analysis.html"
+    html_path = config.REPORT / f"economic_analysis{suffix}.html"
     html_path.write_text(html, encoding="utf-8")
     if pdf:
-        return to_pdf(html_path, config.REPORT / "economic_analysis.pdf")
+        return to_pdf(html_path, config.REPORT / f"economic_analysis{suffix}.pdf")
     return md_path

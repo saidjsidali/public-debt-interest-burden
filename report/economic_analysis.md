@@ -223,7 +223,7 @@ The first term, the *net-interest-to-debt factor*, uses net interest and end-yea
 | End year 2025 (mostly estimates) | 181 | 6.6 | 1.1 | 12 | 0.52 |
 | Adding Brunei (repeated-zero case) | 182 | 5.8 | 0.9 | 11 | 0.54 |
 
-<p class="table-note">Changes since 2015 use countries with values in both years for that measure (149 for FPP, 83 for the World Bank series). Dropping the top and bottom 5% of 2024 burdens gives a rank correlation of 0.52.</p>
+<p class="table-note">Median change: the median of country changes since 2015, not the change in the median; countries with values in both years (149 for FPP, 83 for World Bank). Trimming the top and bottom 5% of 2024 burdens gives a rank correlation of 0.52.</p>
 
 ## Appendix B. Additional figures
 

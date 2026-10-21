@@ -40,7 +40,7 @@ pytest
 
 `run.py` first checks the input files against `data/snapshot_manifest.json`, then builds the SQLite database, runs the data checks, the SQL queries and the statistics, draws the charts and writes this README and the report. After a run, `data/processed/fiscal.sqlite` contains the tables (`panel` has one row per country and year).
 
-`python run.py --refresh` only downloads a **new** snapshot into `data/snapshots/<date>/`. It does not change the published results: a new IMF vintage needs a new review of the numbers, the flagged cases and the text.
+`python run.py --refresh` only downloads a **new** snapshot into `data/snapshots/<date>/`. It does not change the published results: a new IMF vintage needs a new review of the numbers, the flagged cases and the text. To look at a new snapshot, run `SNAPSHOT_DIR=data/snapshots/<date> python run.py` (PowerShell: `$env:SNAPSHOT_DIR="data/snapshots/<date>"; python run.py`). This is **draft mode**: it checks the new files against their own manifest and writes everything to separate files (`outputs_draft/`, `audit/draft/`, `README_draft.md`, `report/economic_analysis_draft.*`), each marked as an unreviewed draft. The published files are not changed.
 
 **What CI checks.** On every push, GitHub Actions installs the pinned packages on Ubuntu 24.04, runs `python run.py --no-pdf` and `pytest`, compares the key numbers with the committed ones (with a small numeric tolerance) and checks that the README and Markdown report are unchanged. It does not rebuild or check the PDF; the PDF is built locally with Chrome or Edge and its links are checked by a test.
 

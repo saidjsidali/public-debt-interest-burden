@@ -11,6 +11,7 @@ import json
 
 import numpy as np
 import pandas as pd
+from matplotlib import patheffects
 from matplotlib.transforms import blended_transform_factory
 
 import config
@@ -41,7 +42,7 @@ def table(name):
 
 
 def numbers():
-    return json.loads((config.ROOT / "outputs" / "key_numbers.json").read_text(encoding="utf-8"))
+    return json.loads(config.KEY_NUMBERS.read_text(encoding="utf-8"))
 
 
 def short(name):
@@ -54,15 +55,20 @@ def _line_with_forecast(ax, series, colour, lw=2.2, zorder=4):
     ax.plot(fut.index, fut.values, color=colour, lw=lw, ls=DASH, zorder=zorder)
 
 
-def _annotate(ax, x, y, text, dx=6, dy=0, ha="left", colour=INK, size=8.5):
+HALO = [patheffects.withStroke(linewidth=2.5, foreground="white")]  # keeps labels readable over dots and lines
+
+
+def _annotate(ax, x, y, text, dx=6, dy=0, ha="left", colour=INK, size=8.5, leader=False):
+    line = dict(arrowstyle="-", color=TEXT_SOFT, lw=0.6, shrinkA=1, shrinkB=3) if leader else None
     ax.annotate(text, (x, y), xytext=(dx, dy), textcoords="offset points", ha=ha, va="center",
-                fontsize=size, color=colour, zorder=6)
+                fontsize=size, color=colour, zorder=6, arrowprops=line, path_effects=HALO)
 
 
 def _label_points(ax, df, x, y, positions):
+    """positions: name -> (dx, dy, ha) or (dx, dy, ha, True) for a thin line from label to dot."""
     for _, r in df[df["name"].isin(positions)].iterrows():
-        dx, dy, ha = positions[r["name"]]
-        _annotate(ax, r[x], r[y], short(r["name"]), dx=dx, dy=dy, ha=ha)
+        dx, dy, ha, *leader = positions[r["name"]]
+        _annotate(ax, r[x], r[y], short(r["name"]), dx=dx, dy=dy, ha=ha, leader=bool(leader))
 
 
 # --- Figure 3: highest burdens -------------------------------------------------
@@ -181,7 +187,7 @@ LABELS_FIG4 = {  # name: (dx, dy, ha) in points
     "Pakistan": (6, 0, "left"), "Egypt, Arab Rep.": (-6, 0, "right"), "Sri Lanka": (6, 0, "left"),
     "Bahrain": (6, 0, "left"), "Malawi": (6, 0, "left"), "Bangladesh": (-6, 0, "right"),
     "Nigeria": (-6, 0, "right"), "Kenya": (6, 0, "left"), "Costa Rica": (-6, 0, "right"),
-    "India": (6, 3, "left"), "Brazil": (6, -3, "left"), "China": (0, -10, "center"),
+    "India": (6, 3, "left"), "Brazil": (6, -3, "left"), "China": (-6, -20, "right", True),
     "Zambia": (6, 0, "left"), "Norway": (-6, 0, "right"), "Canada": (0, -10, "center"),
 }
 
@@ -207,9 +213,9 @@ def fig4_debt_vs_burden():
     ax.axvline(md, color=TEXT_SOFT, lw=0.9, ls=(0, (3, 2)), zorder=2)
     ax.axhline(mb, color=TEXT_SOFT, lw=0.9, ls=(0, (3, 2)), zorder=2)
     corner = dict(fontsize=8.5, color=TEXT_SOFT, style="italic", linespacing=1.2)
-    ax.text(md - 3, 79, "Below-median debt,\nabove-median burden", va="top", ha="right", **corner)
-    ax.text(md + 3, 79, "Above-median debt,\nabove-median burden", va="top", ha="left", **corner)
-    ax.text(298, -1.5, "Above-median debt,\nbelow-median burden", va="top", ha="right", **corner)
+    ax.text(md - 3, 79, "Debt below median,\nburden above", va="top", ha="right", **corner)
+    ax.text(md + 3, 79, "Debt and burden\nabove median", va="top", ha="left", **corner)
+    ax.text(298, -1.5, "Debt above median,\nburden below", va="top", ha="right", **corner)
     _label_points(ax, shown, "debt_gdp", "interest_burden", LABELS_FIG4)
     style.value_axis(ax, [-10, 0, 10, 20, 30, 40, 50, 60, 70, 80], unit="%", zero=0)
     ax.set_xlim(0, 300)
@@ -378,9 +384,9 @@ def figA1_decomposition():
 
 LABELS_FIGA2 = {
     "India": (19, 0, "left"), "Pakistan": (-10, 0, "right"), "Egypt, Arab Rep.": (8, 0, "left"),
-    "Nigeria": (0, 12, "center"), "Bangladesh": (0, -14, "center"), "Indonesia": (13, -9, "left"),
+    "Nigeria": (0, 12, "center"), "Bangladesh": (0, -14, "center"), "Indonesia": (15, -9, "left"),
     "Brazil": (9, 0, "left"), "Mexico": (8, 0, "left"), "United States": (-13, 0, "right"),
-    "China": (0, -21, "center"), "Sri Lanka": (6, 0, "left"), "Kenya": (6, 0, "left"),
+    "China": (0, 0, "center"), "Sri Lanka": (6, 0, "left"), "Kenya": (6, 0, "left"),
     "Japan": (-9, 0, "right"), "Germany": (8, 3, "left"),
 }
 
@@ -424,7 +430,7 @@ def figA2_interest_vs_health():
 
 LABELS_FIGA3 = {
     "Canada": (-6, 0, "right"), "Norway": (0, 9, "center"), "Brazil": (-6, 3, "right"),
-    "Honduras": (-5, 8, "right"), "Myanmar": (-6, 3, "right"), "United States": (6, -4, "left"),
+    "Honduras": (-5, 8, "right"), "Myanmar": (-6, 3, "right"), "United States": (12, -16, "left", True),
     "Pakistan": (-6, 0, "right"),
 }
 

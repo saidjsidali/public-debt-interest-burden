@@ -3,9 +3,11 @@
     python run.py              # snapshot in data/raw -> SQL -> checks -> statistics -> figures -> report
     python run.py --no-pdf     # the same, without printing the PDF (needs Chrome or Edge)
     python run.py --refresh    # only download a NEW snapshot into data/snapshots/<date>/ and stop
+    SNAPSHOT_DIR=data/snapshots/<date> python run.py   # analyse a new snapshot in draft mode
 
-Reproducing the snapshot is the default. Downloading new data is a separate
-step: it does not change the published results, and a new vintage needs a new
+Reproducing the published snapshot is the default. Downloading new data is a
+separate step: it does not change the published results. In draft mode all
+outputs go to *_draft folders and files, because a new vintage needs a new
 review of the numbers, the flagged cases and the report text before use.
 """
 
@@ -52,11 +54,19 @@ def main():
 
     if args.refresh:
         out = step("Downloading a new snapshot (the published one is not changed)", acquire.main)
-        print(f"Saved to {out}. To analyse it, point config.DATA_RAW to that folder and review "
-              "audit/reviewed_cases.csv and the report text before publishing anything.")
+        rel = out.relative_to(config.ROOT).as_posix()
+        print(f"Saved to {rel}. To analyse it in draft mode (published files are not changed):\n"
+              f"    SNAPSHOT_DIR={rel} python run.py\n"
+              "Then review the flagged cases, audit/reviewed_cases.csv and the report text before "
+              "publishing anything.")
         return
 
-    step("Checking the input files against data/snapshot_manifest.json", snapshot.check_inputs)
+    if config.DRAFT:
+        print(f"DRAFT MODE: analysing {config.DATA_RAW}. Outputs go to *_draft folders and files; "
+              "the published results are not changed.")
+    manifest = config.SNAPSHOT_MANIFEST.relative_to(config.ROOT).as_posix() \
+        if config.SNAPSHOT_MANIFEST.is_relative_to(config.ROOT) else config.SNAPSHOT_MANIFEST
+    step(f"Checking the input files against {manifest}", snapshot.check_inputs)
     clear_outputs()
     step("Loading the snapshot into SQLite and building the panel", database.build)
     step("Running data-quality checks", validate.run)
@@ -64,7 +74,11 @@ def main():
     step("Estimating statistics and decompositions", analyze.run, tables)
     step("Drawing figures", figures.run)
     step("Writing README and report", build_report.run, pdf=not args.no_pdf)
-    print("Finished. See README.md, report/ and outputs/.")
+    if config.DRAFT:
+        print("Finished (draft). See README_draft.md, report/economic_analysis_draft.*, outputs_draft/ "
+              "and audit/draft/.")
+    else:
+        print("Finished. See README.md, report/ and outputs/.")
 
 
 if __name__ == "__main__":

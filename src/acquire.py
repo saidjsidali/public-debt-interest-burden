@@ -105,7 +105,7 @@ def fetch_wb_countries(rec):
 def main(out_dir=None):
     stamp = datetime.now(timezone.utc)
     out_dir = out_dir or config.SNAPSHOTS / stamp.strftime("%Y-%m-%d")
-    if out_dir.resolve() == config.DATA_RAW.resolve():
+    if out_dir.resolve() == config.PUBLISHED_RAW.resolve():
         raise ValueError("The published snapshot in data/raw/ is never overwritten.")
     if out_dir.exists() and any(out_dir.iterdir()):
         raise FileExistsError(f"{out_dir} already contains files; choose another folder.")
