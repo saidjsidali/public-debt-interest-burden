@@ -4,12 +4,11 @@ Issues found while building and reviewing this project, how each was fixed, and 
 verified. Automated data checks are reported separately in
 [validation_report.md](validation_report.md), which is regenerated on every run.
 
-**Independence.** The reviews below were carried out by the same AI system that wrote the code
-and the text, working through the roles one at a time (data and code, econometrics, economic
-interpretation, communication, reproducibility). They are not independent expert reviews. The
-automated tests, the cross-implementation checks (SQL against pandas) and the clean-machine run
-on GitHub Actions are the parts that do not depend on that judgement. A human review is still
-recommended before relying on the results.
+**Independence.** These are self-reviews, carried out one role at a time (data and code,
+econometrics, economic interpretation, communication, reproducibility). They are not independent
+expert reviews. The automated tests, the cross-implementation checks (SQL against pandas) and the
+clean-machine run on GitHub Actions are the parts that do not depend on the author's judgement.
+An outside review is still recommended before relying on the results.
 
 Severity: **High** would change a conclusion or a published number; **Medium** would mislead
 a reader or break reproduction; **Low** is presentation.
