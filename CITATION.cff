@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this analysis or its code, please cite it as below."
+title: "The cost of public debt: government interest burdens across 181 economies, 2015-2024"
+authors:
+  - family-names: Saidj
+    given-names: Sidali
+version: 1.0.0
+date-released: 2026-10-21
+repository-code: "https://github.com/saidjsidali/public-debt-interest-burden"
+license: MIT
+keywords:
+  - public debt
+  - fiscal policy
+  - interest payments
+  - debt affordability
+  - sovereign risk

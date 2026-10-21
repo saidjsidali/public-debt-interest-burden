@@ -1,0 +1,21 @@
+variable,definition,unit,source,source_code,derivation_or_notes
+iso3,ISO 3166-1 alpha-3 code (World Bank convention),code,World Bank,,IMF codes UVK and WBG mapped to XKX (Kosovo) and PSE (West Bank and Gaza)
+name,Economy name,text,World Bank,,
+region,World Bank region,text,World Bank,,Classification at retrieval date
+income_group,World Bank income group,text,World Bank,,Current classification held fixed for all years
+year,Calendar or fiscal year as reported by the source,year,,,
+period_type,"historical (to 2024), estimate (2025) or projection (2026+)",text,derived,,Set in sql/02_build_panel.sql
+revenue_gdp,General government revenue,% of GDP,IMF Fiscal Monitor Oct-2026,GGR_G01_GDP_PT,
+debt_gdp,General government gross debt,% of GDP,IMF Fiscal Monitor Oct-2026,G_XWDG_G01_GDP_PT,
+primary_balance_gdp,General government primary balance,% of GDP,IMF Fiscal Monitor Oct-2026,GGXONLB_G01_GDP_PT,Overall balance excluding net interest
+overall_balance_gdp,General government net lending/borrowing,% of GDP,IMF Fiscal Monitor Oct-2026,GGXCNL_G01_GDP_PT,
+net_interest_gdp,Net interest paid by general government,% of GDP,derived,,primary_balance_gdp - overall_balance_gdp
+interest_burden,Net interest as a share of revenue (primary measure),% of revenue,derived,,100 * net_interest_gdp / revenue_gdp
+implicit_rate,Net interest divided by end-year gross debt,%,derived,,100 * net_interest_gdp / debt_gdp; not meaningful when net interest is negative
+gross_interest_gdp_fpp,Interest paid on public debt (gross),% of GDP,IMF Public Finances in Modern History Dec-2025,ie,Cross-check
+interest_burden_gross,Gross interest as a share of revenue,% of revenue,derived,,100 * ie / rev (both FPP)
+interest_burden_wb,"Interest payments, central government",% of revenue,World Bank WDI,GC.XPN.INTP.RV.ZS,Cross-check; central government only; coverage falls after 2019
+gdp_usd_bn,GDP at current prices,US$ billions,IMF World Economic Outlook Oct-2026,NGDPD,Used only to weight aggregates
+health_gdp,Domestic general government health expenditure,% of GDP,World Bank WDI (WHO),SH.XPD.GHED.GD.ZS,Latest year mostly 2023
+education_gdp,Government expenditure on education,% of GDP,World Bank WDI (UNESCO),SE.XPD.TOTL.GD.ZS,Coverage thinner than health
+population,Total population,persons,World Bank WDI,SP.POP.TOTL,

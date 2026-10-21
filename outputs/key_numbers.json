@@ -1,0 +1,1658 @@
+{
+  "years": {
+    "start": 2015,
+    "break": 2021,
+    "end": 2024,
+    "estimate": 2025,
+    "forecast_end": 2027
+  },
+  "sample": {
+    "countries": 181,
+    "by_income": {
+      "High income": 61,
+      "Upper middle income": 55,
+      "Lower middle income": 45,
+      "Low income": 20
+    },
+    "excluded_with_some_data": 12
+  },
+  "top20_by_income": {
+    "High income": 2,
+    "Upper middle income": 4,
+    "Lower middle income": 10,
+    "Low income": 4
+  },
+  "top20_low_and_lower_middle": 14,
+  "median_burden": {
+    "All countries": {
+      "2015": 4.502687650768331,
+      "2016": 4.7993632064430365,
+      "2017": 4.886142193043637,
+      "2018": 5.148256178189232,
+      "2019": 5.079612669225511,
+      "2020": 5.374798467292963,
+      "2021": 5.385043109278692,
+      "2022": 4.933619214894243,
+      "2023": 5.314117803462701,
+      "2024": 5.828114468199261,
+      "2025": 6.614689966317081,
+      "2026": 6.322138588866187,
+      "2027": 6.627087484836216
+    },
+    "High income": {
+      "2015": 3.9571407074645597,
+      "2016": 3.9743455731927515,
+      "2017": 3.4252051335999325,
+      "2018": 3.4909521733274684,
+      "2019": 2.7826063730831736,
+      "2020": 3.142366667636697,
+      "2021": 2.620644806028806,
+      "2022": 2.6480493715589293,
+      "2023": 2.2238352504142607,
+      "2024": 2.2851972694900224,
+      "2025": 2.590049563956265,
+      "2026": 2.962202702029108,
+      "2027": 3.1266959901378826
+    },
+    "Upper middle income": {
+      "2015": 6.674519033876588,
+      "2016": 6.169921661237745,
+      "2017": 7.159736731427438,
+      "2018": 7.252666239045903,
+      "2019": 7.150339500956736,
+      "2020": 7.199586822258585,
+      "2021": 6.423740784524312,
+      "2022": 6.236887627093388,
+      "2023": 7.086103441052637,
+      "2024": 7.366800251814749,
+      "2025": 7.110678767902762,
+      "2026": 7.590169816997401,
+      "2027": 8.371235562840702
+    },
+    "Lower middle income": {
+      "2015": 4.277781176575447,
+      "2016": 5.589755633816167,
+      "2017": 5.724446789557223,
+      "2018": 6.760397043238095,
+      "2019": 7.547372713673507,
+      "2020": 6.324103670505572,
+      "2021": 6.833397677667272,
+      "2022": 7.970421144380615,
+      "2023": 7.014725875028509,
+      "2024": 7.907784065082914,
+      "2025": 8.756458177885236,
+      "2026": 9.233363645464035,
+      "2027": 8.901781033091076
+    },
+    "Low income": {
+      "2015": 3.5892158596919184,
+      "2016": 4.55627979248255,
+      "2017": 4.487989471002951,
+      "2018": 5.40088747572031,
+      "2019": 5.517826240157966,
+      "2020": 5.948263642001088,
+      "2021": 6.242335606497933,
+      "2022": 7.641570356779615,
+      "2023": 8.449274175998863,
+      "2024": 8.427841885784884,
+      "2025": 8.441174393804477,
+      "2026": 10.494542836305936,
+      "2027": 10.507739219353027
+    }
+  },
+  "median_burden_gross": {
+    "All countries": {
+      "2015": 5.696723242579243,
+      "2021": 6.234546188522046,
+      "2024": 7.358588155090675
+    },
+    "High income": {
+      "2015": 4.788649362817951,
+      "2021": 3.336722531024705,
+      "2024": 4.6135909098808225
+    },
+    "Upper middle income": {
+      "2015": 8.665215576357333,
+      "2021": 8.088289702440543,
+      "2024": 10.188664413919266
+    },
+    "Lower middle income": {
+      "2015": 5.511964145809827,
+      "2021": 9.343101583282579,
+      "2024": 10.012994809764258
+    },
+    "Low income": {
+      "2015": 3.681093488515526,
+      "2021": 6.250125024473394,
+      "2024": 9.093263816838794
+    }
+  },
+  "median_debt": {
+    "All countries": {
+      "2015": 44.508725715967,
+      "2021": 56.694681334208,
+      "2024": 54.516579460947
+    },
+    "High income": {
+      "2015": 51.599289840413,
+      "2021": 61.873492145919,
+      "2024": 57.467655470871
+    },
+    "Upper middle income": {
+      "2015": 45.483283756638,
+      "2021": 58.366612459945,
+      "2024": 54.516579460947
+    },
+    "Lower middle income": {
+      "2015": 39.280503484042,
+      "2021": 54.450419625774,
+      "2024": 52.530210007656
+    },
+    "Low income": {
+      "2015": 34.4532429050875,
+      "2021": 53.6652139098795,
+      "2024": 52.709404246826
+    }
+  },
+  "median_revenue": {
+    "All countries": {
+      "2015": 25.790097206931,
+      "2021": 26.075261631192,
+      "2024": 26.77061953052
+    },
+    "High income": {
+      "2015": 35.534858884765,
+      "2021": 36.968177083757,
+      "2024": 36.701441837051
+    },
+    "Upper middle income": {
+      "2015": 26.134330544063,
+      "2021": 27.113666424352,
+      "2024": 27.305328095955
+    },
+    "Lower middle income": {
+      "2015": 20.894943144332,
+      "2021": 20.943431626796,
+      "2024": 20.533069514258
+    },
+    "Low income": {
+      "2015": 15.4936397995445,
+      "2021": 17.089677831461,
+      "2024": 16.786573246378502
+    }
+  },
+  "median_implicit_rate": {
+    "All countries": {
+      "2015": 2.6510858110088296,
+      "2021": 2.279667352751851,
+      "2024": 3.1336360366757647
+    },
+    "High income": {
+      "2015": 2.5758387003743133,
+      "2021": 1.7597070135187955,
+      "2024": 1.8346725103481858
+    },
+    "Upper middle income": {
+      "2015": 3.3450746096981088,
+      "2021": 2.8294205423567904,
+      "2024": 3.5399812366759758
+    },
+    "Lower middle income": {
+      "2015": 2.329416216408105,
+      "2021": 2.216866442148968,
+      "2024": 3.1768559869894215
+    },
+    "Low income": {
+      "2015": 1.506677169379528,
+      "2021": 2.1218338867309585,
+      "2024": 3.3735781587527596
+    }
+  },
+  "aggregate_burden": {
+    "All countries": {
+      "2015": 4.887867227033232,
+      "2016": 4.901299229039486,
+      "2017": 4.973524940286263,
+      "2018": 5.047677796231429,
+      "2019": 5.029265296688256,
+      "2020": 4.877610257224838,
+      "2021": 4.929398021288802,
+      "2022": 5.619881283173816,
+      "2023": 6.104783552109308,
+      "2024": 6.357600840439466,
+      "2025": 6.508473741965127,
+      "2026": 7.321405476828776,
+      "2027": 7.655331749791439
+    },
+    "High income": {
+      "2015": 3.886659470987348,
+      "2016": 3.94817566143755,
+      "2017": 3.842536741324912,
+      "2018": 3.9633199875857668,
+      "2019": 3.8562581571301093,
+      "2020": 3.469210709779098,
+      "2021": 3.6962664446800044,
+      "2022": 4.513547161568906,
+      "2023": 4.889200752388281,
+      "2024": 5.160835072819123,
+      "2025": 5.1772044896684655,
+      "2026": 5.9636734202924,
+      "2027": 6.370003294174573
+    },
+    "Upper middle income": {
+      "2015": 5.912607627524817,
+      "2016": 5.54136860518515,
+      "2017": 6.072672771546818,
+      "2018": 5.962494946796178,
+      "2019": 5.982361715099187,
+      "2020": 6.227343861021398,
+      "2021": 5.924324001934928,
+      "2022": 6.43854602140087,
+      "2023": 7.031851375177129,
+      "2024": 7.341621922823654,
+      "2025": 7.922246734459445,
+      "2026": 8.671928284935507,
+      "2027": 8.948279659160766
+    },
+    "Lower middle income": {
+      "2015": 19.94217065872444,
+      "2016": 21.496450720502164,
+      "2017": 21.28285001222352,
+      "2018": 21.974136493359545,
+      "2019": 23.636497610765165,
+      "2020": 28.030132625702464,
+      "2021": 24.439683711999855,
+      "2022": 22.956158726829663,
+      "2023": 24.176661210146502,
+      "2024": 23.43164247894522,
+      "2025": 24.225972442556074,
+      "2026": 25.451637145263938,
+      "2027": 24.656278687476537
+    },
+    "Low income": {
+      "2015": 4.49043134541401,
+      "2016": 5.406904935174922,
+      "2017": 5.576590306889754,
+      "2018": 6.194782436320304,
+      "2019": 5.9467455389129915,
+      "2020": 6.152973206984237,
+      "2021": 7.386826459615274,
+      "2022": 7.709540787356643,
+      "2023": 9.213765761070237,
+      "2024": 10.1179523825686,
+      "2025": 11.523191741094463,
+      "2026": 12.318015586925403,
+      "2027": 12.115593848893877
+    }
+  },
+  "high_burden": {
+    "threshold": 20.0,
+    "countries": {
+      "2015": 12,
+      "2016": 11,
+      "2017": 14,
+      "2018": 13,
+      "2019": 14,
+      "2020": 16,
+      "2021": 16,
+      "2022": 14,
+      "2023": 17,
+      "2024": 20,
+      "2025": 22,
+      "2026": 21,
+      "2027": 22
+    },
+    "population_bn": {
+      "2015": 2.072234062,
+      "2016": 1.940991277,
+      "2017": 2.004032061,
+      "2018": 2.031451871,
+      "2019": 2.289580478,
+      "2020": 2.325751478,
+      "2021": 2.351968793,
+      "2022": 2.50598734,
+      "2023": 2.583140964,
+      "2024": 2.658537974,
+      "2025": 2.78632692,
+      "2026": 2.73414268,
+      "2027": 2.718466774
+    }
+  },
+  "change": {
+    "countries_up_start_end": 113,
+    "countries_up_break_end": 116,
+    "median_change_start_end": 0.9347618722462085,
+    "median_change_break_end": 0.5521513975286965,
+    "largest_increases": [
+      {
+        "name": "Pakistan",
+        "burden_start": 32.722969165528674,
+        "burden_end": 61.25670839780127,
+        "change_start_end": 28.533739232272595
+      },
+      {
+        "name": "Egypt, Arab Rep.",
+        "burden_start": 30.92867756314828,
+        "burden_end": 55.78025859992326,
+        "change_start_end": 24.851581036774977
+      },
+      {
+        "name": "Bahrain",
+        "burden_start": 12.856049936778014,
+        "burden_end": 36.04907013867364,
+        "change_start_end": 23.193020201895628
+      },
+      {
+        "name": "Guinea-Bissau",
+        "burden_start": 3.6810934885153612,
+        "burden_end": 25.390597171942733,
+        "change_start_end": 21.70950368342737
+      },
+      {
+        "name": "Malawi",
+        "burden_start": 14.949448391189822,
+        "burden_end": 35.53753789135209,
+        "change_start_end": 20.588089500162265
+      },
+      {
+        "name": "Sri Lanka",
+        "burden_start": 36.08938922247533,
+        "burden_end": 55.55100263637913,
+        "change_start_end": 19.461613413903798
+      },
+      {
+        "name": "Sierra Leone",
+        "burden_start": 4.995275075635222,
+        "burden_end": 24.019804331446238,
+        "change_start_end": 19.024529255811018
+      },
+      {
+        "name": "Angola",
+        "burden_start": 7.382728323140869,
+        "burden_end": 25.5866098244467,
+        "change_start_end": 18.20388150130583
+      },
+      {
+        "name": "Niger",
+        "burden_start": 2.6518362218439915,
+        "burden_end": 19.724122169673112,
+        "change_start_end": 17.072285947829123
+      },
+      {
+        "name": "Lao PDR",
+        "burden_start": 3.7841072600822696,
+        "burden_end": 19.62679778619369,
+        "change_start_end": 15.842690526111422
+      }
+    ],
+    "largest_decreases": [
+      {
+        "name": "Lebanon",
+        "burden_start": 46.57294656608783,
+        "burden_end": 4.106167331799972,
+        "change_start_end": -42.466779234287856
+      },
+      {
+        "name": "Gambia, The",
+        "burden_start": 33.62877052601167,
+        "burden_end": 14.51935184573222,
+        "change_start_end": -19.10941868027945
+      },
+      {
+        "name": "Jamaica",
+        "burden_start": 27.5712669724999,
+        "burden_end": 17.004805829873856,
+        "change_start_end": -10.566461142626043
+      },
+      {
+        "name": "Barbados",
+        "burden_start": 27.357848919984992,
+        "burden_end": 17.85838592392884,
+        "change_start_end": -9.499462996056153
+      },
+      {
+        "name": "Mongolia",
+        "burden_start": 12.218057887724948,
+        "burden_end": 3.4526052235396985,
+        "change_start_end": -8.765452664185249
+      }
+    ]
+  },
+  "top_burden": [
+    {
+      "name": "Pakistan",
+      "income_group": "Lower middle income",
+      "interest_burden": 61.25670839780127,
+      "debt_gdp": 70.279770742758,
+      "revenue_gdp": 12.651685834841,
+      "implicit_rate": 11.027364229205432
+    },
+    {
+      "name": "Egypt, Arab Rep.",
+      "income_group": "Lower middle income",
+      "interest_burden": 55.78025859992326,
+      "debt_gdp": 90.925932701282,
+      "revenue_gdp": 15.816461992279,
+      "implicit_rate": 9.702912181980192
+    },
+    {
+      "name": "Sri Lanka",
+      "income_group": "Upper middle income",
+      "interest_burden": 55.55100263637913,
+      "debt_gdp": 100.17908692991,
+      "revenue_gdp": 13.592596101948,
+      "implicit_rate": 7.537325054907329
+    },
+    {
+      "name": "Bahrain",
+      "income_group": "High income",
+      "interest_burden": 36.04907013867364,
+      "debt_gdp": 133.6699731396,
+      "revenue_gdp": 17.888198595688,
+      "implicit_rate": 4.8242167682417305
+    },
+    {
+      "name": "Malawi",
+      "income_group": "Low income",
+      "interest_burden": 35.53753789135209,
+      "debt_gdp": 86.54676476078,
+      "revenue_gdp": 18.520264666113,
+      "implicit_rate": 7.604728023618942
+    },
+    {
+      "name": "Costa Rica",
+      "income_group": "High income",
+      "interest_burden": 32.10040220953868,
+      "debt_gdp": 58.9099245269,
+      "revenue_gdp": 14.873914429171,
+      "implicit_rate": 8.104893011509942
+    },
+    {
+      "name": "Kenya",
+      "income_group": "Lower middle income",
+      "interest_burden": 29.97842909287005,
+      "debt_gdp": 67.305826354909,
+      "revenue_gdp": 17.50082369169,
+      "implicit_rate": 7.794974529272435
+    },
+    {
+      "name": "Zambia",
+      "income_group": "Lower middle income",
+      "interest_burden": 28.23624799967882,
+      "debt_gdp": 125.50612563071,
+      "revenue_gdp": 23.051837536199,
+      "implicit_rate": 5.18618034179164
+    },
+    {
+      "name": "Bangladesh",
+      "income_group": "Lower middle income",
+      "interest_burden": 27.51132740392703,
+      "debt_gdp": 40.971764493176,
+      "revenue_gdp": 8.3381745972143,
+      "implicit_rate": 5.598837495350645
+    },
+    {
+      "name": "Angola",
+      "income_group": "Lower middle income",
+      "interest_burden": 25.5866098244467,
+      "debt_gdp": 54.991699211061,
+      "revenue_gdp": 17.952538511596,
+      "implicit_rate": 8.352980628795839
+    },
+    {
+      "name": "Guinea-Bissau",
+      "income_group": "Low income",
+      "interest_burden": 25.390597171942733,
+      "debt_gdp": 82.427157841474,
+      "revenue_gdp": 13.103265670496,
+      "implicit_rate": 4.036287905454252
+    },
+    {
+      "name": "Ghana",
+      "income_group": "Lower middle income",
+      "interest_burden": 25.26882025387154,
+      "debt_gdp": 70.135671673894,
+      "revenue_gdp": 15.775567628701,
+      "implicit_rate": 5.683698085418332
+    },
+    {
+      "name": "Sierra Leone",
+      "income_group": "Low income",
+      "interest_burden": 24.019804331446238,
+      "debt_gdp": 46.961377640548,
+      "revenue_gdp": 12.419166262269,
+      "implicit_rate": 6.352154867829787
+    },
+    {
+      "name": "Mexico",
+      "income_group": "Upper middle income",
+      "interest_burden": 23.808633500829966,
+      "debt_gdp": 59.000934204542,
+      "revenue_gdp": 24.925428506747,
+      "implicit_rate": 10.058152471128071
+    },
+    {
+      "name": "Nigeria",
+      "income_group": "Lower middle income",
+      "interest_burden": 22.966467093708197,
+      "debt_gdp": 39.333030536504,
+      "revenue_gdp": 10.755427788827,
+      "implicit_rate": 6.280069829900403
+    }
+  ],
+  "quadrants": {
+    "median_debt": 54.516579460947,
+    "median_burden": 5.828114468199261,
+    "counts": {
+      "High debt, high burden": 65,
+      "Low debt, low burden": 64,
+      "High debt, low burden": 26,
+      "Low debt, high burden": 26
+    },
+    "low_debt_high_burden_lic_lmic_share": 0.6538461538461539,
+    "high_debt_low_burden_hic_share": 0.6153846153846154
+  },
+  "correlation": {
+    "All countries": {
+      "countries": 181,
+      "spearman": 0.5332786918422276,
+      "ci_low": 0.41382768989438534,
+      "ci_high": 0.6463372150134302,
+      "pearson": 0.31672745595593765
+    },
+    "High income": {
+      "countries": 61,
+      "spearman": 0.5729772607086197,
+      "ci_low": 0.3507649532460582,
+      "ci_high": 0.7600401991468236,
+      "pearson": 0.39492639875113356
+    },
+    "Upper middle income": {
+      "countries": 55,
+      "spearman": 0.5512987012987014,
+      "ci_low": 0.2955616945736042,
+      "ci_high": 0.7406556966344982,
+      "pearson": 0.4541221734225882
+    },
+    "Lower middle income": {
+      "countries": 45,
+      "spearman": 0.6583662714097496,
+      "ci_low": 0.4089200505721365,
+      "ci_high": 0.8219019047316529,
+      "pearson": 0.4137542028391185
+    },
+    "Low income": {
+      "countries": 20,
+      "spearman": 0.4586466165413533,
+      "ci_low": -0.00844838602144563,
+      "ci_high": 0.8204405559950587,
+      "pearson": 0.09062556240281505
+    }
+  },
+  "spearman_trimmed": 0.5205939891709755,
+  "regression": {
+    "debt_only": {
+      "coef": 1.121004529727328,
+      "ci_low": 0.7398889209499029,
+      "ci_high": 1.502120138504753,
+      "p_value": 8.166162693792409e-09,
+      "r_squared": 0.24960689547781034,
+      "countries": 175
+    },
+    "debt_with_revenue": {
+      "coef": 1.0059143114135525,
+      "ci_low": 0.6116189836395314,
+      "ci_high": 1.4002096391875736,
+      "p_value": 5.72706312555548e-07,
+      "r_squared": 0.47979380004872596,
+      "countries": 175
+    },
+    "revenue": {
+      "coef": -1.3190084757141443,
+      "ci_low": -1.9109902049221874,
+      "ci_high": -0.7270267465061011,
+      "p_value": 1.259404849365268e-05,
+      "r_squared": 0.47979380004872596,
+      "countries": 175
+    },
+    "debt_full": {
+      "coef": 1.0680227236189404,
+      "ci_low": 0.7061262899118931,
+      "ci_high": 1.4299191573259877,
+      "p_value": 7.2852565952190006e-09,
+      "r_squared": 0.5359865663548976,
+      "countries": 175
+    },
+    "revenue_full": {
+      "coef": -1.2759057907508666,
+      "ci_low": -1.848802296160288,
+      "ci_high": -0.7030092853414452,
+      "p_value": 1.2708606631595112e-05,
+      "r_squared": 0.5359865663548976,
+      "countries": 175
+    },
+    "rate_on_debt": {
+      "coef": 0.10025694102540567,
+      "ci_low": -0.2638291301141041,
+      "ci_high": 0.4643430121649154,
+      "p_value": 0.5893987472446124,
+      "r_squared": 0.1177534702546944,
+      "countries": 175
+    },
+    "rate_low_income": {
+      "coef": 0.3298560383394906,
+      "ci_low": -0.3065101864117491,
+      "ci_high": 0.9662222630907303,
+      "p_value": 0.3096609132394892,
+      "r_squared": 0.1177534702546944,
+      "countries": 175
+    },
+    "rate_lower_middle": {
+      "coef": 0.6387418204107463,
+      "ci_low": 0.2504406848873958,
+      "ci_high": 1.027042955934097,
+      "p_value": 0.0012638145493835543,
+      "r_squared": 0.1177534702546944,
+      "countries": 175
+    },
+    "rate_upper_middle": {
+      "coef": 0.7982867110998746,
+      "ci_low": 0.45148547200752354,
+      "ci_high": 1.1450879501922255,
+      "p_value": 6.4353794647932035e-06,
+      "r_squared": 0.1177534702546944,
+      "countries": 175
+    },
+    "r2_full": 0.5359865663548976
+  },
+  "decomposition": {
+    "All countries": {
+      "2015-2021": {
+        "income_group": "All countries",
+        "period": "2015-2021",
+        "countries": 166.0,
+        "mean_change": 1.464975773187856,
+        "mean_rate_effect": -1.115334147839875,
+        "mean_debt_effect": 2.4242266099938967,
+        "mean_revenue_effect": 0.15608331103383416,
+        "median_change": 0.46590892665997485,
+        "median_rate_effect": -0.5764002321370227,
+        "median_debt_effect": 1.1314219503502123,
+        "median_revenue_effect": -0.04319491111559991,
+        "share_rate_largest_up": 0.18072289156626506
+      },
+      "2015-2024": {
+        "income_group": "All countries",
+        "period": "2015-2024",
+        "countries": 169.0,
+        "mean_change": 2.458876853524299,
+        "mean_rate_effect": 0.8709831997454752,
+        "mean_debt_effect": 1.9749820213435927,
+        "mean_revenue_effect": -0.3870883675647694,
+        "median_change": 1.0252797481400853,
+        "median_rate_effect": 0.3885381891631325,
+        "median_debt_effect": 0.7530906601930312,
+        "median_revenue_effect": -0.11396530694302606,
+        "share_rate_largest_up": 0.3609467455621302
+      },
+      "2021-2024": {
+        "income_group": "All countries",
+        "period": "2021-2024",
+        "countries": 170.0,
+        "mean_change": 1.0031109115562231,
+        "mean_rate_effect": 2.0244737452160897,
+        "mean_debt_effect": -0.45972795375803877,
+        "mean_revenue_effect": -0.5616348799018283,
+        "median_change": 0.5698963213580429,
+        "median_rate_effect": 1.2417041216966567,
+        "median_debt_effect": -0.19545242838882723,
+        "median_revenue_effect": -0.11547705293820948,
+        "share_rate_largest_up": 0.7235294117647059
+      }
+    },
+    "High income": {
+      "2015-2021": {
+        "income_group": "High income",
+        "period": "2015-2021",
+        "countries": 49.0,
+        "mean_change": -0.18362550468359126,
+        "mean_rate_effect": -1.458823935613343,
+        "mean_debt_effect": 1.3033976516637906,
+        "mean_revenue_effect": -0.02819922073403842,
+        "median_change": -0.714617240322152,
+        "median_rate_effect": -1.3112752728920885,
+        "median_debt_effect": 0.35186356067982766,
+        "median_revenue_effect": -0.04335365332117363,
+        "share_rate_largest_up": 0.10204081632653061
+      },
+      "2015-2024": {
+        "income_group": "High income",
+        "period": "2015-2024",
+        "countries": 52.0,
+        "mean_change": 0.2847889366216541,
+        "mean_rate_effect": -0.03822087041577787,
+        "mean_debt_effect": 0.5109430604113272,
+        "mean_revenue_effect": -0.18793325337389513,
+        "median_change": -0.36001432784063075,
+        "median_rate_effect": -0.306238337811615,
+        "median_debt_effect": -0.010193135157026112,
+        "median_revenue_effect": -0.023260565741852965,
+        "share_rate_largest_up": 0.25
+      },
+      "2021-2024": {
+        "income_group": "High income",
+        "period": "2021-2024",
+        "countries": 51.0,
+        "mean_change": 0.3888694712385952,
+        "mean_rate_effect": 1.367070046414637,
+        "mean_debt_effect": -0.8531177085299462,
+        "mean_revenue_effect": -0.12508286664609605,
+        "median_change": 0.17068899059055798,
+        "median_rate_effect": 0.45192753157953414,
+        "median_debt_effect": -0.19387540689855765,
+        "median_revenue_effect": -0.01162437085338375,
+        "share_rate_largest_up": 0.7450980392156863
+      }
+    },
+    "Upper middle income": {
+      "2015-2021": {
+        "income_group": "Upper middle income",
+        "period": "2015-2021",
+        "countries": 54.0,
+        "mean_change": 1.6467455242009539,
+        "mean_rate_effect": -0.8517727078067339,
+        "mean_debt_effect": 2.142399719903082,
+        "mean_revenue_effect": 0.35611851210460505,
+        "median_change": 0.6594441551560992,
+        "median_rate_effect": -0.5872000156411525,
+        "median_debt_effect": 1.6498886835237279,
+        "median_revenue_effect": -0.02759581772523252,
+        "share_rate_largest_up": 0.2222222222222222
+      },
+      "2015-2024": {
+        "income_group": "Upper middle income",
+        "period": "2015-2024",
+        "countries": 54.0,
+        "mean_change": 1.9012187167845727,
+        "mean_rate_effect": 1.0801116884650799,
+        "mean_debt_effect": 1.5012528683247326,
+        "mean_revenue_effect": -0.6801458400052399,
+        "median_change": 1.3723941619708033,
+        "median_rate_effect": 0.21210747914954736,
+        "median_debt_effect": 0.9408672859430448,
+        "median_revenue_effect": -0.28369466693889056,
+        "share_rate_largest_up": 0.42592592592592593
+      },
+      "2021-2024": {
+        "income_group": "Upper middle income",
+        "period": "2021-2024",
+        "countries": 54.0,
+        "mean_change": 0.25447319258361883,
+        "mean_rate_effect": 2.1244800572113007,
+        "mean_debt_effect": -0.6546708054387513,
+        "mean_revenue_effect": -1.2153360591889313,
+        "median_change": 0.4245502986172385,
+        "median_rate_effect": 1.3351974189364166,
+        "median_debt_effect": -0.30704141488200287,
+        "median_revenue_effect": -0.37218585567408136,
+        "share_rate_largest_up": 0.7777777777777778
+      }
+    },
+    "Lower middle income": {
+      "2015-2021": {
+        "income_group": "Lower middle income",
+        "period": "2015-2021",
+        "countries": 43.0,
+        "mean_change": 2.9687050625171585,
+        "mean_rate_effect": -1.4360676263559353,
+        "mean_debt_effect": 3.8925403974396584,
+        "mean_revenue_effect": 0.5122322914334357,
+        "median_change": 1.9914908967400775,
+        "median_rate_effect": 0.1512881730472773,
+        "median_debt_effect": 1.704476272711745,
+        "median_revenue_effect": 0.08908456834240248,
+        "share_rate_largest_up": 0.18604651162790697
+      },
+      "2015-2024": {
+        "income_group": "Lower middle income",
+        "period": "2015-2024",
+        "countries": 43.0,
+        "mean_change": 4.467115288782018,
+        "mean_rate_effect": 1.1037576378888947,
+        "mean_debt_effect": 3.6447993156648937,
+        "mean_revenue_effect": -0.28144166477177157,
+        "median_change": 3.3222836420992037,
+        "median_rate_effect": 1.5997121559092784,
+        "median_debt_effect": 2.479099877845343,
+        "median_revenue_effect": -0.14399980942750176,
+        "share_rate_largest_up": 0.37209302325581395
+      },
+      "2021-2024": {
+        "income_group": "Lower middle income",
+        "period": "2021-2024",
+        "countries": 45.0,
+        "mean_change": 1.479347026626181,
+        "mean_rate_effect": 2.211167340009571,
+        "mean_debt_effect": 0.0021998033892636215,
+        "mean_revenue_effect": -0.7340201167726537,
+        "median_change": 1.0201217199487473,
+        "median_rate_effect": 1.8846290359079731,
+        "median_debt_effect": -0.1482174911375941,
+        "median_revenue_effect": -0.5251976707901063,
+        "share_rate_largest_up": 0.6444444444444445
+      }
+    },
+    "Low income": {
+      "2015-2021": {
+        "income_group": "Low income",
+        "period": "2015-2021",
+        "countries": 20.0,
+        "mean_change": 1.7802526041795361,
+        "mean_rate_effect": -0.2958230770748317,
+        "mean_debt_effect": 2.7743155181394696,
+        "mean_revenue_effect": -0.6982398368851024,
+        "median_change": 2.734218041490802,
+        "median_rate_effect": 0.405599396949401,
+        "median_debt_effect": 2.099935631038766,
+        "median_revenue_effect": -0.3193744772296655,
+        "share_rate_largest_up": 0.25
+      },
+      "2015-2024": {
+        "income_group": "Low income",
+        "period": "2015-2024",
+        "countries": 20.0,
+        "mean_change": 5.299469770864337,
+        "mean_rate_effect": 2.169801820613448,
+        "mean_debt_effect": 3.4704448501276053,
+        "mean_revenue_effect": -0.3407768998767183,
+        "median_change": 4.714530425706436,
+        "median_rate_effect": 2.3683235587211615,
+        "median_debt_effect": 1.9807690189595941,
+        "median_revenue_effect": -0.6901683966583945,
+        "share_rate_largest_up": 0.45
+      },
+      "2021-2024": {
+        "income_group": "Low income",
+        "period": "2021-2024",
+        "countries": 20.0,
+        "mean_change": 3.5192171666848004,
+        "mean_rate_effect": 3.0107755464873907,
+        "mean_debt_effect": 0.03042416686681875,
+        "mean_revenue_effect": 0.47801745333059004,
+        "median_change": 1.4048679635069674,
+        "median_rate_effect": 1.7854602167002382,
+        "median_debt_effect": 0.0016741112533395393,
+        "median_revenue_effect": -0.03758388504521935,
+        "share_rate_largest_up": 0.7
+      }
+    }
+  },
+  "robustness": {
+    "Baseline (net interest, general government)": {
+      "countries": 181,
+      "median_burden_end": 5.828114468199261,
+      "median_change_since_start": 0.9347618722462085,
+      "share_above_threshold": 11.049723756906078,
+      "spearman_debt_burden": 0.5332786918422276,
+      "baseline_median_same_countries": null
+    },
+    "Gross interest, general government (FPP)": {
+      "countries": 149,
+      "median_burden_end": 7.358588155090675,
+      "median_change_since_start": 1.154445041478085,
+      "share_above_threshold": 11.409395973154362,
+      "spearman_debt_burden": 0.4966080174133866,
+      "baseline_median_same_countries": 6.957372695478401
+    },
+    "Gross interest, central government (World Bank)": {
+      "countries": 88,
+      "median_burden_end": 6.22972946633588,
+      "median_change_since_start": 0.7084711211139396,
+      "share_above_threshold": 10.227272727272728,
+      "spearman_debt_burden": 0.5231939699200452,
+      "baseline_median_same_countries": 5.423638799628122
+    },
+    "Excluding net-creditor governments": {
+      "countries": 175,
+      "median_burden_end": 6.451036841893504,
+      "median_change_since_start": 1.0589717882408567,
+      "share_above_threshold": 11.428571428571429,
+      "spearman_debt_burden": 0.5036609941782355,
+      "baseline_median_same_countries": null
+    },
+    "Excluding small states": {
+      "countries": 142,
+      "median_burden_end": 5.892032718659753,
+      "median_change_since_start": 1.3723941619708033,
+      "share_above_threshold": 14.084507042253522,
+      "spearman_debt_burden": 0.4497674935193665,
+      "baseline_median_same_countries": null
+    },
+    "End year 2025 (estimate)": {
+      "countries": 181,
+      "median_burden_end": 6.614689966317081,
+      "median_change_since_start": 1.0668331642110502,
+      "share_above_threshold": 12.154696132596685,
+      "spearman_debt_burden": 0.5177868172343311,
+      "baseline_median_same_countries": null
+    }
+  },
+  "social_spending": {
+    "countries_health": 177,
+    "countries_interest_gt_health": 45,
+    "population_interest_gt_health_bn": 3.723516337,
+    "countries_education": 169,
+    "countries_interest_gt_education": 26,
+    "population_interest_gt_education_bn": 2.826016428,
+    "countries_both_reported": 166,
+    "countries_interest_gt_either": 48,
+    "population_interest_gt_either_bn": 3.634267634,
+    "health_year_median": 2023.0,
+    "education_year_median": 2023.0
+  },
+  "net_interest_usd_bn": {
+    "2015": 1191.26926083552,
+    "2021": 1554.4233023774405,
+    "2024": 2235.843403560301,
+    "2025": 2446.6688877783013
+  },
+  "net_interest_usd_trn": {
+    "2015": 1.19126926083552,
+    "2021": 1.5544233023774405,
+    "2024": 2.2358434035603008,
+    "2025": 2.4466688877783014
+  },
+  "derived": {
+    "rate_multiple_upper_middle": 2.2217311984389236,
+    "rate_multiple_lower_middle": 1.8940962662215284,
+    "rate_multiple_low_income": 1.3907678967954786,
+    "r2_gain_from_revenue": 0.23018690457091562,
+    "revenue_elasticity_abs": 1.3190084757141443,
+    "off_diagonal_share": 0.287292817679558,
+    "burden_multiple_low_vs_high": 3.68801503410937,
+    "revenue_ratio_high_vs_low": 2.186356994866054,
+    "off_diagonal_countries": 52,
+    "rate_effect_share_2021_2024": 2.0181953180783645,
+    "offset_2021_2024": 1.021362833659867
+  },
+  "case_studies": [
+    {
+      "name": "China",
+      "reason": "Largest economy in region"
+    },
+    {
+      "name": "Germany",
+      "reason": "Largest economy in region"
+    },
+    {
+      "name": "Brazil",
+      "reason": "Largest economy in region"
+    },
+    {
+      "name": "Saudi Arabia",
+      "reason": "Largest economy in region"
+    },
+    {
+      "name": "United States",
+      "reason": "Largest economy in region"
+    },
+    {
+      "name": "India",
+      "reason": "Largest economy in region"
+    },
+    {
+      "name": "South Africa",
+      "reason": "Largest economy in region"
+    },
+    {
+      "name": "Pakistan",
+      "reason": "Highest burden in end year"
+    },
+    {
+      "name": "Egypt, Arab Rep.",
+      "reason": "Highest burden in end year"
+    },
+    {
+      "name": "Sri Lanka",
+      "reason": "Highest burden in end year"
+    }
+  ],
+  "measure_agreement": {
+    "gross_general_government": {
+      "countries": 149,
+      "spearman": 0.9560747324505714,
+      "pearson": 0.9521436828106268,
+      "median_gap": 0.06036251577257801,
+      "within_2_points": 0.8053691275167785
+    },
+    "gross_central_government": {
+      "countries": 88,
+      "spearman": 0.9336409425522174,
+      "pearson": 0.9065826796332077,
+      "median_gap": 0.6375300433383662,
+      "within_2_points": 0.7159090909090909
+    }
+  },
+  "country": {
+    "CHN": {
+      "name": "China",
+      "burden_start": 1.7675165708230425,
+      "burden_break": 3.4240200357726254,
+      "burden_end": 3.711715264970488,
+      "burden_estimate": 3.847694938112147,
+      "burden_forecast_end": 5.003209174397934,
+      "burden_peak": 3.724962224902732,
+      "burden_peak_year": 2020,
+      "burden_max_forecast": 5.003209174397934,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 3.728182547195698,
+      "wb_end": null,
+      "debt_start": 40.879829178392,
+      "debt_end": 90.505357867769,
+      "revenue_end": 25.721605511658,
+      "implicit_rate_end": 1.0548687731466284,
+      "interest_gdp_end": 0.9547127581717004,
+      "health_gdp": 3.39381886
+    },
+    "DEU": {
+      "name": "Germany",
+      "burden_start": 2.382107579420291,
+      "burden_break": 0.976972567804798,
+      "burden_end": 1.7309957328592254,
+      "burden_estimate": 1.8167201696165585,
+      "burden_forecast_end": 2.2983391352313136,
+      "burden_peak": 2.382107579420291,
+      "burden_peak_year": 2015,
+      "burden_max_forecast": 2.2983391352313136,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 2.2637572600969644,
+      "wb_end": 2.47958940598133,
+      "debt_start": 71.019362094765,
+      "debt_end": 61.405603906139,
+      "revenue_end": 46.23587284075,
+      "implicit_rate_end": 1.303367990887207,
+      "interest_gdp_end": 0.8003409859235999,
+      "health_gdp": 9.29177761
+    },
+    "BRA": {
+      "name": "Brazil",
+      "burden_start": 22.835998787224472,
+      "burden_break": 12.295551812144588,
+      "burden_end": 15.1457619984834,
+      "burden_estimate": 18.464108946181916,
+      "burden_forecast_end": 18.616623524792598,
+      "burden_peak": 22.835998787224472,
+      "burden_peak_year": 2015,
+      "burden_max_forecast": 19.187640128300284,
+      "burden_max_forecast_year": 2026,
+      "gross_end": 20.95965135985953,
+      "wb_end": 30.0945783300769,
+      "debt_start": 71.729676542303,
+      "debt_end": 87.027886697939,
+      "revenue_end": 39.359214800807,
+      "implicit_rate_end": 6.849819321584486,
+      "interest_gdp_end": 5.96125299820208,
+      "health_gdp": 4.29392195
+    },
+    "SAU": {
+      "name": "Saudi Arabia",
+      "burden_start": -8.086091915374675,
+      "burden_break": 0.7646929409502763,
+      "burden_end": 0.3325576038698063,
+      "burden_estimate": 0.9423598583852348,
+      "burden_forecast_end": 2.979891311208056,
+      "burden_peak": 0.7646929409502763,
+      "burden_peak_year": 2021,
+      "burden_max_forecast": 2.979891311208056,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 3.539470862489321,
+      "wb_end": 3.53928856293198,
+      "debt_start": 5.472432859825,
+      "debt_end": 25.853933709531,
+      "revenue_end": 26.77061953052,
+      "implicit_rate_end": 0.34434887878969,
+      "interest_gdp_end": 0.0890277308517997,
+      "health_gdp": 4.42276096
+    },
+    "USA": {
+      "name": "United States",
+      "burden_start": 5.831598760963703,
+      "burden_break": 7.16181698342477,
+      "burden_end": 10.692019964368583,
+      "burden_estimate": 10.417520507316995,
+      "burden_forecast_end": 12.71087738047327,
+      "burden_peak": 10.692019964368583,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 12.71087738047327,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 13.23071314725214,
+      "wb_end": 20.2909241993276,
+      "debt_start": 105.48937961191,
+      "debt_end": 122.3342773992,
+      "revenue_end": 29.794726358253,
+      "implicit_rate_end": 2.604060087066188,
+      "interest_gdp_end": 3.1856580905533995,
+      "health_gdp": 9.00711727
+    },
+    "IND": {
+      "name": "India",
+      "burden_start": 22.773023814528248,
+      "burden_break": 25.372005095231945,
+      "burden_end": 22.867078824076643,
+      "burden_estimate": 24.579107258202768,
+      "burden_forecast_end": 25.63207041134128,
+      "burden_peak": 30.891061418596752,
+      "burden_peak_year": 2020,
+      "burden_max_forecast": 25.63207041134128,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 24.96142483201673,
+      "wb_end": null,
+      "debt_start": 69.698819866591,
+      "debt_end": 84.805204770536,
+      "revenue_end": 21.404891105376,
+      "implicit_rate_end": 5.77166617841204,
+      "interest_gdp_end": 4.8946733212741,
+      "health_gdp": 1.30319667
+    },
+    "ZAF": {
+      "name": "South Africa",
+      "burden_start": 11.376311407448698,
+      "burden_break": 15.536222930437466,
+      "burden_end": 18.928836605652155,
+      "burden_estimate": 18.96006514000664,
+      "burden_forecast_end": 18.450434378033272,
+      "burden_peak": 18.928836605652155,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 18.96006514000664,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 19.334944083952443,
+      "wb_end": 18.1746461598679,
+      "debt_start": 45.195466062311,
+      "debt_end": 75.96290718117,
+      "revenue_end": 27.301042701835,
+      "implicit_rate_end": 6.803017362598621,
+      "interest_gdp_end": 5.16776976466967,
+      "health_gdp": 5.48956871
+    },
+    "PAK": {
+      "name": "Pakistan",
+      "burden_start": 32.722969165528674,
+      "burden_break": 39.65972569783517,
+      "burden_end": 61.25670839780127,
+      "burden_estimate": 49.24737157230787,
+      "burden_forecast_end": 36.25471062660748,
+      "burden_peak": 61.25670839780127,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 49.24737157230787,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 61.25670839779816,
+      "wb_end": null,
+      "debt_start": 59.062602765016,
+      "debt_end": 70.279770742758,
+      "revenue_end": 12.651685834841,
+      "implicit_rate_end": 11.027364229205432,
+      "interest_gdp_end": 7.75000629925448,
+      "health_gdp": 0.90008724
+    },
+    "EGY": {
+      "name": "Egypt, Arab Rep.",
+      "burden_start": 30.92867756314828,
+      "burden_break": 43.178289622788526,
+      "burden_end": 55.78025859992326,
+      "burden_estimate": 60.93537650052177,
+      "burden_forecast_end": 70.29737543956941,
+      "burden_peak": 55.78025859992326,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 87.66496222493042,
+      "burden_max_forecast_year": 2026,
+      "gross_end": null,
+      "wb_end": null,
+      "debt_start": 83.753677183995,
+      "debt_end": 90.925932701282,
+      "revenue_end": 15.816461992279,
+      "implicit_rate_end": 9.702912181980192,
+      "interest_gdp_end": 8.8224634006518,
+      "health_gdp": 1.57523489
+    },
+    "LKA": {
+      "name": "Sri Lanka",
+      "burden_start": 36.08938922247533,
+      "burden_break": 71.62011192618058,
+      "burden_end": 55.55100263637913,
+      "burden_estimate": 45.58656113350555,
+      "burden_forecast_end": 37.80808570372793,
+      "burden_peak": 79.87445435181097,
+      "burden_peak_year": 2023,
+      "burden_max_forecast": 45.58656113350555,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 57.1027758573919,
+      "wb_end": null,
+      "debt_start": 76.333789931333,
+      "debt_end": 100.17908692991,
+      "revenue_end": 13.592596101948,
+      "implicit_rate_end": 7.537325054907329,
+      "interest_gdp_end": 7.5508234189455,
+      "health_gdp": 1.23655903
+    },
+    "JPN": {
+      "name": "Japan",
+      "burden_start": 3.1034255814431786,
+      "burden_break": 1.6719413115698745,
+      "burden_end": 0.325355092680704,
+      "burden_estimate": 0.5459122047201197,
+      "burden_forecast_end": 1.82376887172124,
+      "burden_peak": 3.1718423830252216,
+      "burden_peak_year": 2016,
+      "burden_max_forecast": 1.82376887172124,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 3.976363447669322,
+      "wb_end": null,
+      "debt_start": 200.14475284158,
+      "debt_end": 213.58877325468,
+      "revenue_end": 35.494275808165,
+      "implicit_rate_end": 0.0540676516805031,
+      "interest_gdp_end": 0.1154824339519999,
+      "health_gdp": 9.11008263
+    },
+    "NGA": {
+      "name": "Nigeria",
+      "burden_start": 15.562041890349828,
+      "burden_break": 35.27026262169909,
+      "burden_end": 22.9664670937082,
+      "burden_estimate": 25.09642422781041,
+      "burden_forecast_end": 23.00921197756683,
+      "burden_peak": 38.9672498651202,
+      "burden_peak_year": 2023,
+      "burden_max_forecast": 25.09642422781041,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 22.966467093707,
+      "wb_end": null,
+      "debt_start": 14.929655349381,
+      "debt_end": 39.333030536504,
+      "revenue_end": 10.755427788827,
+      "implicit_rate_end": 6.280069829900403,
+      "interest_gdp_end": 2.4701417839085,
+      "health_gdp": 0.60093319
+    },
+    "BGD": {
+      "name": "Bangladesh",
+      "burden_start": 20.76789869945206,
+      "burden_break": 21.357876658054856,
+      "burden_end": 27.51132740392703,
+      "burden_estimate": 28.391193036354508,
+      "burden_forecast_end": 28.350453364397747,
+      "burden_peak": 27.51132740392703,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 29.257240387475992,
+      "burden_max_forecast_year": 2026,
+      "gross_end": 27.51132740392703,
+      "wb_end": null,
+      "debt_start": 28.205818893669,
+      "debt_end": 40.971764493176,
+      "revenue_end": 8.3381745972143,
+      "implicit_rate_end": 5.598837495350645,
+      "interest_gdp_end": 2.2939425129507,
+      "health_gdp": 0.31430635
+    },
+    "LBN": {
+      "name": "Lebanon",
+      "burden_start": 46.57294656608783,
+      "burden_break": 12.866353125749496,
+      "burden_end": 4.106167331799972,
+      "burden_estimate": 3.49044165885303,
+      "burden_forecast_end": null,
+      "burden_peak": 48.38539836224394,
+      "burden_peak_year": 2019,
+      "burden_max_forecast": 3.49044165885303,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 3.6203074259108408,
+      "wb_end": 5.41741607517506,
+      "debt_start": 140.94371983567,
+      "debt_end": 152.00193584936,
+      "revenue_end": 15.125041344935,
+      "implicit_rate_end": 0.408586576977845,
+      "interest_gdp_end": 0.62105950662696,
+      "health_gdp": 2.11316371
+    },
+    "GHA": {
+      "name": "Ghana",
+      "burden_start": 33.83287690777372,
+      "burden_break": 47.8234617547028,
+      "burden_end": 25.26882025387154,
+      "burden_estimate": 22.185292087221043,
+      "burden_forecast_end": 19.28408977259953,
+      "burden_peak": 47.8234617547028,
+      "burden_peak_year": 2021,
+      "burden_max_forecast": 22.185292087221043,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 25.268820253872292,
+      "wb_end": null,
+      "debt_start": 53.895808636009,
+      "debt_end": 70.135671673894,
+      "revenue_end": 15.775567628701,
+      "implicit_rate_end": 5.683698085418332,
+      "interest_gdp_end": 3.9862998281244,
+      "health_gdp": 1.86317766
+    },
+    "CAN": {
+      "name": "Canada",
+      "burden_start": 1.62703442171123,
+      "burden_break": -1.5155318773071464,
+      "burden_end": 0.0139430483616317,
+      "burden_estimate": -0.5479517907307869,
+      "burden_forecast_end": 0.2176084213821161,
+      "burden_peak": 1.62703442171123,
+      "burden_peak_year": 2015,
+      "burden_max_forecast": 0.2176084213821161,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 8.273212122875242,
+      "wb_end": 8.3629853130122,
+      "debt_start": 92.282664997355,
+      "debt_end": 110.01865499392,
+      "revenue_end": 42.221665335393,
+      "implicit_rate_end": 0.0053508990971808,
+      "interest_gdp_end": 0.0058869872168001,
+      "health_gdp": 7.93846798
+    },
+    "KWT": {
+      "name": "Kuwait",
+      "burden_start": -28.284921841394688,
+      "burden_break": -32.38185230672041,
+      "burden_end": -33.40121452340492,
+      "burden_estimate": -41.903297294233816,
+      "burden_forecast_end": -39.70468280011328,
+      "burden_peak": -26.55468671681391,
+      "burden_peak_year": 2022,
+      "burden_max_forecast": -39.70468280011328,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 0.1460432622688655,
+      "wb_end": null,
+      "debt_start": 4.6044329959708,
+      "debt_end": 2.9108870763463,
+      "revenue_end": 74.313874563048,
+      "implicit_rate_end": -852.7207003376288,
+      "interest_gdp_end": -24.8217366634577,
+      "health_gdp": 4.39482975
+    },
+    "SDN": {
+      "name": "Sudan",
+      "burden_start": 8.32459408438506,
+      "burden_break": 0.4414448207872465,
+      "burden_end": 5.175780812202037,
+      "burden_estimate": 6.760303335746043,
+      "burden_forecast_end": 5.054226907684439,
+      "burden_peak": 8.32459408438506,
+      "burden_peak_year": 2015,
+      "burden_max_forecast": 7.652673234669615,
+      "burden_max_forecast_year": 2026,
+      "gross_end": 4.850674855823484,
+      "wb_end": null,
+      "debt_start": 93.19596519768,
+      "debt_end": 282.26270201082,
+      "revenue_end": 2.9599412656372,
+      "implicit_rate_end": 0.0542757052164219,
+      "interest_gdp_end": 0.1532000720793003,
+      "health_gdp": 0.59154689
+    },
+    "ITA": {
+      "name": "Italy",
+      "burden_start": 8.241653162085223,
+      "burden_break": 6.962763839566363,
+      "burden_end": 7.677324388890298,
+      "burden_estimate": 7.506298760138753,
+      "burden_forecast_end": 8.386169489110634,
+      "burden_peak": 8.402706682710749,
+      "burden_peak_year": 2022,
+      "burden_max_forecast": 8.386169489110634,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 8.246947574082727,
+      "wb_end": 9.4182690172743,
+      "debt_start": 134.79045595505,
+      "debt_end": 134.73949037933,
+      "revenue_end": 47.048632398287,
+      "implicit_rate_end": 2.680785061294212,
+      "interest_gdp_end": 3.61207612975303,
+      "health_gdp": 6.14251709
+    },
+    "GRC": {
+      "name": "Greece",
+      "burden_start": 7.336074190006681,
+      "burden_break": 5.024411895250969,
+      "burden_end": 7.026371317028188,
+      "burden_estimate": 6.314984093746279,
+      "burden_forecast_end": 6.702028960128417,
+      "burden_peak": 7.336074190006681,
+      "burden_peak_year": 2015,
+      "burden_max_forecast": 6.702028960128417,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 7.0158069031441945,
+      "wb_end": 7.48339997144081,
+      "debt_start": 180.00054818499,
+      "debt_end": 155.37280080036,
+      "revenue_end": 49.447063395512,
+      "implicit_rate_end": 2.236127727400116,
+      "interest_gdp_end": 3.4743342795349994,
+      "health_gdp": 4.24943686
+    },
+    "NOR": {
+      "name": "Norway",
+      "burden_start": -4.7075136166653175,
+      "burden_break": -2.172980385074706,
+      "burden_end": -5.4476946333525,
+      "burden_estimate": -8.330609411589567,
+      "burden_forecast_end": -5.925141035109162,
+      "burden_peak": -2.000989071533576,
+      "burden_peak_year": 2022,
+      "burden_max_forecast": -5.925141035109162,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 1.85376045888885,
+      "wb_end": 1.64281620889845,
+      "debt_start": 33.200301573045,
+      "debt_end": 52.818228755317,
+      "revenue_end": 59.795105974572,
+      "implicit_rate_end": -6.167292724401108,
+      "interest_gdp_end": -3.257454779184199,
+      "health_gdp": 8.11916542
+    },
+    "CRI": {
+      "name": "Costa Rica",
+      "burden_start": 20.02964342675357,
+      "burden_break": 30.65124940114661,
+      "burden_end": 32.10040220953868,
+      "burden_estimate": 29.76729317401539,
+      "burden_forecast_end": 34.24895155213958,
+      "burden_peak": 33.282390670173065,
+      "burden_peak_year": 2020,
+      "burden_max_forecast": 34.24895155213958,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 32.10040195326502,
+      "wb_end": 16.6149238224439,
+      "debt_start": 39.78570637123,
+      "debt_end": 58.9099245269,
+      "revenue_end": 14.873914429171,
+      "implicit_rate_end": 8.104893011509942,
+      "interest_gdp_end": 4.7745863560665,
+      "health_gdp": 4.61124086
+    },
+    "BHR": {
+      "name": "Bahrain",
+      "burden_start": 12.856049936778014,
+      "burden_break": 22.685729335566503,
+      "burden_end": 36.04907013867364,
+      "burden_estimate": 44.424389293233205,
+      "burden_forecast_end": 40.47070946021901,
+      "burden_peak": 36.04907013867364,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 44.424389293233205,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 35.447337515531416,
+      "wb_end": null,
+      "debt_start": 63.17966603428,
+      "debt_end": 133.6699731396,
+      "revenue_end": 17.888198595688,
+      "implicit_rate_end": 4.8242167682417305,
+      "interest_gdp_end": 6.4485292583048,
+      "health_gdp": 2.36801171
+    },
+    "MWI": {
+      "name": "Malawi",
+      "burden_start": 14.949448391189822,
+      "burden_break": 26.33816745720345,
+      "burden_end": 35.53753789135209,
+      "burden_estimate": 39.281398766696086,
+      "burden_forecast_end": 34.07410247602338,
+      "burden_peak": 35.53753789135209,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 39.281398766696086,
+      "burden_max_forecast_year": 2025,
+      "gross_end": null,
+      "wb_end": 35.7774557484531,
+      "debt_start": 35.455124028821,
+      "debt_end": 86.54676476078,
+      "revenue_end": 18.520264666113,
+      "implicit_rate_end": 7.604728023618942,
+      "interest_gdp_end": 6.581646073298599,
+      "health_gdp": 0.83762544
+    },
+    "KEN": {
+      "name": "Kenya",
+      "burden_start": 14.389389605443892,
+      "burden_break": 24.32166632207355,
+      "burden_end": 29.97842909287005,
+      "burden_estimate": 31.15757296608581,
+      "burden_forecast_end": 34.339710695171995,
+      "burden_peak": 29.97842909287005,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 34.339710695171995,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 32.34051959990759,
+      "wb_end": null,
+      "debt_start": 45.831722112779,
+      "debt_end": 67.305826354909,
+      "revenue_end": 17.50082369169,
+      "implicit_rate_end": 7.794974529272435,
+      "interest_gdp_end": 5.24647202108149,
+      "health_gdp": 1.95431077
+    },
+    "ZMB": {
+      "name": "Zambia",
+      "burden_start": 15.176127577639235,
+      "burden_break": 27.196791806669815,
+      "burden_end": 28.23624799967882,
+      "burden_estimate": 26.628862923634145,
+      "burden_forecast_end": 23.20767910579356,
+      "burden_peak": 33.85186521995497,
+      "burden_peak_year": 2019,
+      "burden_max_forecast": 26.628862923634145,
+      "burden_max_forecast_year": 2025,
+      "gross_end": null,
+      "wb_end": 28.3255923899655,
+      "debt_start": 61.868901812907,
+      "debt_end": 125.50612563071,
+      "revenue_end": 23.051837536199,
+      "implicit_rate_end": 5.18618034179164,
+      "interest_gdp_end": 6.508974015204201,
+      "health_gdp": 2.43413329
+    },
+    "MEX": {
+      "name": "Mexico",
+      "burden_start": 11.86130337582173,
+      "burden_break": 18.89369043282971,
+      "burden_end": 23.808633500829966,
+      "burden_estimate": 24.42844606640843,
+      "burden_forecast_end": 22.539679283804663,
+      "burden_peak": 23.86559542181298,
+      "burden_peak_year": 2023,
+      "burden_max_forecast": 24.42844606640843,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 26.332213677723093,
+      "wb_end": 20.0001112170522,
+      "debt_start": 50.972958347072,
+      "debt_end": 59.000934204542,
+      "revenue_end": 24.925428506747,
+      "implicit_rate_end": 10.058152471128071,
+      "interest_gdp_end": 5.934403921682789,
+      "health_gdp": 2.67641234
+    },
+    "IDN": {
+      "name": "Indonesia",
+      "burden_start": 9.097226769317068,
+      "burden_break": 14.74852393710305,
+      "burden_end": 15.128380584456975,
+      "burden_estimate": 16.26326580650666,
+      "burden_forecast_end": 16.733604632030435,
+      "burden_peak": 16.465624776609555,
+      "burden_peak_year": 2020,
+      "burden_max_forecast": 16.733604632030435,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 15.166810333805884,
+      "wb_end": null,
+      "debt_start": 27.013303953882,
+      "debt_end": 40.164815376729,
+      "revenue_end": 14.583067580479,
+      "implicit_rate_end": 5.492822371447174,
+      "interest_gdp_end": 2.206181964463425,
+      "health_gdp": 1.44882917
+    },
+    "GBR": {
+      "name": "United Kingdom",
+      "burden_start": 4.2320323179742525,
+      "burden_break": 5.640300634752747,
+      "burden_end": 5.402607051692399,
+      "burden_estimate": 6.818273675158633,
+      "burden_forecast_end": 6.660945251221315,
+      "burden_peak": 9.20918873724042,
+      "burden_peak_year": 2022,
+      "burden_max_forecast": 6.818273675158633,
+      "burden_max_forecast_year": 2025,
+      "gross_end": 7.405683926076968,
+      "wb_end": 8.31995334939262,
+      "debt_start": 87.299110383012,
+      "debt_end": 99.383707120604,
+      "revenue_end": 37.436513537238,
+      "implicit_rate_end": 2.035089834006896,
+      "interest_gdp_end": 2.0225477202705995,
+      "health_gdp": 8.98766613
+    },
+    "FRA": {
+      "name": "France",
+      "burden_start": 3.5992586821174557,
+      "burden_break": 2.5841552595283,
+      "burden_end": 3.641573156943352,
+      "burden_estimate": 3.98382177197512,
+      "burden_forecast_end": 5.236109738699281,
+      "burden_peak": 3.641573156943352,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 5.236109738699281,
+      "burden_max_forecast_year": 2027,
+      "gross_end": 4.009024166890499,
+      "wb_end": 4.23089307611782,
+      "debt_start": 96.977789608622,
+      "debt_end": 112.57250941482,
+      "revenue_end": 51.193148464687,
+      "implicit_rate_end": 1.656031265870294,
+      "interest_gdp_end": 1.8642359526842,
+      "health_gdp": 7.89331961
+    },
+    "LAO": {
+      "name": "Lao PDR",
+      "burden_start": 3.7841072600822696,
+      "burden_break": 6.277389812275128,
+      "burden_end": 19.62679778619369,
+      "burden_estimate": 14.433382740605332,
+      "burden_forecast_end": 9.14388835377382,
+      "burden_peak": 19.62679778619369,
+      "burden_peak_year": 2024,
+      "burden_max_forecast": 17.802384024443104,
+      "burden_max_forecast_year": 2026,
+      "gross_end": null,
+      "wb_end": null,
+      "debt_start": 53.052209455927,
+      "debt_end": 99.164805714062,
+      "revenue_end": 18.956666552015,
+      "implicit_rate_end": 3.7519224531081847,
+      "interest_gdp_end": 3.720586611167,
+      "health_gdp": 0.52790278
+    }
+  }
+}

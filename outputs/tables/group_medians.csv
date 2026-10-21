@@ -1,0 +1,376 @@
+income_group,year,variable,median,countries
+All countries,2015,debt_gdp,44.508725715967,181
+All countries,2016,debt_gdp,46.684915042199,181
+All countries,2017,debt_gdp,47.989780859979,181
+All countries,2018,debt_gdp,48.744461646759,181
+All countries,2019,debt_gdp,48.853537215752,181
+All countries,2020,debt_gdp,58.408131415619,181
+All countries,2021,debt_gdp,56.694681334208,181
+All countries,2022,debt_gdp,56.035308864908,181
+All countries,2023,debt_gdp,54.799199044579,181
+All countries,2024,debt_gdp,54.516579460947,181
+All countries,2025,debt_gdp,53.209888836358,181
+All countries,2026,debt_gdp,52.62610556916,177
+All countries,2027,debt_gdp,53.348164697968,177
+High income,2015,debt_gdp,51.599289840413,61
+High income,2016,debt_gdp,53.149305523596,61
+High income,2017,debt_gdp,54.603700899528,61
+High income,2018,debt_gdp,52.177360983112,61
+High income,2019,debt_gdp,55.814280331471,61
+High income,2020,debt_gdp,67.513737646183,61
+High income,2021,debt_gdp,61.873492145919,61
+High income,2022,debt_gdp,57.75625069912,61
+High income,2023,debt_gdp,55.105749079818,61
+High income,2024,debt_gdp,57.467655470871,61
+High income,2025,debt_gdp,56.582494021121,61
+High income,2026,debt_gdp,56.369331779511,61
+High income,2027,debt_gdp,55.943083015687,61
+Low income,2015,debt_gdp,34.4532429050875,20
+Low income,2016,debt_gdp,38.6215513445365,20
+Low income,2017,debt_gdp,40.052802602899504,20
+Low income,2018,debt_gdp,41.851725466378994,20
+Low income,2019,debt_gdp,42.5511268810395,20
+Low income,2020,debt_gdp,50.607301224801,20
+Low income,2021,debt_gdp,53.6652139098795,20
+Low income,2022,debt_gdp,52.316480165738,20
+Low income,2023,debt_gdp,54.48340741577,20
+Low income,2024,debt_gdp,52.709404246826,20
+Low income,2025,debt_gdp,52.2637795446895,20
+Low income,2026,debt_gdp,50.139406111625,19
+Low income,2027,debt_gdp,50.626032243302,19
+Lower middle income,2015,debt_gdp,39.280503484042,45
+Lower middle income,2016,debt_gdp,40.337835299086,45
+Lower middle income,2017,debt_gdp,43.829307832086,45
+Lower middle income,2018,debt_gdp,44.166707525331,45
+Lower middle income,2019,debt_gdp,44.20373903451,45
+Lower middle income,2020,debt_gdp,54.316560653486,45
+Lower middle income,2021,debt_gdp,54.450419625774,45
+Lower middle income,2022,debt_gdp,55.965204010652,45
+Lower middle income,2023,debt_gdp,54.799199044579,45
+Lower middle income,2024,debt_gdp,52.530210007656,45
+Lower middle income,2025,debt_gdp,49.351072172865,45
+Lower middle income,2026,debt_gdp,48.131998423221,43
+Lower middle income,2027,debt_gdp,48.001556836049,43
+Upper middle income,2015,debt_gdp,45.483283756638,55
+Upper middle income,2016,debt_gdp,49.904076416625,55
+Upper middle income,2017,debt_gdp,49.480267616664,55
+Upper middle income,2018,debt_gdp,50.798171517915,55
+Upper middle income,2019,debt_gdp,50.452498479867,55
+Upper middle income,2020,debt_gdp,63.550943476181,55
+Upper middle income,2021,debt_gdp,58.366612459945,55
+Upper middle income,2022,debt_gdp,57.388782608826,55
+Upper middle income,2023,debt_gdp,54.491011098564,55
+Upper middle income,2024,debt_gdp,54.516579460947,55
+Upper middle income,2025,debt_gdp,54.510225320716,55
+Upper middle income,2026,debt_gdp,58.326944949326,54
+Upper middle income,2027,debt_gdp,59.815994581397,54
+All countries,2015,implicit_rate,2.6510858110088296,171
+All countries,2016,implicit_rate,2.730798438638083,171
+All countries,2017,implicit_rate,2.8414933484146117,170
+All countries,2018,implicit_rate,2.815367391376423,171
+All countries,2019,implicit_rate,2.8695782658651607,170
+All countries,2020,implicit_rate,2.3078239094477357,171
+All countries,2021,implicit_rate,2.279667352751851,171
+All countries,2022,implicit_rate,2.6647378155849015,171
+All countries,2023,implicit_rate,2.9032772202398833,172
+All countries,2024,implicit_rate,3.1336360366757647,175
+All countries,2025,implicit_rate,3.219949588666776,174
+All countries,2026,implicit_rate,3.2321319052516175,169
+All countries,2027,implicit_rate,3.4241207975156662,170
+High income,2015,implicit_rate,2.5758387003743133,54
+High income,2016,implicit_rate,2.7174492076867693,54
+High income,2017,implicit_rate,2.489339011970657,53
+High income,2018,implicit_rate,2.4812713055878506,54
+High income,2019,implicit_rate,2.123396358457598,53
+High income,2020,implicit_rate,1.7198146770502212,54
+High income,2021,implicit_rate,1.7597070135187955,52
+High income,2022,implicit_rate,1.7917842554208945,52
+High income,2023,implicit_rate,1.840668435608839,53
+High income,2024,implicit_rate,1.8346725103481858,55
+High income,2025,implicit_rate,1.943047139188275,54
+High income,2026,implicit_rate,2.1690506338520548,54
+High income,2027,implicit_rate,2.5000000000001883,55
+Low income,2015,implicit_rate,1.506677169379528,20
+Low income,2016,implicit_rate,1.6826698819140438,20
+Low income,2017,implicit_rate,1.8573732316846732,20
+Low income,2018,implicit_rate,2.3969855901601007,20
+Low income,2019,implicit_rate,2.4373031216085588,20
+Low income,2020,implicit_rate,2.253645047356563,20
+Low income,2021,implicit_rate,2.1218338867309585,20
+Low income,2022,implicit_rate,2.5100050758338313,20
+Low income,2023,implicit_rate,2.8441254366580315,20
+Low income,2024,implicit_rate,3.3735781587527596,20
+Low income,2025,implicit_rate,3.5790537628844215,20
+Low income,2026,implicit_rate,3.7221001423426903,19
+Low income,2027,implicit_rate,3.7960672586800572,19
+Lower middle income,2015,implicit_rate,2.329416216408105,43
+Lower middle income,2016,implicit_rate,2.5170596594883734,43
+Lower middle income,2017,implicit_rate,2.3467408086862,44
+Lower middle income,2018,implicit_rate,2.6501629880370787,44
+Lower middle income,2019,implicit_rate,3.1187610209163887,44
+Lower middle income,2020,implicit_rate,2.2170305686448915,44
+Lower middle income,2021,implicit_rate,2.216866442148968,45
+Lower middle income,2022,implicit_rate,2.6874347680339308,45
+Lower middle income,2023,implicit_rate,2.94595950445315,45
+Lower middle income,2024,implicit_rate,3.1768559869894215,45
+Lower middle income,2025,implicit_rate,3.3723371629431873,45
+Lower middle income,2026,implicit_rate,3.631974482379078,43
+Lower middle income,2027,implicit_rate,3.825635183196241,43
+Upper middle income,2015,implicit_rate,3.3450746096981088,54
+Upper middle income,2016,implicit_rate,3.3342956989928414,54
+Upper middle income,2017,implicit_rate,3.4414608357952545,53
+Upper middle income,2018,implicit_rate,3.4719950509254853,53
+Upper middle income,2019,implicit_rate,3.4043525332675353,53
+Upper middle income,2020,implicit_rate,2.757329511494536,53
+Upper middle income,2021,implicit_rate,2.8294205423567904,54
+Upper middle income,2022,implicit_rate,3.0399008521456974,54
+Upper middle income,2023,implicit_rate,3.4888719045228567,54
+Upper middle income,2024,implicit_rate,3.5399812366759758,55
+Upper middle income,2025,implicit_rate,3.859555285339464,55
+Upper middle income,2026,implicit_rate,4.141477496425703,53
+Upper middle income,2027,implicit_rate,4.153973418976656,53
+All countries,2015,interest_burden,4.502687650768331,181
+All countries,2016,interest_burden,4.7993632064430365,181
+All countries,2017,interest_burden,4.886142193043637,181
+All countries,2018,interest_burden,5.148256178189232,181
+All countries,2019,interest_burden,5.079612669225511,181
+All countries,2020,interest_burden,5.374798467292963,181
+All countries,2021,interest_burden,5.385043109278692,181
+All countries,2022,interest_burden,4.933619214894243,181
+All countries,2023,interest_burden,5.314117803462701,181
+All countries,2024,interest_burden,5.828114468199261,181
+All countries,2025,interest_burden,6.614689966317081,181
+All countries,2026,interest_burden,6.322138588866187,177
+All countries,2027,interest_burden,6.627087484836216,177
+High income,2015,interest_burden,3.9571407074645597,61
+High income,2016,interest_burden,3.9743455731927515,61
+High income,2017,interest_burden,3.4252051335999325,61
+High income,2018,interest_burden,3.4909521733274684,61
+High income,2019,interest_burden,2.7826063730831736,61
+High income,2020,interest_burden,3.142366667636697,61
+High income,2021,interest_burden,2.620644806028806,61
+High income,2022,interest_burden,2.6480493715589293,61
+High income,2023,interest_burden,2.2238352504142607,61
+High income,2024,interest_burden,2.2851972694900224,61
+High income,2025,interest_burden,2.590049563956265,61
+High income,2026,interest_burden,2.962202702029108,61
+High income,2027,interest_burden,3.1266959901378826,61
+Low income,2015,interest_burden,3.5892158596919184,20
+Low income,2016,interest_burden,4.55627979248255,20
+Low income,2017,interest_burden,4.487989471002951,20
+Low income,2018,interest_burden,5.40088747572031,20
+Low income,2019,interest_burden,5.517826240157966,20
+Low income,2020,interest_burden,5.948263642001088,20
+Low income,2021,interest_burden,6.242335606497933,20
+Low income,2022,interest_burden,7.641570356779615,20
+Low income,2023,interest_burden,8.449274175998863,20
+Low income,2024,interest_burden,8.427841885784884,20
+Low income,2025,interest_burden,8.441174393804477,20
+Low income,2026,interest_burden,10.494542836305936,19
+Low income,2027,interest_burden,10.507739219353027,19
+Lower middle income,2015,interest_burden,4.277781176575447,45
+Lower middle income,2016,interest_burden,5.589755633816167,45
+Lower middle income,2017,interest_burden,5.724446789557223,45
+Lower middle income,2018,interest_burden,6.760397043238095,45
+Lower middle income,2019,interest_burden,7.547372713673507,45
+Lower middle income,2020,interest_burden,6.324103670505572,45
+Lower middle income,2021,interest_burden,6.833397677667272,45
+Lower middle income,2022,interest_burden,7.970421144380615,45
+Lower middle income,2023,interest_burden,7.014725875028509,45
+Lower middle income,2024,interest_burden,7.907784065082914,45
+Lower middle income,2025,interest_burden,8.756458177885236,45
+Lower middle income,2026,interest_burden,9.233363645464035,43
+Lower middle income,2027,interest_burden,8.901781033091076,43
+Upper middle income,2015,interest_burden,6.674519033876588,55
+Upper middle income,2016,interest_burden,6.169921661237745,55
+Upper middle income,2017,interest_burden,7.159736731427438,55
+Upper middle income,2018,interest_burden,7.252666239045903,55
+Upper middle income,2019,interest_burden,7.150339500956736,55
+Upper middle income,2020,interest_burden,7.199586822258585,55
+Upper middle income,2021,interest_burden,6.423740784524312,55
+Upper middle income,2022,interest_burden,6.236887627093388,55
+Upper middle income,2023,interest_burden,7.086103441052637,55
+Upper middle income,2024,interest_burden,7.366800251814749,55
+Upper middle income,2025,interest_burden,7.110678767902762,55
+Upper middle income,2026,interest_burden,7.590169816997401,54
+Upper middle income,2027,interest_burden,8.371235562840702,54
+All countries,2015,interest_burden_gross,5.696723242579243,149
+All countries,2016,interest_burden_gross,6.223287556203025,149
+All countries,2017,interest_burden_gross,5.9231695536692275,149
+All countries,2018,interest_burden_gross,6.207692633540866,149
+All countries,2019,interest_burden_gross,6.220574549801062,149
+All countries,2020,interest_burden_gross,6.534006193370794,149
+All countries,2021,interest_burden_gross,6.234546188522046,149
+All countries,2022,interest_burden_gross,6.334776733146164,149
+All countries,2023,interest_burden_gross,7.086131333778033,149
+All countries,2024,interest_burden_gross,7.358588155090675,149
+High income,2015,interest_burden_gross,4.788649362817951,56
+High income,2016,interest_burden_gross,4.670455299845048,56
+High income,2017,interest_burden_gross,4.453321239486849,56
+High income,2018,interest_burden_gross,4.37507063869569,56
+High income,2019,interest_burden_gross,3.9362284087191077,56
+High income,2020,interest_burden_gross,4.162255599517482,56
+High income,2021,interest_burden_gross,3.336722531024705,56
+High income,2022,interest_burden_gross,3.5737103119426576,56
+High income,2023,interest_burden_gross,4.108044905165407,56
+High income,2024,interest_burden_gross,4.6135909098808225,56
+Low income,2015,interest_burden_gross,3.681093488515526,13
+Low income,2016,interest_burden_gross,4.587254655275059,13
+Low income,2017,interest_burden_gross,4.586220238039918,13
+Low income,2018,interest_burden_gross,5.2320207170292345,13
+Low income,2019,interest_burden_gross,5.550616842727279,13
+Low income,2020,interest_burden_gross,5.954328776980005,13
+Low income,2021,interest_burden_gross,6.250125024473394,13
+Low income,2022,interest_burden_gross,7.78491631800021,13
+Low income,2023,interest_burden_gross,9.292873527943668,13
+Low income,2024,interest_burden_gross,9.093263816838794,13
+Lower middle income,2015,interest_burden_gross,5.511964145809827,36
+Lower middle income,2016,interest_burden_gross,7.697629685264093,36
+Lower middle income,2017,interest_burden_gross,8.253551835394628,36
+Lower middle income,2018,interest_burden_gross,8.739843391581065,36
+Lower middle income,2019,interest_burden_gross,9.773292446267995,36
+Lower middle income,2020,interest_burden_gross,10.09527568171917,36
+Lower middle income,2021,interest_burden_gross,9.343101583282579,36
+Lower middle income,2022,interest_burden_gross,8.77771985621882,36
+Lower middle income,2023,interest_burden_gross,9.464754769064061,36
+Lower middle income,2024,interest_burden_gross,10.012994809764258,36
+Upper middle income,2015,interest_burden_gross,8.665215576357333,44
+Upper middle income,2016,interest_burden_gross,9.241430378967905,44
+Upper middle income,2017,interest_burden_gross,8.597368503811241,44
+Upper middle income,2018,interest_burden_gross,8.366350032606604,44
+Upper middle income,2019,interest_burden_gross,7.928229803431874,44
+Upper middle income,2020,interest_burden_gross,8.959752881555232,44
+Upper middle income,2021,interest_burden_gross,8.088289702440543,44
+Upper middle income,2022,interest_burden_gross,7.71034055505096,44
+Upper middle income,2023,interest_burden_gross,9.310001805828147,44
+Upper middle income,2024,interest_burden_gross,10.188664413919266,44
+All countries,2015,net_interest_gdp,1.1761055433399,181
+All countries,2016,net_interest_gdp,1.2695519482073,181
+All countries,2017,net_interest_gdp,1.2444694870041002,181
+All countries,2018,net_interest_gdp,1.4067486582225,181
+All countries,2019,net_interest_gdp,1.35825268262359,181
+All countries,2020,net_interest_gdp,1.3864313727169,181
+All countries,2021,net_interest_gdp,1.3664914744295995,181
+All countries,2022,net_interest_gdp,1.2958469161211004,181
+All countries,2023,net_interest_gdp,1.4902351720679001,181
+All countries,2024,net_interest_gdp,1.61054728469784,181
+All countries,2025,net_interest_gdp,1.67359853320774,181
+All countries,2026,net_interest_gdp,1.7180118496702999,177
+All countries,2027,net_interest_gdp,1.72365583352666,177
+High income,2015,net_interest_gdp,1.55034826083241,61
+High income,2016,net_interest_gdp,1.4846869030699006,61
+High income,2017,net_interest_gdp,1.3961435945709004,61
+High income,2018,net_interest_gdp,1.3465319877156001,61
+High income,2019,net_interest_gdp,1.17546627957872,61
+High income,2020,net_interest_gdp,1.1232666065909989,61
+High income,2021,net_interest_gdp,1.09403739475277,61
+High income,2022,net_interest_gdp,0.77628440237651,61
+High income,2023,net_interest_gdp,0.7681064730386997,61
+High income,2024,net_interest_gdp,0.9149598694002901,61
+High income,2025,net_interest_gdp,1.0361204658152,61
+High income,2026,net_interest_gdp,1.0971807821854003,61
+High income,2027,net_interest_gdp,1.1214635542890998,61
+Low income,2015,net_interest_gdp,0.5688832083543001,20
+Low income,2016,net_interest_gdp,0.6675227029094501,20
+Low income,2017,net_interest_gdp,0.6969718736022499,20
+Low income,2018,net_interest_gdp,0.8958642829708501,20
+Low income,2019,net_interest_gdp,1.0615360617995502,20
+Low income,2020,net_interest_gdp,1.1653170150039998,20
+Low income,2021,net_interest_gdp,1.1400912321045502,20
+Low income,2022,net_interest_gdp,1.2474494420767999,20
+Low income,2023,net_interest_gdp,1.3518973239239498,20
+Low income,2024,net_interest_gdp,1.497040943353075,20
+Low income,2025,net_interest_gdp,1.6367314080015403,20
+Low income,2026,net_interest_gdp,1.65693250805506,19
+Low income,2027,net_interest_gdp,1.6100731351689102,19
+Lower middle income,2015,net_interest_gdp,0.8307264157707994,45
+Lower middle income,2016,net_interest_gdp,0.9042121450687004,45
+Lower middle income,2017,net_interest_gdp,1.05913061597715,45
+Lower middle income,2018,net_interest_gdp,1.24897676289179,45
+Lower middle income,2019,net_interest_gdp,1.3412723943650002,45
+Lower middle income,2020,net_interest_gdp,1.3163391115660996,45
+Lower middle income,2021,net_interest_gdp,1.1690795121058002,45
+Lower middle income,2022,net_interest_gdp,1.4821726143389231,45
+Lower middle income,2023,net_interest_gdp,1.7676491944306996,45
+Lower middle income,2024,net_interest_gdp,1.9440405153494003,45
+Lower middle income,2025,net_interest_gdp,1.9998708097824698,45
+Lower middle income,2026,net_interest_gdp,1.887993274306,43
+Lower middle income,2027,net_interest_gdp,2.0312218390995995,43
+Upper middle income,2015,net_interest_gdp,1.6130277645409898,55
+Upper middle income,2016,net_interest_gdp,1.6912957770174,55
+Upper middle income,2017,net_interest_gdp,1.79584439162157,55
+Upper middle income,2018,net_interest_gdp,1.79037711260206,55
+Upper middle income,2019,net_interest_gdp,1.7610928534574999,55
+Upper middle income,2020,net_interest_gdp,1.8041106992081999,55
+Upper middle income,2021,net_interest_gdp,1.7878127772276702,55
+Upper middle income,2022,net_interest_gdp,1.6247251150419602,55
+Upper middle income,2023,net_interest_gdp,1.7038148393090005,55
+Upper middle income,2024,net_interest_gdp,1.9693112805848,55
+Upper middle income,2025,net_interest_gdp,1.9973701293297,55
+Upper middle income,2026,net_interest_gdp,2.0521885691541,54
+Upper middle income,2027,net_interest_gdp,2.182233380075955,54
+All countries,2015,revenue_gdp,25.790097206931,181
+All countries,2016,revenue_gdp,26.217607944237,181
+All countries,2017,revenue_gdp,26.086483259311,181
+All countries,2018,revenue_gdp,26.353339161148,181
+All countries,2019,revenue_gdp,26.532036852082,181
+All countries,2020,revenue_gdp,25.641104022683,181
+All countries,2021,revenue_gdp,26.075261631192,181
+All countries,2022,revenue_gdp,27.110315963966,181
+All countries,2023,revenue_gdp,26.908936783383,181
+All countries,2024,revenue_gdp,26.77061953052,181
+All countries,2025,revenue_gdp,26.928425486355,181
+All countries,2026,revenue_gdp,27.647158817532,177
+All countries,2027,revenue_gdp,27.092649931359,177
+High income,2015,revenue_gdp,35.534858884765,61
+High income,2016,revenue_gdp,36.004992189109,61
+High income,2017,revenue_gdp,36.110468501958,61
+High income,2018,revenue_gdp,36.049103011627,61
+High income,2019,revenue_gdp,35.681876854742,61
+High income,2020,revenue_gdp,35.609569168169,61
+High income,2021,revenue_gdp,36.968177083757,61
+High income,2022,revenue_gdp,37.721869524104,61
+High income,2023,revenue_gdp,36.523688182951,61
+High income,2024,revenue_gdp,36.701441837051,61
+High income,2025,revenue_gdp,37.592758284863,61
+High income,2026,revenue_gdp,37.296723503361,61
+High income,2027,revenue_gdp,37.050705676114,61
+Low income,2015,revenue_gdp,15.4936397995445,20
+Low income,2016,revenue_gdp,15.0363231183035,20
+Low income,2017,revenue_gdp,16.3149147175805,20
+Low income,2018,revenue_gdp,14.873972456216,20
+Low income,2019,revenue_gdp,16.469473385417,20
+Low income,2020,revenue_gdp,17.485851994813,20
+Low income,2021,revenue_gdp,17.089677831461,20
+Low income,2022,revenue_gdp,16.3167913911665,20
+Low income,2023,revenue_gdp,15.737500430587,20
+Low income,2024,revenue_gdp,16.786573246378502,20
+Low income,2025,revenue_gdp,17.463198667995,20
+Low income,2026,revenue_gdp,17.815725865711,19
+Low income,2027,revenue_gdp,18.175665174112,19
+Lower middle income,2015,revenue_gdp,20.894943144332,45
+Lower middle income,2016,revenue_gdp,20.159263754324,45
+Lower middle income,2017,revenue_gdp,20.654552914467,45
+Lower middle income,2018,revenue_gdp,20.294510014993,45
+Lower middle income,2019,revenue_gdp,20.47330909384,45
+Lower middle income,2020,revenue_gdp,20.268391375079,45
+Lower middle income,2021,revenue_gdp,20.943431626796,45
+Lower middle income,2022,revenue_gdp,20.382751651858,45
+Lower middle income,2023,revenue_gdp,20.729651153234,45
+Lower middle income,2024,revenue_gdp,20.533069514258,45
+Lower middle income,2025,revenue_gdp,20.076163345503,45
+Lower middle income,2026,revenue_gdp,20.02646732207,43
+Lower middle income,2027,revenue_gdp,20.219612492027,43
+Upper middle income,2015,revenue_gdp,26.134330544063,55
+Upper middle income,2016,revenue_gdp,26.325790839075,55
+Upper middle income,2017,revenue_gdp,26.758029381249,55
+Upper middle income,2018,revenue_gdp,26.99163574497,55
+Upper middle income,2019,revenue_gdp,26.959088607219,55
+Upper middle income,2020,revenue_gdp,25.622140736695,55
+Upper middle income,2021,revenue_gdp,27.113666424352,55
+Upper middle income,2022,revenue_gdp,27.251410791841,55
+Upper middle income,2023,revenue_gdp,27.411139112435,55
+Upper middle income,2024,revenue_gdp,27.305328095955,55
+Upper middle income,2025,revenue_gdp,28.399453505547,55
+Upper middle income,2026,revenue_gdp,27.764193057476497,54
+Upper middle income,2027,revenue_gdp,28.205775997623,54

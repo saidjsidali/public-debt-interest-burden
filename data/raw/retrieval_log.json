@@ -1,0 +1,31 @@
+{
+  "retrieved_utc": "2026-10-21T16:07:27Z",
+  "imf_datamapper": {
+    "endpoint": "https://www.imf.org/external/datamapper/api/v1/<series_code>",
+    "vintage_by_series": {
+      "GGR_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "G_XWDG_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "GGXONLB_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "GGXCNL_G01_GDP_PT": "Fiscal Monitor (October 2026)",
+      "NGDPD": "World Economic Outlook (October 2026)",
+      "ie": "Public Finances in Modern History Database (Dec 2025)",
+      "rev": "Public Finances in Modern History Database (Dec 2025)"
+    },
+    "rows": 27576
+  },
+  "world_bank_wdi": {
+    "endpoint": "https://api.worldbank.org/v2/country/all/indicator/<series_code>",
+    "years": "2010-2025",
+    "last_updated_by_series": {
+      "GC.XPN.INTP.RV.ZS": "2026-10-08",
+      "SH.XPD.GHED.GD.ZS": "2026-10-08",
+      "SE.XPD.TOTL.GD.ZS": "2026-10-08",
+      "SP.POP.TOTL": "2026-10-08"
+    },
+    "rows": 12716
+  },
+  "world_bank_countries": {
+    "endpoint": "https://api.worldbank.org/v2/country",
+    "rows": 217
+  }
+}

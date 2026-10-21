@@ -1,0 +1,30 @@
+name: Reproduce analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run the full pipeline from the committed data snapshot
+        run: python run.py --no-pdf
+
+      - name: Run tests
+        run: pytest
+
+      - name: Check that the committed README and report match a fresh run
+        run: git diff --exit-code -- README.md report/economic_analysis.md

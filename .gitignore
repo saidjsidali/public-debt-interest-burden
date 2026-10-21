@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+data/processed/fiscal.sqlite
+report/economic_analysis.html

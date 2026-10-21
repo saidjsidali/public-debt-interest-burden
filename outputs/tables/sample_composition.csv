@@ -1,0 +1,21 @@
+income_group,region,countries,small_states
+High income,East Asia & Pacific,5,0
+High income,Europe & Central Asia,33,6
+High income,Latin America & Caribbean,12,7
+High income,"Middle East, North Africa, Afghanistan & Pakistan",8,1
+High income,North America,2,0
+High income,Sub-Saharan Africa,1,1
+Low income,"Middle East, North Africa, Afghanistan & Pakistan",1,0
+Low income,Sub-Saharan Africa,19,0
+Lower middle income,East Asia & Pacific,8,4
+Lower middle income,Europe & Central Asia,3,0
+Lower middle income,Latin America & Caribbean,4,0
+Lower middle income,"Middle East, North Africa, Afghanistan & Pakistan",6,1
+Lower middle income,South Asia,4,1
+Lower middle income,Sub-Saharan Africa,20,3
+Upper middle income,East Asia & Pacific,12,5
+Upper middle income,Europe & Central Asia,14,1
+Upper middle income,Latin America & Caribbean,17,6
+Upper middle income,"Middle East, North Africa, Afghanistan & Pakistan",4,0
+Upper middle income,South Asia,2,1
+Upper middle income,Sub-Saharan Africa,6,2
